@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		2CB51AF5202CDC96009C3B71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB51AF4202CDC96009C3B71 /* AppDelegate.swift */; };
 		2CB51AF7202CDC96009C3B71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB51AF6202CDC96009C3B71 /* ViewController.swift */; };
-		2CB51AFA202CDC96009C3B71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB51AF8202CDC96009C3B71 /* Main.storyboard */; };
 		2CB51AFC202CDC96009C3B71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB51AFB202CDC96009C3B71 /* Assets.xcassets */; };
 		2CB51AFF202CDC96009C3B71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB51AFD202CDC96009C3B71 /* LaunchScreen.storyboard */; };
 		2CB51B0A202CDC96009C3B71 /* OnPaperSoccerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB51B09202CDC96009C3B71 /* OnPaperSoccerTests.swift */; };
+		2DE7783BAEE9C6896C6DE789 /* Pods_OnPaperSoccer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C997CA20A546BDB0661357 /* Pods_OnPaperSoccer.framework */; };
+		9756ACC4D1309DCDA4E43A32 /* Pods_OnPaperSoccer_OnPaperSoccerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B84FDFCEC62331B26D25449 /* Pods_OnPaperSoccer_OnPaperSoccerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +27,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040D6B35AB64C4F38C776C43 /* Pods-OnPaperSoccer-OnPaperSoccerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnPaperSoccer-OnPaperSoccerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OnPaperSoccer-OnPaperSoccerTests/Pods-OnPaperSoccer-OnPaperSoccerTests.release.xcconfig"; sourceTree = "<group>"; };
+		27C997CA20A546BDB0661357 /* Pods_OnPaperSoccer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnPaperSoccer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB51AF1202CDC96009C3B71 /* OnPaperSoccer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnPaperSoccer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB51AF4202CDC96009C3B71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CB51AF6202CDC96009C3B71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2CB51AF9202CDC96009C3B71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CB51AFB202CDC96009C3B71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CB51AFE202CDC96009C3B71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CB51B00202CDC96009C3B71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CB51B05202CDC96009C3B71 /* OnPaperSoccerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnPaperSoccerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB51B09202CDC96009C3B71 /* OnPaperSoccerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnPaperSoccerTests.swift; sourceTree = "<group>"; };
 		2CB51B0B202CDC96009C3B71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B84FDFCEC62331B26D25449 /* Pods_OnPaperSoccer_OnPaperSoccerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnPaperSoccer_OnPaperSoccerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3CFDFF8E1AEE55F84192E36 /* Pods-OnPaperSoccer-OnPaperSoccerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnPaperSoccer-OnPaperSoccerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OnPaperSoccer-OnPaperSoccerTests/Pods-OnPaperSoccer-OnPaperSoccerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CA66CA537D937603362FBED7 /* Pods-OnPaperSoccer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnPaperSoccer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OnPaperSoccer/Pods-OnPaperSoccer.debug.xcconfig"; sourceTree = "<group>"; };
+		F1287B65CACC13F62FA27AC4 /* Pods-OnPaperSoccer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnPaperSoccer.release.xcconfig"; path = "Pods/Target Support Files/Pods-OnPaperSoccer/Pods-OnPaperSoccer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DE7783BAEE9C6896C6DE789 /* Pods_OnPaperSoccer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,18 +57,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9756ACC4D1309DCDA4E43A32 /* Pods_OnPaperSoccer_OnPaperSoccerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10E1D3514C0C10ADD8B61CC5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA66CA537D937603362FBED7 /* Pods-OnPaperSoccer.debug.xcconfig */,
+				F1287B65CACC13F62FA27AC4 /* Pods-OnPaperSoccer.release.xcconfig */,
+				C3CFDFF8E1AEE55F84192E36 /* Pods-OnPaperSoccer-OnPaperSoccerTests.debug.xcconfig */,
+				040D6B35AB64C4F38C776C43 /* Pods-OnPaperSoccer-OnPaperSoccerTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		2CB51AE8202CDC95009C3B71 = {
 			isa = PBXGroup;
 			children = (
 				2CB51AF3202CDC96009C3B71 /* OnPaperSoccer */,
 				2CB51B08202CDC96009C3B71 /* OnPaperSoccerTests */,
 				2CB51AF2202CDC96009C3B71 /* Products */,
+				10E1D3514C0C10ADD8B61CC5 /* Pods */,
+				6B7F3ED2EA6208B16576E814 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,7 +100,6 @@
 			children = (
 				2CB51AF4202CDC96009C3B71 /* AppDelegate.swift */,
 				2CB51AF6202CDC96009C3B71 /* ViewController.swift */,
-				2CB51AF8202CDC96009C3B71 /* Main.storyboard */,
 				2CB51AFB202CDC96009C3B71 /* Assets.xcassets */,
 				2CB51AFD202CDC96009C3B71 /* LaunchScreen.storyboard */,
 				2CB51B00202CDC96009C3B71 /* Info.plist */,
@@ -96,6 +116,15 @@
 			path = OnPaperSoccerTests;
 			sourceTree = "<group>";
 		};
+		6B7F3ED2EA6208B16576E814 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				27C997CA20A546BDB0661357 /* Pods_OnPaperSoccer.framework */,
+				9B84FDFCEC62331B26D25449 /* Pods_OnPaperSoccer_OnPaperSoccerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +132,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CB51B0E202CDC96009C3B71 /* Build configuration list for PBXNativeTarget "OnPaperSoccer" */;
 			buildPhases = (
+				DCAD1F4DA6BA30E586A9A57C /* [CP] Check Pods Manifest.lock */,
 				2CB51AED202CDC95009C3B71 /* Sources */,
 				2CB51AEE202CDC95009C3B71 /* Frameworks */,
 				2CB51AEF202CDC95009C3B71 /* Resources */,
+				2F69341882CEE0E503D527AA /* [CP] Embed Pods Frameworks */,
+				2381F35A1254BF845687849D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -120,9 +152,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CB51B11202CDC96009C3B71 /* Build configuration list for PBXNativeTarget "OnPaperSoccerTests" */;
 			buildPhases = (
+				4B86497C4A3B0264B46CBAA4 /* [CP] Check Pods Manifest.lock */,
 				2CB51B01202CDC96009C3B71 /* Sources */,
 				2CB51B02202CDC96009C3B71 /* Frameworks */,
 				2CB51B03202CDC96009C3B71 /* Resources */,
+				FFEFA3CF7DC9C3B84CE14779 /* [CP] Embed Pods Frameworks */,
+				AC29086C6D771F8BA76B363A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -181,7 +216,6 @@
 			files = (
 				2CB51AFF202CDC96009C3B71 /* LaunchScreen.storyboard in Resources */,
 				2CB51AFC202CDC96009C3B71 /* Assets.xcassets in Resources */,
-				2CB51AFA202CDC96009C3B71 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +227,119 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2381F35A1254BF845687849D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OnPaperSoccer/Pods-OnPaperSoccer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2F69341882CEE0E503D527AA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OnPaperSoccer/Pods-OnPaperSoccer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OnPaperSoccer/Pods-OnPaperSoccer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B86497C4A3B0264B46CBAA4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OnPaperSoccer-OnPaperSoccerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC29086C6D771F8BA76B363A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OnPaperSoccer-OnPaperSoccerTests/Pods-OnPaperSoccer-OnPaperSoccerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCAD1F4DA6BA30E586A9A57C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OnPaperSoccer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFEFA3CF7DC9C3B84CE14779 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OnPaperSoccer-OnPaperSoccerTests/Pods-OnPaperSoccer-OnPaperSoccerTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OnPaperSoccer-OnPaperSoccerTests/Pods-OnPaperSoccer-OnPaperSoccerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2CB51AED202CDC95009C3B71 /* Sources */ = {
@@ -223,14 +370,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2CB51AF8202CDC96009C3B71 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CB51AF9202CDC96009C3B71 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2CB51AFD202CDC96009C3B71 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -351,6 +490,7 @@
 		};
 		2CB51B0F202CDC96009C3B71 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA66CA537D937603362FBED7 /* Pods-OnPaperSoccer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -360,12 +500,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = OwlyApps.OnPaperSoccer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		2CB51B10202CDC96009C3B71 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1287B65CACC13F62FA27AC4 /* Pods-OnPaperSoccer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -375,12 +516,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = OwlyApps.OnPaperSoccer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		2CB51B12202CDC96009C3B71 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3CFDFF8E1AEE55F84192E36 /* Pods-OnPaperSoccer-OnPaperSoccerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -398,6 +540,7 @@
 		};
 		2CB51B13202CDC96009C3B71 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 040D6B35AB64C4F38C776C43 /* Pods-OnPaperSoccer-OnPaperSoccerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
