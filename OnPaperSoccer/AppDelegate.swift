@@ -4,11 +4,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    lazy var flowController: FlowController = {
+        return MainFlowController()
+    }()
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions
+        launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        window = UIWindow()
-        window?.rootViewController = ViewController()
+        window = flowController.buildMainWindow()
         window?.makeKeyAndVisible()
 
         return true

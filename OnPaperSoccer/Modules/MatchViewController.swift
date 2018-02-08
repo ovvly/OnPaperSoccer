@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
+class MatchViewController: UIViewController {
 
     init() {
         super.init(nibName: nil, bundle: nil)
