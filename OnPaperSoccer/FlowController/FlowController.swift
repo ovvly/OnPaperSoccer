@@ -4,7 +4,7 @@ protocol FlowController {
     func buildMainWindow() -> UIWindow
 }
 
-final class MainFlowController: FlowController {
+final class DefaultFlowController: FlowController {
 
     func buildMainWindow() -> UIWindow {
         let window = UIWindow()

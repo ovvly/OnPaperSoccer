@@ -5,7 +5,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     lazy var flowController: FlowController = {
-        return MainFlowController()
+        return DefaultFlowController()
     }()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
