@@ -3,7 +3,7 @@ import UIKit
 class MatchViewController: UIViewController {
 
     private let viewModel: MatchViewModel = DefaultMatchViewModel()
-    private lazy var drawer = DefaultMatchDrawer()
+    private lazy var drawer = DefaultMatchDrawer(rows: 11, columns: 9)
 
     // MARK: Init
 
@@ -23,7 +23,6 @@ class MatchViewController: UIViewController {
         view.addSubview(drawer.view)
         drawer.view.frame = view.bounds
 
-        drawer.start()
-        drawer.draw()
+        drawer.drawMatch()
     }
 }
