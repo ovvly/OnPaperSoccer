@@ -8,8 +8,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
         launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+        let fieldViewController = FieldViewController()
+        let matchViewController = MatchViewController(fieldController: fieldViewController)
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = MatchViewController()
+        window?.rootViewController = matchViewController
         window?.makeKeyAndVisible()
 
         return true

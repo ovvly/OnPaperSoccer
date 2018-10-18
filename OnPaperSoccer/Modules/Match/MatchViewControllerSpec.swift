@@ -7,19 +7,19 @@ import Nimble
 class MatchViewControllerSpec: QuickSpec {
     override func spec() {
         describe("MatchViewController") {
-            var matchViewSpy: MatchViewSpy!
+            var fieldControllerSpy: FieldControllerSpy!
 
             var sut: MatchViewController!
 
             beforeEach {
-                matchViewSpy = MatchViewSpy()
+                fieldControllerSpy = FieldControllerSpy()
 
-                sut = MatchViewController(matchView: matchViewSpy)
+                sut = MatchViewController(fieldController: fieldControllerSpy)
                 _ = sut.view
             }
 
             it("should add match view as subview") {
-                expect(matchViewSpy.superview).toNot(beNil())
+                expect(fieldControllerSpy.view.superview).toNot(beNil())
             }
 
             sharedExamples("move") { context in
@@ -88,8 +88,8 @@ class MatchViewControllerSpec: QuickSpec {
                     }
 
                     it("should draw line from old to new position") {
-                        expect(matchViewSpy.capturedLine?.from) == Point(x: 10, y: 10)
-                        expect(matchViewSpy.capturedLine?.to) == Point(x: 20, y: 20)
+                        expect(fieldControllerSpy.capturedLine?.from) == Point(x: 10, y: 10)
+                        expect(fieldControllerSpy.capturedLine?.to) == Point(x: 20, y: 20)
                     }
                 }
             }
@@ -97,24 +97,10 @@ class MatchViewControllerSpec: QuickSpec {
     }
 }
 
-private class MatchViewSpy: MatchView {
+private class FieldControllerSpy: UIViewController & LineDrawer {
     var capturedLine: Line? = nil
 
-    override init() {
-        super.init()
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    override func draw(line: Line) {
+    func draw(line: Line) {
         capturedLine = line
-    }
-}
-
-extension Point: Equatable {
-    public static func ==(lhs: Point, rhs: Point) -> Bool {
-        return lhs.x == rhs.x && lhs.y == rhs.y
     }
 }

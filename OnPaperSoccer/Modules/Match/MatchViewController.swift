@@ -10,16 +10,16 @@ class MatchViewController: UIViewController {
     var currentPosition: Point = Point(x: 0, y: 0) {
         didSet {
             let line = Line(from: oldValue, to: currentPosition)
-            matchView.draw(line: line)
+            fieldController.draw(line: line)
         }
     }
 
-    private let matchView: MatchView
+    private let fieldController: FieldController
 
     // MARK: Init
 
-    init(matchView: MatchView = MatchView()) {
-        self.matchView = matchView
+    init(fieldController: FieldController) {
+        self.fieldController = fieldController
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -33,7 +33,9 @@ class MatchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        matchViewContainer.addSubview(matchView)
+        addChildViewController(fieldController)
+        matchViewContainer.addContentSubview(fieldController.view)
+        fieldController.didMove(toParentViewController: self)
     }
 
     // MARK: Actions
@@ -56,5 +58,16 @@ class MatchViewController: UIViewController {
     @IBAction
     func rightButtonTapped(_ sender: UIButton) {
         currentPosition = Point(x: currentPosition.x + 1, y: currentPosition.y)
+    }
+}
+
+extension UIView {
+    func addContentSubview(_ view: UIView) {
+        addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        view.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        view.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        view.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
 }

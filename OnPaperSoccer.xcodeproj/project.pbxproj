@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2C320B8E2178ADE400CDADF5 /* MatchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C320B8D2178ADE400CDADF5 /* MatchViewController.xib */; };
-		2C320B902178DB5C00CDADF5 /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B8F2178DB5C00CDADF5 /* MatchView.swift */; };
 		2C320B932178DBC800CDADF5 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B922178DBC800CDADF5 /* Point.swift */; };
 		2C320B952178DBE500CDADF5 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B942178DBE500CDADF5 /* Line.swift */; };
+		2C320B982178DD1E00CDADF5 /* FieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B962178DD1E00CDADF5 /* FieldViewController.swift */; };
+		2C320B992178DD1E00CDADF5 /* FieldViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C320B972178DD1E00CDADF5 /* FieldViewController.xib */; };
+		2C320B9B2178E0A700CDADF5 /* Point+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B9A2178E0A700CDADF5 /* Point+Equatable.swift */; };
 		2CB51AF5202CDC96009C3B71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB51AF4202CDC96009C3B71 /* AppDelegate.swift */; };
 		2CB51AFC202CDC96009C3B71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB51AFB202CDC96009C3B71 /* Assets.xcassets */; };
 		2CB51AFF202CDC96009C3B71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB51AFD202CDC96009C3B71 /* LaunchScreen.storyboard */; };
@@ -35,9 +37,11 @@
 		040D6B35AB64C4F38C776C43 /* Pods-OnPaperSoccer-OnPaperSoccerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnPaperSoccer-OnPaperSoccerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OnPaperSoccer-OnPaperSoccerTests/Pods-OnPaperSoccer-OnPaperSoccerTests.release.xcconfig"; sourceTree = "<group>"; };
 		27C997CA20A546BDB0661357 /* Pods_OnPaperSoccer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnPaperSoccer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C320B8D2178ADE400CDADF5 /* MatchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchViewController.xib; sourceTree = "<group>"; };
-		2C320B8F2178DB5C00CDADF5 /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
 		2C320B922178DBC800CDADF5 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		2C320B942178DBE500CDADF5 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		2C320B962178DD1E00CDADF5 /* FieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldViewController.swift; sourceTree = "<group>"; };
+		2C320B972178DD1E00CDADF5 /* FieldViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FieldViewController.xib; sourceTree = "<group>"; };
+		2C320B9A2178E0A700CDADF5 /* Point+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Point+Equatable.swift"; sourceTree = "<group>"; };
 		2CB51AF1202CDC96009C3B71 /* OnPaperSoccer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnPaperSoccer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB51AF4202CDC96009C3B71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CB51AFB202CDC96009C3B71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,7 +154,7 @@
 				2CB51B15202CEB50009C3B71 /* MatchViewController.swift */,
 				2C320B8D2178ADE400CDADF5 /* MatchViewController.xib */,
 				AA24BA41B03C300D9E7A2641 /* MatchViewControllerSpec.swift */,
-				2C320B8F2178DB5C00CDADF5 /* MatchView.swift */,
+				AA24BCA3D2362B6FDA99C1B5 /* Field */,
 			);
 			path = Match;
 			sourceTree = "<group>";
@@ -164,10 +168,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AA24BCA3D2362B6FDA99C1B5 /* Field */ = {
+			isa = PBXGroup;
+			children = (
+				2C320B962178DD1E00CDADF5 /* FieldViewController.swift */,
+				2C320B972178DD1E00CDADF5 /* FieldViewController.xib */,
+			);
+			path = Field;
+			sourceTree = "<group>";
+		};
 		AA24BCC82FC7DBC8BBDE68DE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				AA24B1B708C98F1A574B73A2 /* UIButton+Specs.swift */,
+				2C320B9A2178E0A700CDADF5 /* Point+Equatable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -264,6 +278,7 @@
 				2CB51AFF202CDC96009C3B71 /* LaunchScreen.storyboard in Resources */,
 				2CB51AFC202CDC96009C3B71 /* Assets.xcassets in Resources */,
 				2C320B8E2178ADE400CDADF5 /* MatchViewController.xib in Resources */,
+				2C320B992178DD1E00CDADF5 /* FieldViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,9 +411,9 @@
 			files = (
 				2C320B932178DBC800CDADF5 /* Point.swift in Sources */,
 				2CB51B16202CEB50009C3B71 /* MatchViewController.swift in Sources */,
-				2C320B902178DB5C00CDADF5 /* MatchView.swift in Sources */,
 				2CB51AF5202CDC96009C3B71 /* AppDelegate.swift in Sources */,
 				2C320B952178DBE500CDADF5 /* Line.swift in Sources */,
+				2C320B982178DD1E00CDADF5 /* FieldViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +423,7 @@
 			files = (
 				AA24B0446C21A8E5F08A7CDC /* MatchViewControllerSpec.swift in Sources */,
 				AA24B7F2356C873ECB235CBD /* UIButton+Specs.swift in Sources */,
+				2C320B9B2178E0A700CDADF5 /* Point+Equatable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
