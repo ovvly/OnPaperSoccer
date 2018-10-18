@@ -1,6 +1,7 @@
 import UIKit
 
 protocol LineDrawer {
+    func drawNewField()
     func draw(line: Line)
 }
 
@@ -18,5 +19,9 @@ class FieldViewController: UIViewController, LineDrawer {
 
     func draw(line: Line) {
         print(line)
+    }
+
+    func drawNewField() {
+        
     }
 }

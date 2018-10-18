@@ -36,6 +36,8 @@ class MatchViewController: UIViewController {
         addChildViewController(fieldController)
         matchViewContainer.addContentSubview(fieldController.view)
         fieldController.didMove(toParentViewController: self)
+
+        fieldController.drawNewField()
     }
 
     // MARK: Actions

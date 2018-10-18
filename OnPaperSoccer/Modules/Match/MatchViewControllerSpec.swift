@@ -22,6 +22,10 @@ class MatchViewControllerSpec: QuickSpec {
                 expect(fieldControllerSpy.view.superview).toNot(beNil())
             }
 
+            it("should draw initial field") {
+                expect(fieldControllerSpy.didDrawNewField) == true
+            }
+
             sharedExamples("move") { context in
                 var newPosition: Point!
 
@@ -99,6 +103,11 @@ class MatchViewControllerSpec: QuickSpec {
 
 private class FieldControllerSpy: UIViewController & LineDrawer {
     var capturedLine: Line? = nil
+    var didDrawNewField = false
+
+    func drawNewField() {
+        didDrawNewField = true
+    }
 
     func draw(line: Line) {
         capturedLine = line
