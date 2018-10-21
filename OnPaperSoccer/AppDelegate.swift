@@ -9,7 +9,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         let fieldViewController = FieldViewController()
-        let matchViewController = MatchViewController(fieldController: fieldViewController)
+        let matchViewController = MatchViewController(fieldDrawer: fieldViewController)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = matchViewController
         window?.makeKeyAndVisible()

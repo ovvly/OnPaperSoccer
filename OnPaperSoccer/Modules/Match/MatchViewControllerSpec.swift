@@ -7,23 +7,23 @@ import Nimble
 class MatchViewControllerSpec: QuickSpec {
     override func spec() {
         describe("MatchViewController") {
-            var fieldControllerSpy: FieldControllerSpy!
+            var fieldDrawerSpy: FieldDrawerSpy!
 
             var sut: MatchViewController!
 
             beforeEach {
-                fieldControllerSpy = FieldControllerSpy()
+                fieldDrawerSpy = FieldDrawerSpy()
 
-                sut = MatchViewController(fieldController: fieldControllerSpy)
+                sut = MatchViewController(fieldDrawer: fieldDrawerSpy)
                 _ = sut.view
             }
 
             it("should add match view as subview") {
-                expect(fieldControllerSpy.view.superview).toNot(beNil())
+                expect(sut.childViewControllers).to(contain(fieldDrawerSpy.viewController))
             }
 
             it("should draw initial field") {
-                expect(fieldControllerSpy.didDrawNewField) == true
+                expect(fieldDrawerSpy.didDrawNewField) == true
             }
 
             sharedExamples("move") { context in
@@ -92,8 +92,8 @@ class MatchViewControllerSpec: QuickSpec {
                     }
 
                     it("should draw line from old to new position") {
-                        expect(fieldControllerSpy.capturedLine?.from) == Point(x: 10, y: 10)
-                        expect(fieldControllerSpy.capturedLine?.to) == Point(x: 20, y: 20)
+                        expect(fieldDrawerSpy.capturedLine?.from) == Point(x: 10, y: 10)
+                        expect(fieldDrawerSpy.capturedLine?.to) == Point(x: 20, y: 20)
                     }
                 }
             }
@@ -101,9 +101,10 @@ class MatchViewControllerSpec: QuickSpec {
     }
 }
 
-private class FieldControllerSpy: UIViewController & LineDrawer {
+private class FieldDrawerSpy: FieldDrawer {
     var capturedLine: Line? = nil
     var didDrawNewField = false
+    var viewController = UIViewController()
 
     func drawNewField() {
         didDrawNewField = true

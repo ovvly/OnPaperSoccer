@@ -13,8 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MatchViewController" customModule="OnPaperSoccer" customModuleProvider="target">
             <connections>
                 <outlet property="downButton" destination="o8r-c1-Kfj" id="3aW-dN-K7D"/>
+                <outlet property="fieldView" destination="06C-lg-Wwm" id="4g4-a3-kBl"/>
                 <outlet property="leftButton" destination="amN-xT-aku" id="IKD-7b-ssX"/>
-                <outlet property="matchViewContainer" destination="06C-lg-Wwm" id="hcX-f6-wd3"/>
                 <outlet property="rightButton" destination="aJ1-lm-8mk" id="ief-jb-8DX"/>
                 <outlet property="upButton" destination="NY2-79-ygI" id="zfd-II-DrE"/>
                 <outlet property="view" destination="iN0-l3-epB" id="sx2-ha-eIZ"/>

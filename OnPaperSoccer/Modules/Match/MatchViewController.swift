@@ -1,7 +1,7 @@
 import UIKit
 
 class MatchViewController: UIViewController {
-    @IBOutlet weak var matchViewContainer: UIView!
+    @IBOutlet weak var fieldView: UIView!
     @IBOutlet weak var upButton: UIButton!
     @IBOutlet weak var downButton: UIButton!
     @IBOutlet weak var leftButton: UIButton!
@@ -10,16 +10,16 @@ class MatchViewController: UIViewController {
     var currentPosition: Point = Point(x: 0, y: 0) {
         didSet {
             let line = Line(from: oldValue, to: currentPosition)
-            fieldController.draw(line: line)
+            fieldDrawer.draw(line: line)
         }
     }
 
-    private let fieldController: FieldController
+    private let fieldDrawer: FieldDrawer
 
     // MARK: Init
 
-    init(fieldController: FieldController) {
-        self.fieldController = fieldController
+    init(fieldDrawer: FieldDrawer) {
+        self.fieldDrawer = fieldDrawer
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -33,11 +33,8 @@ class MatchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        addChildViewController(fieldController)
-        matchViewContainer.addContentSubview(fieldController.view)
-        fieldController.didMove(toParentViewController: self)
-
-        fieldController.drawNewField()
+        addChild(viewController: fieldDrawer.viewController, to: fieldView)
+        fieldDrawer.drawNewField()
     }
 
     // MARK: Actions
@@ -60,16 +57,5 @@ class MatchViewController: UIViewController {
     @IBAction
     func rightButtonTapped(_ sender: UIButton) {
         currentPosition = Point(x: currentPosition.x + 1, y: currentPosition.y)
-    }
-}
-
-extension UIView {
-    func addContentSubview(_ view: UIView) {
-        addSubview(view)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        view.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        view.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        view.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
 }
