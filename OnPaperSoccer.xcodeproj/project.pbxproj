@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C2BDD4621874587009D48BC /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2BDD4521874587009D48BC /* FieldView.swift */; };
 		2C320B8E2178ADE400CDADF5 /* MatchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C320B8D2178ADE400CDADF5 /* MatchViewController.xib */; };
 		2C320B932178DBC800CDADF5 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B922178DBC800CDADF5 /* Point.swift */; };
 		2C320B952178DBE500CDADF5 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B942178DBE500CDADF5 /* Line.swift */; };
@@ -24,6 +25,7 @@
 		AA24B0446C21A8E5F08A7CDC /* MatchViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BA41B03C300D9E7A2641 /* MatchViewControllerSpec.swift */; };
 		AA24B2F3C919EEC95E187E86 /* FieldViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B13D18BFBF3DDCDC0F91 /* FieldViewControllerSpec.swift */; };
 		AA24B7F2356C873ECB235CBD /* UIButton+Specs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B1B708C98F1A574B73A2 /* UIButton+Specs.swift */; };
+		AA24B9D40713DEC4441E3456 /* CoreGraphics+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B10771B109B53597B92F /* CoreGraphics+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,7 @@
 /* Begin PBXFileReference section */
 		040D6B35AB64C4F38C776C43 /* Pods-OnPaperSoccer-OnPaperSoccerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnPaperSoccer-OnPaperSoccerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OnPaperSoccer-OnPaperSoccerTests/Pods-OnPaperSoccer-OnPaperSoccerTests.release.xcconfig"; sourceTree = "<group>"; };
 		27C997CA20A546BDB0661357 /* Pods_OnPaperSoccer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnPaperSoccer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C2BDD4521874587009D48BC /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
 		2C320B8D2178ADE400CDADF5 /* MatchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchViewController.xib; sourceTree = "<group>"; };
 		2C320B922178DBC800CDADF5 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		2C320B942178DBE500CDADF5 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
@@ -56,6 +59,7 @@
 		2CB51B0B202CDC96009C3B71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CB51B15202CEB50009C3B71 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		9B84FDFCEC62331B26D25449 /* Pods_OnPaperSoccer_OnPaperSoccerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnPaperSoccer_OnPaperSoccerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA24B10771B109B53597B92F /* CoreGraphics+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreGraphics+Extensions.swift"; sourceTree = "<group>"; };
 		AA24B13D18BFBF3DDCDC0F91 /* FieldViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldViewControllerSpec.swift; sourceTree = "<group>"; };
 		AA24B1B708C98F1A574B73A2 /* UIButton+Specs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Specs.swift"; sourceTree = "<group>"; };
 		AA24BA41B03C300D9E7A2641 /* MatchViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchViewControllerSpec.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 			children = (
 				2C320B9E2178E2F600CDADF5 /* UIView+AddContentSubview.swift */,
 				2C320BA02178E32E00CDADF5 /* UIViewController+AddChildViewController.swift */,
+				AA24B10771B109B53597B92F /* CoreGraphics+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 				2C320B962178DD1E00CDADF5 /* FieldViewController.swift */,
 				2C320B972178DD1E00CDADF5 /* FieldViewController.xib */,
 				AA24B13D18BFBF3DDCDC0F91 /* FieldViewControllerSpec.swift */,
+				2C2BDD4521874587009D48BC /* FieldView.swift */,
 			);
 			path = Field;
 			sourceTree = "<group>";
@@ -413,14 +419,18 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble-Snapshots/Nimble_Snapshots.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+				"${BUILT_PRODUCTS_DIR}/iOSSnapshotTestCase/FBSnapshotTestCase.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble_Snapshots.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -435,12 +445,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C320BA12178E32E00CDADF5 /* UIViewController+AddChildViewController.swift in Sources */,
+				2C2BDD4621874587009D48BC /* FieldView.swift in Sources */,
 				2C320B9F2178E2F600CDADF5 /* UIView+AddContentSubview.swift in Sources */,
 				2C320B932178DBC800CDADF5 /* Point.swift in Sources */,
 				2CB51B16202CEB50009C3B71 /* MatchViewController.swift in Sources */,
 				2CB51AF5202CDC96009C3B71 /* AppDelegate.swift in Sources */,
 				2C320B952178DBE500CDADF5 /* Line.swift in Sources */,
 				2C320B982178DD1E00CDADF5 /* FieldViewController.swift in Sources */,
+				AA24B9D40713DEC4441E3456 /* CoreGraphics+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

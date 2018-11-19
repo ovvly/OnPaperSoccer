@@ -1,6 +1,7 @@
 import Foundation
 import Quick
 import Nimble
+import Nimble_Snapshots
 
 @testable import OnPaperSoccer
 
@@ -18,8 +19,8 @@ class FieldViewControllerSpec: QuickSpec {
                     sut.drawNewField()
                 }
 
-                it("should render 9 columns and 11 rows of nodes") {
-                    //expect(sut.) ==
+                it("should have valid snapshot") {
+                    expect(sut.view).to(haveValidSnapshot())
                 }
             }
 
@@ -28,7 +29,7 @@ class FieldViewControllerSpec: QuickSpec {
                     sut.draw(line: Line.fixture)
                 }
 
-                it("should draw line") {
+                it("should have valid snapshot") {
                     // expect fb snapshot
                 }
             }

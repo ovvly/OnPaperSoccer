@@ -1,5 +1,5 @@
 import UIKit
-import SpriteKit
+import CoreGraphics
 
 protocol WithViewController {
     var viewController: UIViewController { get }
@@ -11,23 +11,22 @@ protocol FieldDrawer: WithViewController {
 }
 
 class FieldViewController: UIViewController, FieldDrawer {
-    var viewController: UIViewController {
-        return self
+    var viewController: UIViewController { return self }
+    var castView: FieldView {
+        return view as! FieldView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .lightGray
     }
 
     // MARK: Actions
 
     func draw(line: Line) {
-        print(line)
+        castView.draw(line: line)
     }
 
     func drawNewField() {
-        
+        castView.drawNewField()
     }
 }
