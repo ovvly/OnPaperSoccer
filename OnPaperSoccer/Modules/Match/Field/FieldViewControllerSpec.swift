@@ -26,11 +26,12 @@ class FieldViewControllerSpec: QuickSpec {
 
             describe("draw line") {
                 beforeEach {
+                    sut.drawNewField()
                     sut.draw(line: Line.fixture)
                 }
 
                 it("should have valid snapshot") {
-                    // expect fb snapshot
+                    expect(sut.view).to(haveValidSnapshot())
                 }
             }
         }
@@ -39,8 +40,8 @@ class FieldViewControllerSpec: QuickSpec {
 
 extension Line {
     static var fixture: Line {
-        let fromPoint = Point(x: 10, y: 10)
-        let toPoint = Point(x: 20, y: 20)
+        let fromPoint = Point(x: 1, y: 1)
+        let toPoint = Point(x: 2, y: 2)
         return Line(from: fromPoint, to: toPoint)
     }
 }
