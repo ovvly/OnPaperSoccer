@@ -83,6 +83,30 @@ class MatchViewControllerSpec: QuickSpec {
                                          "tapping": sut.rightButton] }
             }
 
+            describe("up-left button") {
+                itBehavesLike("move") { ["from": Point(x: 0, y: 0),
+                                         "to": Point(x: -1, y: 1),
+                                         "tapping": sut.upLeftButton] }
+            }
+
+            describe("up-right button") {
+                itBehavesLike("move") { ["from": Point(x: 0, y: 0),
+                                         "to": Point(x: 1, y: 1),
+                                         "tapping": sut.upRightButton] }
+            }
+
+            describe("down-left button") {
+                itBehavesLike("move") { ["from": Point(x: 0, y: 0),
+                                         "to": Point(x: -1, y: -1),
+                                         "tapping": sut.downLeftButton] }
+            }
+
+            describe("down-right button") {
+                itBehavesLike("move") { ["from": Point(x: 0, y: 0),
+                                         "to": Point(x: 1, y: -1),
+                                         "tapping": sut.downRightButton] }
+            }
+
             describe("current position") {
                 context("when current position changes") {
                     beforeEach {

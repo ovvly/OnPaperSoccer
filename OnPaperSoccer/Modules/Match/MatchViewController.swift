@@ -6,6 +6,10 @@ class MatchViewController: UIViewController {
     @IBOutlet weak var downButton: UIButton!
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
+    @IBOutlet weak var upLeftButton: UIButton!
+    @IBOutlet weak var upRightButton: UIButton!
+    @IBOutlet weak var downLeftButton: UIButton!
+    @IBOutlet weak var downRightButton: UIButton!
 
     var currentPosition: Point = Point(x: 0, y: 0) {
         didSet {
@@ -57,5 +61,25 @@ class MatchViewController: UIViewController {
     @IBAction
     func rightButtonTapped(_ sender: UIButton) {
         currentPosition = Point(x: currentPosition.x + 1, y: currentPosition.y)
+    }
+
+    @IBAction
+    private func upLeftButtonTapped(_ sender: UIButton) {
+        currentPosition = Point(x: currentPosition.x - 1, y: currentPosition.y + 1)
+    }
+
+    @IBAction
+    func upRightButtonTapped(_ sender: UIButton) {
+        currentPosition = Point(x: currentPosition.x + 1, y: currentPosition.y + 1)
+    }
+
+    @IBAction
+    func downLeftButtonTapped(_ sender: UIButton) {
+        currentPosition = Point(x: currentPosition.x - 1, y: currentPosition.y - 1)
+    }
+
+    @IBAction
+    func downRightButtonTapped(_ sender: UIButton) {
+        currentPosition = Point(x: currentPosition.x + 1, y: currentPosition.y - 1)
     }
 }
