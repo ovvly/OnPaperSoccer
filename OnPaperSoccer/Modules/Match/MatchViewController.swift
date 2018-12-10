@@ -11,7 +11,7 @@ class MatchViewController: UIViewController {
     @IBOutlet weak var downLeftButton: UIButton!
     @IBOutlet weak var downRightButton: UIButton!
 
-    var currentPosition: Point = Point(x: 0, y: 0) {
+    var currentPosition: Point = Point(x: 4, y: 5) {
         didSet {
             let line = Line(from: oldValue, to: currentPosition)
             fieldDrawer.draw(line: line)

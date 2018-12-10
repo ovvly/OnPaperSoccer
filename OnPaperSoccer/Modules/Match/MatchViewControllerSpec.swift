@@ -48,8 +48,8 @@ class MatchViewControllerSpec: QuickSpec {
                                          "to": Point(x: 0, y: 1),
                                          "tapping": sut.upButton] }
 
-                itBehavesLike("move") { ["from": Point(x: 10, y: 10),
-                                         "to": Point(x: 10, y: 11),
+                itBehavesLike("move") { ["from": Point(x: 100, y: 100),
+                                         "to": Point(x: 100, y: 101),
                                          "tapping": sut.upButton] }
             }
 
@@ -58,8 +58,8 @@ class MatchViewControllerSpec: QuickSpec {
                                          "to": Point(x: 0, y: -1),
                                           "tapping": sut.downButton] }
 
-                itBehavesLike("move") { ["from": Point(x: 10, y: 10),
-                                         "to": Point(x: 10, y: 9),
+                itBehavesLike("move") { ["from": Point(x: 100, y: 100),
+                                         "to": Point(x: 100, y: 99),
                                          "tapping": sut.downButton] }
             }
 
@@ -68,8 +68,8 @@ class MatchViewControllerSpec: QuickSpec {
                                          "to": Point(x: -1, y: 0),
                                          "tapping": sut.leftButton] }
 
-                itBehavesLike("move") { ["from": Point(x: 10, y: 10),
-                                         "to": Point(x: 9, y: 10),
+                itBehavesLike("move") { ["from": Point(x: 100, y: 100),
+                                         "to": Point(x: 99, y: 100),
                                          "tapping": sut.leftButton] }
             }
 
@@ -78,8 +78,8 @@ class MatchViewControllerSpec: QuickSpec {
                                          "to": Point(x: 1, y: 0),
                                          "tapping": sut.rightButton] }
 
-                itBehavesLike("move") { ["from": Point(x: 10, y: 10),
-                                         "to": Point(x: 11, y: 10),
+                itBehavesLike("move") { ["from": Point(x: 100, y: 100),
+                                         "to": Point(x: 101, y: 100),
                                          "tapping": sut.rightButton] }
             }
 
@@ -87,11 +87,19 @@ class MatchViewControllerSpec: QuickSpec {
                 itBehavesLike("move") { ["from": Point(x: 0, y: 0),
                                          "to": Point(x: -1, y: 1),
                                          "tapping": sut.upLeftButton] }
+
+                itBehavesLike("move") { ["from": Point(x: 100, y: 100),
+                                         "to": Point(x: 99, y: 101),
+                                         "tapping": sut.upLeftButton] }
             }
 
             describe("up-right button") {
                 itBehavesLike("move") { ["from": Point(x: 0, y: 0),
                                          "to": Point(x: 1, y: 1),
+                                         "tapping": sut.upRightButton] }
+
+                itBehavesLike("move") { ["from": Point(x: 100, y: 100),
+                                         "to": Point(x: 101, y: 101),
                                          "tapping": sut.upRightButton] }
             }
 
@@ -99,11 +107,19 @@ class MatchViewControllerSpec: QuickSpec {
                 itBehavesLike("move") { ["from": Point(x: 0, y: 0),
                                          "to": Point(x: -1, y: -1),
                                          "tapping": sut.downLeftButton] }
+
+                itBehavesLike("move") { ["from": Point(x: 100, y: 100),
+                                         "to": Point(x: 99, y: 99),
+                                         "tapping": sut.downLeftButton] }
             }
 
             describe("down-right button") {
                 itBehavesLike("move") { ["from": Point(x: 0, y: 0),
                                          "to": Point(x: 1, y: -1),
+                                         "tapping": sut.downRightButton] }
+
+                itBehavesLike("move") { ["from": Point(x: 100, y: 100),
+                                         "to": Point(x: 101, y: 99),
                                          "tapping": sut.downRightButton] }
             }
 
@@ -119,6 +135,12 @@ class MatchViewControllerSpec: QuickSpec {
                         expect(fieldDrawerSpy.capturedLine?.from) == Point(x: 10, y: 10)
                         expect(fieldDrawerSpy.capturedLine?.to) == Point(x: 20, y: 20)
                     }
+                }
+            }
+
+            describe("start") {
+                it("should have current position set to (4, 5)") {
+                    expect(sut.currentPosition) == Point(x: 4, y: 5)
                 }
             }
         }
