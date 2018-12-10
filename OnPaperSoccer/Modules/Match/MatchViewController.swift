@@ -1,15 +1,8 @@
 import UIKit
+import RxSwift
 
 class MatchViewController: UIViewController {
     @IBOutlet weak var fieldView: UIView!
-    @IBOutlet weak var upButton: UIButton!
-    @IBOutlet weak var downButton: UIButton!
-    @IBOutlet weak var leftButton: UIButton!
-    @IBOutlet weak var rightButton: UIButton!
-    @IBOutlet weak var upLeftButton: UIButton!
-    @IBOutlet weak var upRightButton: UIButton!
-    @IBOutlet weak var downLeftButton: UIButton!
-    @IBOutlet weak var downRightButton: UIButton!
 
     var currentPosition: Point = Point(x: 4, y: 5) {
         didSet {
@@ -19,11 +12,16 @@ class MatchViewController: UIViewController {
     }
 
     private let fieldDrawer: FieldDrawer
+    private let movesController: MovesController
+    private let movesValidator: MovesValidator
+    private let disposeBag = DisposeBag()
 
     // MARK: Init
 
-    init(fieldDrawer: FieldDrawer) {
+    init(fieldDrawer: FieldDrawer, movesController: MovesController, movesValidator: MovesValidator) {
         self.fieldDrawer = fieldDrawer
+        self.movesController = movesController
+        self.movesValidator = movesValidator
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -38,48 +36,15 @@ class MatchViewController: UIViewController {
         super.viewDidLoad()
 
         addChild(viewController: fieldDrawer.viewController, to: fieldView)
+        addChild(viewController: movesController.viewController, to: view)
         fieldDrawer.drawNewField()
-    }
 
-    // MARK: Actions
-    
-    @IBAction
-    private func upButtonTapped(_ sender: UIButton) {
-        currentPosition = Point(x: currentPosition.x, y: currentPosition.y + 1)
-    }
+        movesController.moves
+            .filter { self.movesValidator.isValidMove(from: self.currentPosition, by: $0)}
+            .subscribe(onNext: { [unowned self] vector in
+                self.currentPosition = self.currentPosition.shifted(by: vector)
+            })
+            .disposed(by: disposeBag)
 
-    @IBAction
-    func downButtonTapped(_ sender: UIButton) {
-        currentPosition = Point(x: currentPosition.x, y: currentPosition.y - 1)
-    }
-
-    @IBAction
-    func leftButtonTapped(_ sender: UIButton) {
-        currentPosition = Point(x: currentPosition.x - 1, y: currentPosition.y)
-    }
-
-    @IBAction
-    func rightButtonTapped(_ sender: UIButton) {
-        currentPosition = Point(x: currentPosition.x + 1, y: currentPosition.y)
-    }
-
-    @IBAction
-    private func upLeftButtonTapped(_ sender: UIButton) {
-        currentPosition = Point(x: currentPosition.x - 1, y: currentPosition.y + 1)
-    }
-
-    @IBAction
-    func upRightButtonTapped(_ sender: UIButton) {
-        currentPosition = Point(x: currentPosition.x + 1, y: currentPosition.y + 1)
-    }
-
-    @IBAction
-    func downLeftButtonTapped(_ sender: UIButton) {
-        currentPosition = Point(x: currentPosition.x - 1, y: currentPosition.y - 1)
-    }
-
-    @IBAction
-    func downRightButtonTapped(_ sender: UIButton) {
-        currentPosition = Point(x: currentPosition.x + 1, y: currentPosition.y - 1)
     }
 }

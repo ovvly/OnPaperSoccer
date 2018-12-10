@@ -1,126 +1,33 @@
 import Foundation
 import Quick
 import Nimble
+import RxSwift
 
 @testable import OnPaperSoccer
 
 class MatchViewControllerSpec: QuickSpec {
     override func spec() {
         describe("MatchViewController") {
-            var fieldDrawerSpy: FieldDrawerSpy!
 
+            var fieldDrawerSpy: FieldDrawerSpy!
+            var movesControllerSpy: MovesControllerSpy!
+            var movesValidatorSpy: MovesValidatorSpy!
             var sut: MatchViewController!
 
             beforeEach {
                 fieldDrawerSpy = FieldDrawerSpy()
-
-                sut = MatchViewController(fieldDrawer: fieldDrawerSpy)
+                movesControllerSpy = MovesControllerSpy()
+                movesValidatorSpy = MovesValidatorSpy()
+                sut = MatchViewController(fieldDrawer: fieldDrawerSpy, movesController: movesControllerSpy, movesValidator: movesValidatorSpy)
                 _ = sut.view
             }
 
-            it("should add match view as subview") {
+            it("should add field drawer view as subview") {
                 expect(sut.childViewControllers).to(contain(fieldDrawerSpy.viewController))
             }
 
             it("should draw initial field") {
                 expect(fieldDrawerSpy.didDrawNewField) == true
-            }
-
-            sharedExamples("move") { context in
-                var newPosition: Point!
-
-                beforeEach {
-                    let currentPosition = context()["from"] as! Point
-                    newPosition = context()["to"]  as? Point
-                    let button = context()["tapping"] as! UIButton
-                    sut.currentPosition = currentPosition
-
-                    button.simulateTap()
-                }
-
-                it("should move to new position") {
-                    expect(sut.currentPosition) == newPosition
-                }
-            }
-
-            describe("up button") {
-                itBehavesLike("move") { ["from": Point(x: 0, y: 0),
-                                         "to": Point(x: 0, y: 1),
-                                         "tapping": sut.upButton] }
-
-                itBehavesLike("move") { ["from": Point(x: 100, y: 100),
-                                         "to": Point(x: 100, y: 101),
-                                         "tapping": sut.upButton] }
-            }
-
-            describe("down button") {
-                itBehavesLike("move") { ["from": Point(x: 0, y: 0),
-                                         "to": Point(x: 0, y: -1),
-                                          "tapping": sut.downButton] }
-
-                itBehavesLike("move") { ["from": Point(x: 100, y: 100),
-                                         "to": Point(x: 100, y: 99),
-                                         "tapping": sut.downButton] }
-            }
-
-            describe("left button") {
-                itBehavesLike("move") { ["from": Point(x: 0, y: 0),
-                                         "to": Point(x: -1, y: 0),
-                                         "tapping": sut.leftButton] }
-
-                itBehavesLike("move") { ["from": Point(x: 100, y: 100),
-                                         "to": Point(x: 99, y: 100),
-                                         "tapping": sut.leftButton] }
-            }
-
-            describe("right button") {
-                itBehavesLike("move") { ["from": Point(x: 0, y: 0),
-                                         "to": Point(x: 1, y: 0),
-                                         "tapping": sut.rightButton] }
-
-                itBehavesLike("move") { ["from": Point(x: 100, y: 100),
-                                         "to": Point(x: 101, y: 100),
-                                         "tapping": sut.rightButton] }
-            }
-
-            describe("up-left button") {
-                itBehavesLike("move") { ["from": Point(x: 0, y: 0),
-                                         "to": Point(x: -1, y: 1),
-                                         "tapping": sut.upLeftButton] }
-
-                itBehavesLike("move") { ["from": Point(x: 100, y: 100),
-                                         "to": Point(x: 99, y: 101),
-                                         "tapping": sut.upLeftButton] }
-            }
-
-            describe("up-right button") {
-                itBehavesLike("move") { ["from": Point(x: 0, y: 0),
-                                         "to": Point(x: 1, y: 1),
-                                         "tapping": sut.upRightButton] }
-
-                itBehavesLike("move") { ["from": Point(x: 100, y: 100),
-                                         "to": Point(x: 101, y: 101),
-                                         "tapping": sut.upRightButton] }
-            }
-
-            describe("down-left button") {
-                itBehavesLike("move") { ["from": Point(x: 0, y: 0),
-                                         "to": Point(x: -1, y: -1),
-                                         "tapping": sut.downLeftButton] }
-
-                itBehavesLike("move") { ["from": Point(x: 100, y: 100),
-                                         "to": Point(x: 99, y: 99),
-                                         "tapping": sut.downLeftButton] }
-            }
-
-            describe("down-right button") {
-                itBehavesLike("move") { ["from": Point(x: 0, y: 0),
-                                         "to": Point(x: 1, y: -1),
-                                         "tapping": sut.downRightButton] }
-
-                itBehavesLike("move") { ["from": Point(x: 100, y: 100),
-                                         "to": Point(x: 101, y: 99),
-                                         "tapping": sut.downRightButton] }
             }
 
             describe("current position") {
@@ -138,11 +45,57 @@ class MatchViewControllerSpec: QuickSpec {
                 }
             }
 
+            describe("moves") {
+                context("when moves controller emits moves") {
+                    beforeEach {
+                        sut.currentPosition = Point(x: 0, y: 0)
+                        movesValidatorSpy.isMoveValid = true
+                        
+                        movesControllerSpy.movesSubject.onNext(Vector(dx: 10, dy: 10))
+                    }
+
+                    it("should apply moves to current position") {
+                        expect(sut.currentPosition) == Point(x: 10, y: 10)
+                    }
+                }
+            }
+
             describe("start") {
                 it("should have current position set to (4, 5)") {
                     expect(sut.currentPosition) == Point(x: 4, y: 5)
                 }
             }
+
+            describe("move validation") {
+
+                context("when move is valid") {
+                    beforeEach {
+                        movesValidatorSpy.isMoveValid = true
+                        sut.currentPosition = Point(x: 0, y: 0)
+
+                        movesControllerSpy.movesSubject.onNext(Vector(dx: 42, dy: 42))
+                    }
+
+                    it("should change current position") {
+                        expect(sut.currentPosition) == Point(x: 42, y: 42)
+                    }
+                }
+
+
+                context("when move is invalid") {
+                    beforeEach {
+                        movesValidatorSpy.isMoveValid = false
+                        sut.currentPosition = Point(x: 0, y: 0)
+
+                        movesControllerSpy.movesSubject.onNext(Vector(dx: 42, dy: 42))
+                    }
+
+                    it("should not change current position") {
+                        expect(sut.currentPosition) == Point(x: 0, y: 0)
+                    }
+                }
+            }
+
         }
     }
 }
@@ -158,5 +111,18 @@ private class FieldDrawerSpy: FieldDrawer {
 
     func draw(line: Line) {
         capturedLine = line
+    }
+}
+
+private class MovesControllerSpy: MovesController {
+    var viewController = UIViewController()
+    var moves: Observable<Vector> { return movesSubject.asObservable() }
+    let movesSubject = PublishSubject<Vector>()
+}
+
+private class MovesValidatorSpy: MovesValidator {
+    var isMoveValid: Bool = false
+    func isValidMove(from point: Point, by vector: Vector) -> Bool {
+        return isMoveValid
     }
 }

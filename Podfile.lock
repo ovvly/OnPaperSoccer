@@ -11,26 +11,44 @@ PODS:
     - iOSSnapshotTestCase (~> 4.0)
     - Nimble (~> 7.0)
   - Quick (1.3.1)
+  - RxAtomic (4.4.0)
   - RxCocoa (4.2.0):
     - RxSwift (~> 4.0)
   - RxSwift (4.2.0)
+  - RxTest (4.4.0):
+    - RxAtomic (~> 4.4)
+    - RxSwift (~> 4.0)
 
 DEPENDENCIES:
   - iOSSnapshotTestCase (~> 4.0)
   - Nimble (~> 7.3)
-  - Nimble-Snapshots
+  - Nimble-Snapshots (~> 6.8)
   - Quick (~> 1.3)
   - RxCocoa (~> 4.2)
   - RxSwift (~> 4.2)
+  - RxTest (~> 4.4)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - iOSSnapshotTestCase
+    - Nimble
+    - Nimble-Snapshots
+    - Quick
+    - RxAtomic
+    - RxCocoa
+    - RxSwift
+    - RxTest
 
 SPEC CHECKSUMS:
   iOSSnapshotTestCase: 711379b19f69a22c131527df862352c877c2773c
   Nimble: c8d6a1f463701921c46de965c673e13cafa09196
   Nimble-Snapshots: 65bce321fa2f62d70909b90a66a825a3cc4ae773
   Quick: d17304d58d0d169dd0bd1c6e5c28e3318de32a1a
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  RxTest: 19d03286bdc0a3aaea5d61d4cde31fdf4bb8a5ba
 
-PODFILE CHECKSUM: b0756792215f2fb5f0d0221dc7a6dec97dfbc25e
+PODFILE CHECKSUM: 82c135d5659eb430c040f107f2955f436d13ab70
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

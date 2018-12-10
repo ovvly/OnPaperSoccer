@@ -10,6 +10,7 @@ target 'OnPaperSoccer' do
   target 'OnPaperSoccerTests' do
     pod 'Quick', '~> 1.3'
     pod 'Nimble', '~> 7.3'
+    pod 'RxTest', '~> 4.4'
     pod 'iOSSnapshotTestCase', '~> 4.0'
     pod 'Nimble-Snapshots', '~> 6.8'
   end

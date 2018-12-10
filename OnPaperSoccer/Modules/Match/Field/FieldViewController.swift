@@ -1,10 +1,6 @@
 import UIKit
 import CoreGraphics
 
-protocol WithViewController {
-    var viewController: UIViewController { get }
-}
-
 protocol FieldDrawer: WithViewController {
     func drawNewField()
     func draw(line: Line)
