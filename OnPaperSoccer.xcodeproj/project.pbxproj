@@ -26,6 +26,7 @@
 		AA24B11F054EE5B762DC08E3 /* WithViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B25C83A75A67DF1244E5 /* WithViewController.swift */; };
 		AA24B2F3C919EEC95E187E86 /* FieldViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B13D18BFBF3DDCDC0F91 /* FieldViewControllerSpec.swift */; };
 		AA24B42B6DE4E267CAB7CFAD /* MovesViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B4F322735060BBE4226E /* MovesViewControllerSpec.swift */; };
+		AA24B4FFA5A98FA1002F8BE1 /* ControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BCB1E19522BE044C014E /* ControllersFactory.swift */; };
 		AA24B6302B864E0EE4257AA3 /* MatchViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B240A48A18440B46E320 /* MatchViewControllerSpec.swift */; };
 		AA24B7F2356C873ECB235CBD /* UIButton+Specs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B1B708C98F1A574B73A2 /* UIButton+Specs.swift */; };
 		AA24B801CF942F9DB6416223 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B05A388611DD00323809 /* Vector.swift */; };
@@ -78,6 +79,7 @@
 		AA24B5092F1425DDB1948782 /* MovesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesViewController.swift; sourceTree = "<group>"; };
 		AA24B89C3CD561A829494264 /* MovesValidatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesValidatorSpec.swift; sourceTree = "<group>"; };
 		AA24BA9C383BCEDACB8CD8E5 /* MovesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovesViewController.xib; sourceTree = "<group>"; };
+		AA24BCB1E19522BE044C014E /* ControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllersFactory.swift; sourceTree = "<group>"; };
 		AA24BE66D118E974DD2BDDA6 /* Vector+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Vector+Equatable.swift"; sourceTree = "<group>"; };
 		C3CFDFF8E1AEE55F84192E36 /* Pods-OnPaperSoccer-OnPaperSoccerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnPaperSoccer-OnPaperSoccerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OnPaperSoccer-OnPaperSoccerTests/Pods-OnPaperSoccer-OnPaperSoccerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CA66CA537D937603362FBED7 /* Pods-OnPaperSoccer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnPaperSoccer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OnPaperSoccer/Pods-OnPaperSoccer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				AA24B25C83A75A67DF1244E5 /* WithViewController.swift */,
 				2C9A70A621BE747000B801C9 /* MovesValidator.swift */,
 				AA24B89C3CD561A829494264 /* MovesValidatorSpec.swift */,
+				AA24BCB1E19522BE044C014E /* ControllersFactory.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				AA24BB0EB5F03F92D472BEDA /* MovesViewController.swift in Sources */,
 				AA24B11F054EE5B762DC08E3 /* WithViewController.swift in Sources */,
 				AA24B801CF942F9DB6416223 /* Vector.swift in Sources */,
+				AA24B4FFA5A98FA1002F8BE1 /* ControllersFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

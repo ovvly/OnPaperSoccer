@@ -8,10 +8,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
         launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        let fieldViewController = FieldViewController()
-        let movesViewController = MovesViewController()
-        let movesValidator = DefaultMovesValidator()
-        let matchViewController = MatchViewController(fieldDrawer: fieldViewController, movesController: movesViewController, movesValidator: movesValidator)
+        let controllersFactory = ControllersFactory()
+        let matchViewController = controllersFactory.createMatchViewController()
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = matchViewController
