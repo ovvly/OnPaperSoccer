@@ -2,7 +2,7 @@ import UIKit
 import CoreGraphics
 
 protocol FieldDrawer: WithViewController {
-    func drawNewField()
+    func drawNewField(width: Int, height: Int)
     func draw(line: Line)
 }
 
@@ -22,7 +22,7 @@ class FieldViewController: UIViewController, FieldDrawer {
         castView.draw(line: line)
     }
 
-    func drawNewField() {
-        castView.drawNewField()
+    func drawNewField(width: Int, height: Int) {
+        castView.drawNewField(width: width, height: height)
     }
 }

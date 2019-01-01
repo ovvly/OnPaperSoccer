@@ -1,6 +1,8 @@
 import Foundation
 
 protocol MovesValidator {
+    var fieldWidth: Int { get set}
+    var fieldHeight: Int { get set}
     func isValidMove(from point: Point, by vector: Vector) -> Bool
 }
 

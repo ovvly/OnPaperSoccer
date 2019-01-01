@@ -4,8 +4,8 @@ import CoreGraphics
 
 final class FieldView: UIView {
     private let margin: CGFloat = 10
-    private let numberOfColumns = 9
-    private let numberOfRows = 11
+    private var numberOfColumns = 0
+    private var numberOfRows = 0
 
     private var isFieldDrawn = false
     private var lineToDraw: Line?
@@ -35,7 +35,10 @@ final class FieldView: UIView {
         }
     }
 
-    func drawNewField() {
+    func drawNewField(width: Int, height: Int) {
+        numberOfRows = height
+        numberOfColumns = width
+
         isFieldDrawn = false
         setNeedsDisplay()
     }

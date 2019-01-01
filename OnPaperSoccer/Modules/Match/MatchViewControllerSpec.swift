@@ -18,16 +18,27 @@ class MatchViewControllerSpec: QuickSpec {
                 fieldDrawerSpy = FieldDrawerSpy()
                 movesControllerSpy = MovesControllerSpy()
                 movesValidatorSpy = MovesValidatorSpy()
-                sut = MatchViewController(fieldDrawer: fieldDrawerSpy, movesController: movesControllerSpy, movesValidator: movesValidatorSpy)
+                sut = MatchViewController(fieldDrawer: fieldDrawerSpy, movesController: movesControllerSpy, movesValidator: movesValidatorSpy, fieldWidth: 42, fieldHeight: 43)
                 _ = sut.view
             }
+            
+            describe("init") {
+                it("should add field drawer view as subview") {
+                    expect(sut.childViewControllers).to(contain(fieldDrawerSpy.viewController))
+                }
 
-            it("should add field drawer view as subview") {
-                expect(sut.childViewControllers).to(contain(fieldDrawerSpy.viewController))
-            }
+                it("should draw initial field") {
+                    expect(fieldDrawerSpy.didDrawNewField) == true
+                }
 
-            it("should draw initial field") {
-                expect(fieldDrawerSpy.didDrawNewField) == true
+                it("should set size field size for moves validator") {
+                    expect(movesValidatorSpy.fieldWidth) == 42
+                    expect(movesValidatorSpy.fieldHeight) == 43
+                }
+
+                it("should have current position set to middle of field size") {
+                    expect(sut.currentPosition) == Point(x: 21, y: 21)
+                }
             }
 
             describe("current position") {
@@ -60,14 +71,7 @@ class MatchViewControllerSpec: QuickSpec {
                 }
             }
 
-            describe("start") {
-                it("should have current position set to (4, 5)") {
-                    expect(sut.currentPosition) == Point(x: 4, y: 5)
-                }
-            }
-
             describe("moves validation") {
-
                 context("when move is valid") {
                     beforeEach {
                         movesValidatorSpy.isMoveValid = true
@@ -100,10 +104,14 @@ class MatchViewControllerSpec: QuickSpec {
 
 private class FieldDrawerSpy: FieldDrawer {
     var capturedLine: Line? = nil
+    var capturedWidth: Int = 0
+    var capturedHeight: Int = 0
     var didDrawNewField = false
     var viewController = UIViewController()
 
-    func drawNewField() {
+    func drawNewField(width: Int, height: Int) {
+        capturedWidth = width
+        capturedHeight = height
         didDrawNewField = true
     }
 
@@ -119,7 +127,10 @@ private class MovesControllerSpy: MovesController {
 }
 
 private class MovesValidatorSpy: MovesValidator {
+    var fieldWidth: Int = 0
+    var fieldHeight: Int = 0
     var isMoveValid: Bool = false
+
     func isValidMove(from point: Point, by vector: Vector) -> Bool {
         return isMoveValid
     }
