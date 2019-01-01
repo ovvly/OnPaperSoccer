@@ -5,8 +5,13 @@ protocol MovesValidator {
 }
 
 final class DefaultMovesValidator: MovesValidator {
+    var fieldWidth: Int = 0
+    var fieldHeight: Int = 0
+
     func isValidMove(from point: Point, by vector: Vector) -> Bool {
         let endingMove = point.shifted(by: vector)
-        return endingMove.x >= 0 && endingMove.x <= 8
+        guard endingMove.x < fieldWidth && endingMove.x >= 0 else { return false }
+        guard endingMove.y < fieldHeight && endingMove.y >= 0 else { return false }
+        return true
     }
 }

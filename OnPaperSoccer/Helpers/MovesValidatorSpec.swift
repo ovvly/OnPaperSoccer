@@ -11,6 +11,9 @@ class MovesValidatorSpec: QuickSpec {
             
             beforeEach {
                 sut = DefaultMovesValidator()
+
+                sut.fieldHeight = 42
+                sut.fieldWidth = 42
             }
 
             sharedExamples("valid move") { context in
@@ -50,6 +53,36 @@ class MovesValidatorSpec: QuickSpec {
 
                 context("when move will cross left sideline") {
                     itBehavesLike("invalid move") {["point": Point(x: 0, y: 0), "vector": Vector(dx: -1, dy: 0)]}
+                }
+            }
+
+            describe("right sideline") {
+                context("when move will end on right sideline") {
+                    itBehavesLike("valid move") {["point": Point(x: 40, y: 0), "vector": Vector(dx: 1, dy: 0)]}
+                }
+
+                context("when move will cross right sideline") {
+                    itBehavesLike("invalid move") {["point": Point(x: 41, y: 0), "vector": Vector(dx: 1, dy: 0)]}
+                }
+            }
+
+            describe("top sideline") {
+                context("when move will end on top sideline") {
+                    itBehavesLike("valid move") {["point": Point(x: 0, y: 40), "vector": Vector(dx: 0, dy: 1)]}
+                }
+
+                context("when move will cross top sideline") {
+                    itBehavesLike("invalid move") {["point": Point(x: 0, y: 41), "vector": Vector(dx: 0, dy: 1)]}
+                }
+            }
+
+            describe("bottom sideline") {
+                context("when move will end on bottom sideline") {
+                    itBehavesLike("valid move") {["point": Point(x: 0, y: 1), "vector": Vector(dx: 0, dy: -1)]}
+                }
+
+                context("when move will cross bottom sideline") {
+                    itBehavesLike("invalid move") {["point": Point(x: 0, y: 0), "vector": Vector(dx: 0, dy: -1)]}
                 }
             }
         }

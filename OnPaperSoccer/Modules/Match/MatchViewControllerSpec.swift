@@ -66,7 +66,7 @@ class MatchViewControllerSpec: QuickSpec {
                 }
             }
 
-            describe("move validation") {
+            describe("moves validation") {
 
                 context("when move is valid") {
                     beforeEach {
@@ -80,8 +80,7 @@ class MatchViewControllerSpec: QuickSpec {
                         expect(sut.currentPosition) == Point(x: 42, y: 42)
                     }
                 }
-
-
+                
                 context("when move is invalid") {
                     beforeEach {
                         movesValidatorSpy.isMoveValid = false
@@ -95,7 +94,6 @@ class MatchViewControllerSpec: QuickSpec {
                     }
                 }
             }
-
         }
     }
 }
