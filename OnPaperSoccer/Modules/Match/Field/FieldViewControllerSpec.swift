@@ -11,12 +11,12 @@ class FieldViewControllerSpec: QuickSpec {
             var sut: FieldViewController!
 
             beforeEach {
-                sut = FieldViewController()
+                sut = FieldViewController(fieldWidth: 9, fieldHeight: 11)
             }
 
             describe("draw new field") {
                 beforeEach {
-                    sut.drawNewField(width: 9, height: 11)
+                    sut.drawNewField()
                 }
 
                 it("should have valid snapshot") {
@@ -26,7 +26,7 @@ class FieldViewControllerSpec: QuickSpec {
 
             describe("draw line") {
                 beforeEach {
-                    sut.drawNewField(width: 9, height: 11)
+                    sut.drawNewField()
                     sut.draw(line: Line.fixture)
                 }
 

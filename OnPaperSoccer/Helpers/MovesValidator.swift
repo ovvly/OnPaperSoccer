@@ -1,14 +1,17 @@
 import Foundation
 
 protocol MovesValidator {
-    var fieldWidth: Int { get set}
-    var fieldHeight: Int { get set}
     func isValidMove(from point: Point, by vector: Vector) -> Bool
 }
 
 final class DefaultMovesValidator: MovesValidator {
-    var fieldWidth: Int = 0
-    var fieldHeight: Int = 0
+    private let fieldWidth: Int
+    private let fieldHeight: Int
+
+    init(fieldWidth: Int, fieldHeight: Int) {
+        self.fieldWidth = fieldWidth
+        self.fieldHeight = fieldHeight
+    }
 
     func isValidMove(from point: Point, by vector: Vector) -> Bool {
         let endingMove = point.shifted(by: vector)

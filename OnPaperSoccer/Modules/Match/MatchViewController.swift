@@ -14,24 +14,17 @@ class MatchViewController: UIViewController {
     private let fieldDrawer: FieldDrawer
     private let movesController: MovesController
     private var movesValidator: MovesValidator
-    private let fieldWidth: Int
-    private let fieldHeight: Int
     private let disposeBag = DisposeBag()
 
     // MARK: Init
 
-    init(fieldDrawer: FieldDrawer, movesController: MovesController, movesValidator: MovesValidator, fieldWidth: Int = 9, fieldHeight: Int = 11) {
+    init(fieldDrawer: FieldDrawer, movesController: MovesController, movesValidator: MovesValidator, fieldWidth: Int, fieldHeight: Int) {
         self.fieldDrawer = fieldDrawer
         self.movesController = movesController
         self.movesValidator = movesValidator
-        self.fieldWidth = fieldWidth
-        self.fieldHeight = fieldHeight
         self.currentPosition = Point(x: fieldWidth / 2, y: fieldHeight / 2)
 
         super.init(nibName: nil, bundle: nil)
-
-        self.movesValidator.fieldWidth = fieldWidth
-        self.movesValidator.fieldHeight = fieldHeight
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -45,7 +38,7 @@ class MatchViewController: UIViewController {
 
         addChild(viewController: fieldDrawer.viewController, to: fieldView)
         addChild(viewController: movesController.viewController, to: view)
-        fieldDrawer.drawNewField(width: fieldWidth, height: fieldHeight)
+        fieldDrawer.drawNewField()
 
         movesController.moves
             .filter { self.movesValidator.isValidMove(from: self.currentPosition, by: $0)}

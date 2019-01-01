@@ -10,10 +10,7 @@ class MovesValidatorSpec: QuickSpec {
             var sut: DefaultMovesValidator!
             
             beforeEach {
-                sut = DefaultMovesValidator()
-
-                sut.fieldHeight = 42
-                sut.fieldWidth = 42
+                sut = DefaultMovesValidator(fieldWidth: 42, fieldHeight: 43)
             }
 
             sharedExamples("valid move") { context in
@@ -68,11 +65,11 @@ class MovesValidatorSpec: QuickSpec {
 
             describe("top sideline") {
                 context("when move will end on top sideline") {
-                    itBehavesLike("valid move") {["point": Point(x: 0, y: 40), "vector": Vector(dx: 0, dy: 1)]}
+                    itBehavesLike("valid move") {["point": Point(x: 0, y: 41), "vector": Vector(dx: 0, dy: 1)]}
                 }
 
                 context("when move will cross top sideline") {
-                    itBehavesLike("invalid move") {["point": Point(x: 0, y: 41), "vector": Vector(dx: 0, dy: 1)]}
+                    itBehavesLike("invalid move") {["point": Point(x: 0, y: 42), "vector": Vector(dx: 0, dy: 1)]}
                 }
             }
 

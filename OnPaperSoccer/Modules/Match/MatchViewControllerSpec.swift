@@ -31,11 +31,6 @@ class MatchViewControllerSpec: QuickSpec {
                     expect(fieldDrawerSpy.didDrawNewField) == true
                 }
 
-                it("should set size field size for moves validator") {
-                    expect(movesValidatorSpy.fieldWidth) == 42
-                    expect(movesValidatorSpy.fieldHeight) == 43
-                }
-
                 it("should have current position set to middle of field size") {
                     expect(sut.currentPosition) == Point(x: 21, y: 21)
                 }
@@ -104,14 +99,10 @@ class MatchViewControllerSpec: QuickSpec {
 
 private class FieldDrawerSpy: FieldDrawer {
     var capturedLine: Line? = nil
-    var capturedWidth: Int = 0
-    var capturedHeight: Int = 0
     var didDrawNewField = false
     var viewController = UIViewController()
 
-    func drawNewField(width: Int, height: Int) {
-        capturedWidth = width
-        capturedHeight = height
+    func drawNewField() {
         didDrawNewField = true
     }
 
@@ -127,8 +118,6 @@ private class MovesControllerSpy: MovesController {
 }
 
 private class MovesValidatorSpy: MovesValidator {
-    var fieldWidth: Int = 0
-    var fieldHeight: Int = 0
     var isMoveValid: Bool = false
 
     func isValidMove(from point: Point, by vector: Vector) -> Bool {
