@@ -45,41 +45,41 @@ class MovesValidatorSpec: QuickSpec {
 
             describe("left sideline") {
                 context("when move will end on left sideline") {
-                    itBehavesLike("valid move") {["point": Point(x: 1, y: 0), "vector": Vector(dx: -1, dy: 0)]}
+                    itBehavesLike("valid move") {["point": Point(x: 1, y: 0), "vector": Vector.left]}
                 }
 
                 context("when move will cross left sideline") {
-                    itBehavesLike("invalid move") {["point": Point(x: 0, y: 0), "vector": Vector(dx: -1, dy: 0)]}
+                    itBehavesLike("invalid move") {["point": Point(x: 0, y: 0), "vector": Vector.left]}
                 }
             }
 
             describe("right sideline") {
                 context("when move will end on right sideline") {
-                    itBehavesLike("valid move") {["point": Point(x: 40, y: 0), "vector": Vector(dx: 1, dy: 0)]}
+                    itBehavesLike("valid move") {["point": Point(x: 40, y: 0), "vector": Vector.right]}
                 }
 
                 context("when move will cross right sideline") {
-                    itBehavesLike("invalid move") {["point": Point(x: 41, y: 0), "vector": Vector(dx: 1, dy: 0)]}
+                    itBehavesLike("invalid move") {["point": Point(x: 41, y: 0), "vector": Vector.right]}
                 }
             }
 
             describe("top sideline") {
                 context("when move will end on top sideline") {
-                    itBehavesLike("valid move") {["point": Point(x: 0, y: 41), "vector": Vector(dx: 0, dy: 1)]}
+                    itBehavesLike("valid move") {["point": Point(x: 0, y: 41), "vector": Vector.up]}
                 }
 
                 context("when move will cross top sideline") {
-                    itBehavesLike("invalid move") {["point": Point(x: 0, y: 42), "vector": Vector(dx: 0, dy: 1)]}
+                    itBehavesLike("invalid move") {["point": Point(x: 0, y: 42), "vector": Vector.up]}
                 }
             }
 
             describe("bottom sideline") {
                 context("when move will end on bottom sideline") {
-                    itBehavesLike("valid move") {["point": Point(x: 0, y: 1), "vector": Vector(dx: 0, dy: -1)]}
+                    itBehavesLike("valid move") {["point": Point(x: 0, y: 1), "vector": Vector.down]}
                 }
 
                 context("when move will cross bottom sideline") {
-                    itBehavesLike("invalid move") {["point": Point(x: 0, y: 0), "vector": Vector(dx: 0, dy: -1)]}
+                    itBehavesLike("invalid move") {["point": Point(x: 0, y: 0), "vector": Vector.down]}
                 }
             }
         }

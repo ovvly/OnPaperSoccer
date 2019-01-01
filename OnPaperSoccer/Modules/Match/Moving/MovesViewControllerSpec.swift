@@ -41,56 +41,56 @@ class MovesViewControllerSpec: QuickSpec {
 
             describe("up button") {
                 itBehavesLike("move") {
-                    ["vector": Vector(dx: 0, dy: 1),
+                    ["vector": Vector.up,
                      "tapping": sut.upButton]
                 }
             }
 
             describe("down button") {
                 itBehavesLike("move") {
-                    ["vector": Vector(dx: 0, dy: -1),
+                    ["vector": Vector.down,
                      "tapping": sut.downButton]
                 }
             }
 
             describe("left button") {
                 itBehavesLike("move") {
-                    ["vector": Vector(dx: -1, dy: 0),
+                    ["vector": Vector.left,
                      "tapping": sut.leftButton]
                 }
             }
 
             describe("right button") {
                 itBehavesLike("move") {
-                    ["vector": Vector(dx: 1, dy: 0),
+                    ["vector": Vector.right,
                      "tapping": sut.rightButton]
                 }
             }
 
             describe("up-left button") {
                 itBehavesLike("move") {
-                    ["vector": Vector(dx: -1, dy: 1),
+                    ["vector": Vector.upLeft,
                      "tapping": sut.upLeftButton]
                 }
             }
 
             describe("up-right button") {
                 itBehavesLike("move") {
-                    ["vector": Vector(dx: 1, dy: 1),
+                    ["vector": Vector.upRight,
                      "tapping": sut.upRightButton]
                 }
             }
 
             describe("down-left button") {
                 itBehavesLike("move") {
-                    ["vector": Vector(dx: -1, dy: -1),
+                    ["vector": Vector.downLeft,
                      "tapping": sut.downLeftButton]
                 }
             }
 
             describe("down-right button") {
                 itBehavesLike("move") {
-                    ["vector": Vector(dx: 1, dy: -1),
+                    ["vector": Vector.downRight,
                      "tapping": sut.downRightButton]
                 }
             }

@@ -37,41 +37,41 @@ class MovesViewController: UIViewController, MovesController {
     
     @IBAction
     private func upButtonTapped(_ sender: UIButton) {
-        movesSubject.onNext(Vector(dx: 0, dy: 1))
+        movesSubject.onNext(Vector.up)
     }
 
     @IBAction
     func downButtonTapped(_ sender: UIButton) {
-        movesSubject.onNext(Vector(dx: 0, dy: -1))
+        movesSubject.onNext(Vector.down)
     }
 
     @IBAction
     func leftButtonTapped(_ sender: UIButton) {
-        movesSubject.onNext(Vector(dx: -1, dy: 0))
+        movesSubject.onNext(Vector.left)
     }
 
     @IBAction
     func rightButtonTapped(_ sender: UIButton) {
-        movesSubject.onNext(Vector(dx: 1, dy: 0))
+        movesSubject.onNext(Vector.right)
     }
 
     @IBAction
     private func upLeftButtonTapped(_ sender: UIButton) {
-        movesSubject.onNext(Vector(dx: -1, dy: 1))
+        movesSubject.onNext(Vector.upLeft)
     }
 
     @IBAction
     func upRightButtonTapped(_ sender: UIButton) {
-        movesSubject.onNext(Vector(dx: 1, dy: 1))
+        movesSubject.onNext(Vector.upRight)
     }
 
     @IBAction
     func downLeftButtonTapped(_ sender: UIButton) {
-        movesSubject.onNext(Vector(dx: -1, dy: -1))
+        movesSubject.onNext(Vector.downLeft)
     }
 
     @IBAction
     func downRightButtonTapped(_ sender: UIButton) {
-        movesSubject.onNext(Vector(dx: 1, dy: -1))
+        movesSubject.onNext(Vector.downRight)
     }
 }
