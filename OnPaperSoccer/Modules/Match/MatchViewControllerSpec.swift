@@ -36,60 +36,44 @@ class MatchViewControllerSpec: QuickSpec {
                 }
             }
 
-            describe("current position") {
-                context("when current position changes") {
+            describe("current position changes") {
+                describe("possible moves") {
                     beforeEach {
+                        movesValidatorSpy.possibleMoves = [.up, .down, .left]
                         sut.currentPosition = Point(x: 10, y: 10)
-
-                        sut.currentPosition = Point(x: 20, y: 20)
                     }
 
-                    it("should draw line from old to new position") {
-                        expect(fieldDrawerSpy.capturedLine?.from) == Point(x: 10, y: 10)
-                        expect(fieldDrawerSpy.capturedLine?.to) == Point(x: 20, y: 20)
+                    it("should be updated") {
+                        expect(movesControllerSpy.capturedPossibleMoves) == [.up, .down, .left]
+                    }
+                }
+
+                describe("field drawer") {
+                    context("when current position changes twice") {
+                        beforeEach {
+                            sut.currentPosition = Point(x: 10, y: 10)
+
+                            sut.currentPosition = Point(x: 20, y: 20)
+                        }
+
+                        it("should draw line from old to new position") {
+                            expect(fieldDrawerSpy.capturedLine?.from) == Point(x: 10, y: 10)
+                            expect(fieldDrawerSpy.capturedLine?.to) == Point(x: 20, y: 20)
+                        }
                     }
                 }
             }
 
             describe("moves") {
-                context("when moves controller emits moves") {
+                context("when moves controller emits move") {
                     beforeEach {
                         sut.currentPosition = Point(x: 0, y: 0)
-                        movesValidatorSpy.isMoveValid = true
-                        
-                        movesControllerSpy.movesSubject.onNext(Vector(dx: 10, dy: 10))
+
+                        movesControllerSpy.movesSubject.onNext(.downRight)
                     }
 
-                    it("should apply moves to current position") {
-                        expect(sut.currentPosition) == Point(x: 10, y: 10)
-                    }
-                }
-            }
-
-            describe("moves validation") {
-                context("when move is valid") {
-                    beforeEach {
-                        movesValidatorSpy.isMoveValid = true
-                        sut.currentPosition = Point(x: 0, y: 0)
-
-                        movesControllerSpy.movesSubject.onNext(Vector(dx: 42, dy: 42))
-                    }
-
-                    it("should change current position") {
-                        expect(sut.currentPosition) == Point(x: 42, y: 42)
-                    }
-                }
-                
-                context("when move is invalid") {
-                    beforeEach {
-                        movesValidatorSpy.isMoveValid = false
-                        sut.currentPosition = Point(x: 0, y: 0)
-
-                        movesControllerSpy.movesSubject.onNext(Vector(dx: 42, dy: 42))
-                    }
-
-                    it("should not change current position") {
-                        expect(sut.currentPosition) == Point(x: 0, y: 0)
+                    it("should apply move vector to current position") {
+                        expect(sut.currentPosition) == Point(x: 1, y: -1)
                     }
                 }
             }
@@ -112,15 +96,21 @@ private class FieldDrawerSpy: FieldDrawer {
 }
 
 private class MovesControllerSpy: MovesController {
+    var capturedPossibleMoves = Set<Move>()
     var viewController = UIViewController()
-    var moves: Observable<Vector> { return movesSubject.asObservable() }
-    let movesSubject = PublishSubject<Vector>()
+    let movesSubject = PublishSubject<Move>()
+
+    var moves: Observable<Move> { return movesSubject.asObservable() }
+    func updateMovesPossibility(_ moves: Set<Move>) {
+        capturedPossibleMoves = moves
+    }
 }
 
 private class MovesValidatorSpy: MovesValidator {
+    var possibleMoves = Set<Move>()
     var isMoveValid: Bool = false
 
-    func isValidMove(from point: Point, by vector: Vector) -> Bool {
-        return isMoveValid
+    func possibleMoves(from point: Point) -> Set<Move> {
+        return possibleMoves
     }
 }

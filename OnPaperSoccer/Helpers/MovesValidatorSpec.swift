@@ -13,74 +13,45 @@ class MovesValidatorSpec: QuickSpec {
                 sut = DefaultMovesValidator(fieldWidth: 42, fieldHeight: 43)
             }
 
-            sharedExamples("valid move") { context in
-                var result: Bool!
+            sharedExamples("possible moves") { context in
+                var result: Set<Move>!
+                var moves: Set<Move>!
 
                 beforeEach {
                     let point = context()["point"] as! Point
-                    let vector = context()["vector"] as! Vector
+                    moves = context()["moves"] as? Set<Move>
 
-                    result = sut.isValidMove(from: point, by: vector)
+                    result = sut.possibleMoves(from: point)
 
                 }
+
                 it("should have result the same as expectation") {
-                    expect(result) == true
+                    expect(result) == moves
                 }
             }
 
-            sharedExamples("invalid move") { context in
-                var result: Bool!
-
-                beforeEach {
-                    let point = context()["point"] as! Point
-                    let vector = context()["vector"] as! Vector
-
-                    result = sut.isValidMove(from: point, by: vector)
-
-                }
-                it("should have result the same as expectation") {
-                    expect(result) == false
-                }
+            context("when current position is on left sideline") {
+                itBehavesLike("possible moves") {["point": Point(x: 0, y: 20), "moves": Set([Move.right, Move.upRight, Move.downRight])]}
             }
 
-            describe("left sideline") {
-                context("when move will end on left sideline") {
-                    itBehavesLike("valid move") {["point": Point(x: 1, y: 0), "vector": Vector.left]}
-                }
-
-                context("when move will cross left sideline") {
-                    itBehavesLike("invalid move") {["point": Point(x: 0, y: 0), "vector": Vector.left]}
-                }
+            context("when current position is on right sideline") {
+                itBehavesLike("possible moves") {["point": Point(x: 41, y: 20), "moves": Set([Move.left, Move.upLeft, Move.downLeft])]}
             }
 
-            describe("right sideline") {
-                context("when move will end on right sideline") {
-                    itBehavesLike("valid move") {["point": Point(x: 40, y: 0), "vector": Vector.right]}
-                }
-
-                context("when move will cross right sideline") {
-                    itBehavesLike("invalid move") {["point": Point(x: 41, y: 0), "vector": Vector.right]}
-                }
+            context("when current position is on top sideline") {
+                itBehavesLike("possible moves") {["point": Point(x: 20, y: 42), "moves": Set([Move.down, Move.downLeft, Move.downRight])]}
             }
 
-            describe("top sideline") {
-                context("when move will end on top sideline") {
-                    itBehavesLike("valid move") {["point": Point(x: 0, y: 41), "vector": Vector.up]}
-                }
-
-                context("when move will cross top sideline") {
-                    itBehavesLike("invalid move") {["point": Point(x: 0, y: 42), "vector": Vector.up]}
-                }
+            context("when current position is on bottom sideline") {
+                itBehavesLike("possible moves") {["point": Point(x: 20, y: 0), "moves": Set([Move.up, Move.upLeft, Move.upRight])]}
             }
 
-            describe("bottom sideline") {
-                context("when move will end on bottom sideline") {
-                    itBehavesLike("valid move") {["point": Point(x: 0, y: 1), "vector": Vector.down]}
-                }
+            pending("corners") {
 
-                context("when move will cross bottom sideline") {
-                    itBehavesLike("invalid move") {["point": Point(x: 0, y: 0), "vector": Vector.down]}
-                }
+            }
+
+            pending("goal fields") {
+
             }
         }
     }

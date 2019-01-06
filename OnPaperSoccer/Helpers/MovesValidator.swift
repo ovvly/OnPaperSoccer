@@ -1,7 +1,7 @@
 import Foundation
 
 protocol MovesValidator {
-    func isValidMove(from point: Point, by vector: Vector) -> Bool
+    func possibleMoves(from point: Point) -> Set<Move>
 }
 
 final class DefaultMovesValidator: MovesValidator {
@@ -13,10 +13,28 @@ final class DefaultMovesValidator: MovesValidator {
         self.fieldHeight = fieldHeight
     }
 
-    func isValidMove(from point: Point, by vector: Vector) -> Bool {
-        let endingMove = point.shifted(by: vector)
-        guard endingMove.x < fieldWidth && endingMove.x >= 0 else { return false }
-        guard endingMove.y < fieldHeight && endingMove.y >= 0 else { return false }
+    func possibleMoves(from point: Point) -> Set<Move> {
+        return Set(Move.allCases.filter { move in
+            return isValidMove(from: point, moving: move)
+        })
+    }
+
+    private func isValidMove(from point: Point, moving move: Move) -> Bool {
+        let endPoint = point.shifted(by: move.vector)
+        guard endPoint.x < fieldWidth && endPoint.x >= 0 else { return false }
+        guard endPoint.y < fieldHeight && endPoint.y >= 0 else { return false }
+
+        let line = Line(from: point, to: endPoint)
+        if isBorderLine(line) { return false }
+
         return true
+    }
+
+    private func isBorderLine(_ line: Line) -> Bool {
+        if line.from.x == 0 && line.to.x == 0 { return true }
+        if line.from.x == fieldWidth - 1 && line.to.x == fieldWidth - 1 { return true }
+        if line.from.y == 0 && line.to.y == 0 { return true }
+        if line.from.y == fieldHeight - 1 && line.to.y == fieldHeight - 1 { return true }
+        return false
     }
 }

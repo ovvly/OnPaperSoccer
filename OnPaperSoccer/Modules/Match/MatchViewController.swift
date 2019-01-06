@@ -8,6 +8,7 @@ class MatchViewController: UIViewController {
         didSet {
             let line = Line(from: oldValue, to: currentPosition)
             fieldDrawer.draw(line: line)
+            updateMovesPossibility()
         }
     }
 
@@ -41,11 +42,17 @@ class MatchViewController: UIViewController {
         fieldDrawer.drawNewField()
 
         movesController.moves
-            .filter { self.movesValidator.isValidMove(from: self.currentPosition, by: $0)}
-            .subscribe(onNext: { [unowned self] vector in
-                self.currentPosition = self.currentPosition.shifted(by: vector)
+            .subscribe(onNext: { [unowned self] move in
+                self.currentPosition = self.currentPosition.shifted(by: move.vector)
             })
             .disposed(by: disposeBag)
 
+    }
+
+    //MARK: Helpers
+
+    private func updateMovesPossibility() {
+        let possibleMoves = movesValidator.possibleMoves(from: currentPosition)
+        movesController.updateMovesPossibility(possibleMoves)
     }
 }
