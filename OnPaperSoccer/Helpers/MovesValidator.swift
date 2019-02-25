@@ -5,6 +5,8 @@ protocol MovesValidator {
 }
 
 final class DefaultMovesValidator: MovesValidator {
+    var usedLines = Set<Line>()
+
     private let fieldWidth: Int
     private let fieldHeight: Int
 
@@ -21,11 +23,10 @@ final class DefaultMovesValidator: MovesValidator {
 
     private func isValidMove(from point: Point, moving move: Move) -> Bool {
         let endPoint = point.shifted(by: move.vector)
-        guard endPoint.x < fieldWidth && endPoint.x >= 0 else { return false }
-        guard endPoint.y < fieldHeight && endPoint.y >= 0 else { return false }
 
         let line = Line(from: point, to: endPoint)
         if isBorderLine(line) { return false }
+        if usedLines.contains(line) { return false }
 
         return true
     }

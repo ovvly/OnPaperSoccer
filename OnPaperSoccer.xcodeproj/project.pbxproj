@@ -12,7 +12,6 @@
 		2C320B952178DBE500CDADF5 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B942178DBE500CDADF5 /* Line.swift */; };
 		2C320B982178DD1E00CDADF5 /* FieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B962178DD1E00CDADF5 /* FieldViewController.swift */; };
 		2C320B992178DD1E00CDADF5 /* FieldViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C320B972178DD1E00CDADF5 /* FieldViewController.xib */; };
-		2C320B9B2178E0A700CDADF5 /* Point+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B9A2178E0A700CDADF5 /* Point+Equatable.swift */; };
 		2C320B9F2178E2F600CDADF5 /* UIView+AddContentSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B9E2178E2F600CDADF5 /* UIView+AddContentSubview.swift */; };
 		2C320BA12178E32E00CDADF5 /* UIViewController+AddChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320BA02178E32E00CDADF5 /* UIViewController+AddChildViewController.swift */; };
 		2C9A70A421BE615C00B801C9 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A70A221BE615C00B801C9 /* MatchViewController.swift */; };
@@ -55,7 +54,6 @@
 		2C320B942178DBE500CDADF5 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		2C320B962178DD1E00CDADF5 /* FieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldViewController.swift; sourceTree = "<group>"; };
 		2C320B972178DD1E00CDADF5 /* FieldViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FieldViewController.xib; sourceTree = "<group>"; };
-		2C320B9A2178E0A700CDADF5 /* Point+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Point+Equatable.swift"; sourceTree = "<group>"; };
 		2C320B9E2178E2F600CDADF5 /* UIView+AddContentSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddContentSubview.swift"; sourceTree = "<group>"; };
 		2C320BA02178E32E00CDADF5 /* UIViewController+AddChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AddChildViewController.swift"; sourceTree = "<group>"; };
 		2C9A70A221BE615C00B801C9 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
@@ -247,7 +245,6 @@
 			isa = PBXGroup;
 			children = (
 				AA24B1B708C98F1A574B73A2 /* UIButton+Specs.swift */,
-				2C320B9A2178E0A700CDADF5 /* Point+Equatable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -475,7 +472,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA24B7F2356C873ECB235CBD /* UIButton+Specs.swift in Sources */,
-				2C320B9B2178E0A700CDADF5 /* Point+Equatable.swift in Sources */,
 				AA24B2F3C919EEC95E187E86 /* FieldViewControllerSpec.swift in Sources */,
 				AA24B42B6DE4E267CAB7CFAD /* MovesViewControllerSpec.swift in Sources */,
 				AA24B6302B864E0EE4257AA3 /* MatchViewControllerSpec.swift in Sources */,
