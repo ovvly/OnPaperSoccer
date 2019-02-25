@@ -30,7 +30,7 @@ final class DefaultMovesValidator: MovesValidator {
         let endPoint = point.shifted(by: move.vector)
 
         let line = Line(from: point, to: endPoint)
-        if isCrossingLine(line) { return false }
+        if isCrossingSideline(line) { return false }
         if isMovingAlongBorderLine(line) { return false }
         if !usedLines.intersection([line, line.lineInOppositeDirection()]).isEmpty { return false }
 
@@ -42,8 +42,9 @@ final class DefaultMovesValidator: MovesValidator {
         return false
     }
 
-    private func isCrossingLine(_ line: Line) -> Bool {
+    private func isCrossingSideline(_ line: Line) -> Bool {
         if line.to.x < 0 { return true }
+        if line.to.x > fieldWidth - 1 { return true }
         if line.from.x == fieldWidth - 1 && line.to.x == fieldWidth - 1 { return true }
         if line.from.y == 0 && line.to.y == 0 { return true }
         if line.from.y == fieldHeight - 1 && line.to.y == fieldHeight - 1 { return true }
