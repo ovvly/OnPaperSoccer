@@ -31,7 +31,7 @@ final class DefaultMovesValidator: MovesValidator {
 
         let line = Line(from: point, to: endPoint)
         if isBorderLine(line) { return false }
-        if usedLines.contains(line) { return false }
+        if !usedLines.intersection([line, line.lineInOppositeDirection()]).isEmpty { return false }
 
         return true
     }

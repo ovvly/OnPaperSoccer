@@ -79,6 +79,23 @@ class MovesValidatorSpec: QuickSpec {
                     expect(possibleMoves).toNot(contain([Move.upRight]))
                 }
             }
+
+            context("when line ending in starting point is used") {
+                var possibleMoves: Set<Move>!
+
+                beforeEach {
+                    let startingPoint = Point(x: 1, y: 1)
+                    let endingPoint = Point(x: 0, y: 0)
+                    let oppositeDirectionLine = Line(from: endingPoint, to: startingPoint)
+                    sut.setLineAsUsed(oppositeDirectionLine)
+
+                    possibleMoves = sut.possibleMoves(from: startingPoint)
+                }
+
+                it("should return possible moves without direction pointing used line") {
+                    expect(possibleMoves).toNot(contain([Move.downLeft]))
+                }
+            }
         }
     }
 }
