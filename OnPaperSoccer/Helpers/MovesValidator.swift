@@ -2,6 +2,7 @@ import Foundation
 
 protocol MovesValidator {
     func possibleMoves(from point: Point) -> Set<Move>
+    func setLineAsUsed(_ line: Line)
 }
 
 final class DefaultMovesValidator: MovesValidator {
@@ -19,6 +20,10 @@ final class DefaultMovesValidator: MovesValidator {
         return Set(Move.allCases.filter { move in
             return isValidMove(from: point, moving: move)
         })
+    }
+
+    func setLineAsUsed(_ line: Line) {
+        usedLines.insert(line)
     }
 
     private func isValidMove(from point: Point, moving move: Move) -> Bool {

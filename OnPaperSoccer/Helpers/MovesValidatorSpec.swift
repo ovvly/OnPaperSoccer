@@ -69,7 +69,8 @@ class MovesValidatorSpec: QuickSpec {
                 beforeEach {
                     let startingPoint = Point(x: 0, y: 0)
                     let endingPoint = startingPoint.shifted(by: Move.upRight.vector)
-                    sut.usedLines = [Line(from: startingPoint, to: endingPoint)]
+                    let line = Line(from: startingPoint, to: endingPoint)
+                    sut.setLineAsUsed(line)
 
                     possibleMoves = sut.possibleMoves(from: startingPoint)
                 }

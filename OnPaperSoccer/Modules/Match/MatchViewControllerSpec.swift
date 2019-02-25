@@ -62,6 +62,17 @@ class MatchViewControllerSpec: QuickSpec {
                         }
                     }
                 }
+                
+                describe("line from current position to new position") {
+                    beforeEach {
+                        sut.currentPosition = Point(x: 10, y: 10)
+
+                        sut.currentPosition = Point(x: 20, y: 20)
+                    }
+                    it("should be marked as used") {
+                        expect(movesValidatorSpy.capturedUsedLine) == Line(from: Point(x: 10, y: 10), to: Point(x: 20, y: 20))
+                    }
+                }
             }
 
             describe("moves") {
@@ -110,7 +121,13 @@ private class MovesValidatorSpy: MovesValidator {
     var possibleMoves = Set<Move>()
     var isMoveValid: Bool = false
 
+    var capturedUsedLine: Line?
+
     func possibleMoves(from point: Point) -> Set<Move> {
         return possibleMoves
+    }
+
+    func setLineAsUsed(_ line: Line) {
+        capturedUsedLine = line
     }
 }

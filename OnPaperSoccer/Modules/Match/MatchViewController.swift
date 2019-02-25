@@ -8,6 +8,7 @@ class MatchViewController: UIViewController {
         didSet {
             let line = Line(from: oldValue, to: currentPosition)
             fieldDrawer.draw(line: line)
+            movesValidator.setLineAsUsed(line)
             updateMovesPossibility()
         }
     }
