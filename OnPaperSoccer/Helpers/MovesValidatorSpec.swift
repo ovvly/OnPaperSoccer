@@ -22,7 +22,15 @@ class MovesValidatorSpec: QuickSpec {
                     }
 
                     it("should not be possible to move left") {
-                        expect(possibleMoves).toNot(contain([Move.left, Move.upLeft, Move.downLeft]))
+                        expect(possibleMoves).toNot(contain(Move.left))
+                        expect(possibleMoves).toNot(contain(Move.upLeft))
+                        expect(possibleMoves).toNot(contain(Move.downLeft))
+                    }
+
+
+                    it("should not be possible to move along sideline") {
+                        expect(possibleMoves).toNot(contain(Move.up))
+                        expect(possibleMoves).toNot(contain(Move.down))
                     }
                 }
 
