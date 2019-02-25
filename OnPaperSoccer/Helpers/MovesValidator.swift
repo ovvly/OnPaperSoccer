@@ -33,21 +33,22 @@ final class DefaultMovesValidator: MovesValidator {
         if isCrossingSideline(line) { return false }
         if isMovingAlongBorderLine(line) { return false }
         if !usedLines.intersection([line, line.lineInOppositeDirection()]).isEmpty { return false }
-
         return true
     }
 
     private func isMovingAlongBorderLine(_ line: Line) -> Bool {
         if line.from.x == 0 && line.to.x == 0 { return true }
+        if line.from.x == fieldWidth - 1 && line.to.x == fieldWidth - 1 { return true }
+        if line.from.y == fieldHeight - 1 && line.to.y == fieldHeight - 1 { return true }
+        if line.from.y == 0 && line.to.y == 0 { return true }
         return false
     }
 
     private func isCrossingSideline(_ line: Line) -> Bool {
         if line.to.x < 0 { return true }
         if line.to.x > fieldWidth - 1 { return true }
-        if line.from.x == fieldWidth - 1 && line.to.x == fieldWidth - 1 { return true }
-        if line.from.y == 0 && line.to.y == 0 { return true }
-        if line.from.y == fieldHeight - 1 && line.to.y == fieldHeight - 1 { return true }
+        if line.to.y > fieldHeight - 1 { return true }
+        if line.to.y < 0 { return true }
         return false
     }
 }

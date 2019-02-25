@@ -18,7 +18,7 @@ class MovesValidatorSpec: QuickSpec {
                     var possibleMoves: Set<Move>!
 
                     beforeEach {
-                        possibleMoves = sut.possibleMoves(from: Point(x: 0, y: 0))
+                        possibleMoves = sut.possibleMoves(from: Point(x: 0, y: 20))
                     }
 
                     it("should not be possible to move left") {
@@ -38,7 +38,7 @@ class MovesValidatorSpec: QuickSpec {
                     var possibleMoves: Set<Move>!
 
                     beforeEach {
-                        possibleMoves = sut.possibleMoves(from: Point(x: 41, y: 0))
+                        possibleMoves = sut.possibleMoves(from: Point(x: 41, y: 20))
                     }
 
                     it("should not be possible to move right") {
@@ -58,11 +58,19 @@ class MovesValidatorSpec: QuickSpec {
                     var possibleMoves: Set<Move>!
 
                     beforeEach {
-                        possibleMoves = sut.possibleMoves(from: Point(x: 0, y: 42))
+                        possibleMoves = sut.possibleMoves(from: Point(x: 20, y: 42))
                     }
 
                     it("should not be possible to move up") {
-                        expect(possibleMoves).toNot(contain([Move.up, Move.upRight, Move.upLeft]))
+                        expect(possibleMoves).toNot(contain(Move.up))
+                        expect(possibleMoves).toNot(contain(Move.upRight))
+                        expect(possibleMoves).toNot(contain(Move.upLeft))
+                    }
+
+
+                    it("should not be possible to move along sideline") {
+                        expect(possibleMoves).toNot(contain(Move.left))
+                        expect(possibleMoves).toNot(contain(Move.right))
                     }
                 }
 
@@ -70,11 +78,18 @@ class MovesValidatorSpec: QuickSpec {
                     var possibleMoves: Set<Move>!
 
                     beforeEach {
-                        possibleMoves = sut.possibleMoves(from: Point(x: 0, y: 0))
+                        possibleMoves = sut.possibleMoves(from: Point(x: 20, y: 0))
                     }
 
                     it("should not be possible to move down") {
-                        expect(possibleMoves).toNot(contain([Move.down, Move.downLeft, Move.downRight]))
+                        expect(possibleMoves).toNot(contain(Move.down))
+                        expect(possibleMoves).toNot(contain(Move.downRight))
+                        expect(possibleMoves).toNot(contain(Move.downLeft))
+                    }
+
+                    it("should not be possible to move along sideline") {
+                        expect(possibleMoves).toNot(contain(Move.left))
+                        expect(possibleMoves).toNot(contain(Move.right))
                     }
                 }
             }
