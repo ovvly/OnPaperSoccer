@@ -90,26 +90,26 @@ class MatchViewControllerSpec: QuickSpec {
                     }
                 }
 
-                context("when player 1 finished move") {
+                context("when player 1 moved") {
                     beforeEach {
-                        sut.currentPlayer = .player1
+                        sut.changePlayer(to: .player1)
 
                         sut.move(to: Point.fixture)
                     }
 
-                    it("should change player to player 2") {
+                    it("should change current player to player 2") {
                         expect(sut.currentPlayer) == .player2
                     }
                 }
 
-                context("when player 2 finished move") {
+                context("when player 2 moved") {
                     beforeEach {
-                        sut.currentPlayer = .player2
+                        sut.changePlayer(to: .player2)
 
                         sut.move(to: Point.fixture)
                     }
 
-                    it("should change player to player 1") {
+                    it("should change current player to player 1") {
                         expect(sut.currentPlayer) == .player1
                     }
                 }
@@ -129,10 +129,10 @@ class MatchViewControllerSpec: QuickSpec {
                 }
             }
 
-            describe("current player") {
-                context("when set to player 1") {
+            describe("change player") {
+                context("when changed to player 1") {
                     beforeEach {
-                        sut.currentPlayer = .player1
+                        sut.changePlayer(to: .player1)
                     }
 
                     it("should set field drawer color to red") {
@@ -140,9 +140,9 @@ class MatchViewControllerSpec: QuickSpec {
                     }
                 }
 
-                context("when set to player 2") {
+                context("when changed to player 1") {
                     beforeEach {
-                        sut.currentPlayer = .player2
+                        sut.changePlayer(to: .player2)
                     }
 
                     it("should set field drawer color to green") {

@@ -16,14 +16,7 @@ enum Player {
 class MatchViewController: UIViewController {
     @IBOutlet weak var fieldView: UIView!
 
-    var currentPlayer: Player = .player1 {
-        didSet {
-            switch currentPlayer {
-                case .player1: fieldDrawer.setLine(color: .red)
-                case .player2: fieldDrawer.setLine(color: .green)
-            }
-        }
-    }
+    private(set) var currentPlayer: Player = .player1
     private(set) var currentPosition: Point
 
     private let fieldDrawer: FieldDrawer
@@ -72,7 +65,15 @@ class MatchViewController: UIViewController {
         updateMovesPossibility()
         currentPosition = point
 
-        currentPlayer = currentPlayer.nextPlayer()
+        changePlayer(to: currentPlayer.nextPlayer())
+    }
+
+    func changePlayer(to player: Player) {
+        currentPlayer = player
+        switch currentPlayer {
+            case .player1: fieldDrawer.setLine(color: .red)
+            case .player2: fieldDrawer.setLine(color: .green)
+        }
     }
 
     //MARK: Helpers
