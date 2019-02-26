@@ -60,10 +60,10 @@ class MatchViewController: UIViewController {
 
     func move(to point: Point) {
         let line = Line(from: currentPosition, to: point)
+        currentPosition = point
         fieldDrawer.draw(line: line)
         movesValidator.setLineAsUsed(line)
         updateMovesPossibility()
-        currentPosition = point
 
         changePlayer(to: currentPlayer.nextPlayer())
     }

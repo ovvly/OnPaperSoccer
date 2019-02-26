@@ -98,8 +98,8 @@ class MovesValidatorSpec: QuickSpec {
                 var possibleMoves: Set<Move>!
 
                 beforeEach {
-                    let startingPoint = Point(x: 0, y: 0)
-                    let endingPoint = startingPoint.shifted(by: Move.upRight.vector)
+                    let startingPoint = Point(x: 5, y: 5)
+                    let endingPoint = startingPoint.shifted(by: Move.up.vector)
                     let line = Line(from: startingPoint, to: endingPoint)
                     sut.setLineAsUsed(line)
 
@@ -107,7 +107,7 @@ class MovesValidatorSpec: QuickSpec {
                 }
 
                 it("should return possible moves without that direction") {
-                    expect(possibleMoves).toNot(contain([Move.upRight]))
+                    expect(possibleMoves).toNot(contain([Move.up]))
                 }
             }
 
@@ -115,8 +115,8 @@ class MovesValidatorSpec: QuickSpec {
                 var possibleMoves: Set<Move>!
 
                 beforeEach {
-                    let startingPoint = Point(x: 1, y: 1)
-                    let endingPoint = Point(x: 0, y: 0)
+                    let startingPoint = Point(x: 5, y: 5)
+                    let endingPoint = startingPoint.shifted(by: Move.up.vector)
                     let oppositeDirectionLine = Line(from: endingPoint, to: startingPoint)
                     sut.setLineAsUsed(oppositeDirectionLine)
 
@@ -124,7 +124,7 @@ class MovesValidatorSpec: QuickSpec {
                 }
 
                 it("should return possible moves without direction pointing used line") {
-                    expect(possibleMoves).toNot(contain([Move.downLeft]))
+                    expect(possibleMoves).toNot(contain([Move.up]))
                 }
             }
         }
