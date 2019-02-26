@@ -34,6 +34,10 @@ class MatchViewControllerSpec: QuickSpec {
                 it("should have current position set to middle of field size") {
                     expect(sut.currentPosition) == Point(x: 21, y: 21)
                 }
+                
+                it("should have current player set as 1") {
+                    expect(sut.currentPlayer) == .player1    
+                }
             }
 
             describe("move to") {

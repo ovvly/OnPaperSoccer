@@ -1,9 +1,15 @@
 import UIKit
 import RxSwift
 
+enum Player {
+    case player1
+    case player2
+}
+
 class MatchViewController: UIViewController {
     @IBOutlet weak var fieldView: UIView!
 
+    var currentPlayer: Player = .player1
     private(set) var currentPosition: Point
 
     private let fieldDrawer: FieldDrawer
@@ -37,7 +43,7 @@ class MatchViewController: UIViewController {
 
         movesController.moves
             .subscribe(onNext: { [unowned self] move in
-                self.currentPosition = self.currentPosition.shifted(by: move.vector)
+                self.move(to: self.currentPosition.shifted(by: move.vector))
             })
             .disposed(by: disposeBag)
 
