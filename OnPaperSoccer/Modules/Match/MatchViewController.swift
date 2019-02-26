@@ -4,14 +4,7 @@ import RxSwift
 class MatchViewController: UIViewController {
     @IBOutlet weak var fieldView: UIView!
 
-    var currentPosition: Point {
-        didSet {
-            let line = Line(from: oldValue, to: currentPosition)
-            fieldDrawer.draw(line: line)
-            movesValidator.setLineAsUsed(line)
-            updateMovesPossibility()
-        }
-    }
+    private(set) var currentPosition: Point
 
     private let fieldDrawer: FieldDrawer
     private let movesController: MovesController
@@ -48,6 +41,16 @@ class MatchViewController: UIViewController {
             })
             .disposed(by: disposeBag)
 
+    }
+
+    //MARK: Actions
+
+    func move(to point: Point) {
+        let line = Line(from: currentPosition, to: point)
+        fieldDrawer.draw(line: line)
+        movesValidator.setLineAsUsed(line)
+        updateMovesPossibility()
+        currentPosition = point
     }
 
     //MARK: Helpers

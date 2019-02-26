@@ -36,11 +36,23 @@ class MatchViewControllerSpec: QuickSpec {
                 }
             }
 
-            describe("current position changes") {
+            describe("move to") {
+                describe("current position") {
+                    beforeEach {
+                        sut.move(to: Point(x: 0, y: 0))
+
+                        sut.move(to: Point(x: 10, y: 10))
+                    }
+                    it("should be set correctly") {
+                        expect(sut.currentPosition) == Point(x: 10, y: 10)
+                    }
+                }
+
                 describe("possible moves") {
                     beforeEach {
                         movesValidatorSpy.possibleMoves = [.up, .down, .left]
-                        sut.currentPosition = Point(x: 10, y: 10)
+
+                        sut.move(to: Point(x: 10, y: 10))
                     }
 
                     it("should be updated") {
@@ -51,9 +63,9 @@ class MatchViewControllerSpec: QuickSpec {
                 describe("field drawer") {
                     context("when current position changes twice") {
                         beforeEach {
-                            sut.currentPosition = Point(x: 10, y: 10)
+                            sut.move(to: Point(x: 10, y: 10))
 
-                            sut.currentPosition = Point(x: 20, y: 20)
+                            sut.move(to: Point(x: 20, y: 20))
                         }
 
                         it("should draw line from old to new position") {
@@ -65,9 +77,9 @@ class MatchViewControllerSpec: QuickSpec {
                 
                 describe("line from current position to new position") {
                     beforeEach {
-                        sut.currentPosition = Point(x: 10, y: 10)
+                        sut.move(to: Point(x: 10, y: 10))
 
-                        sut.currentPosition = Point(x: 20, y: 20)
+                        sut.move(to: Point(x: 20, y: 20))
                     }
                     it("should be marked as used") {
                         expect(movesValidatorSpy.capturedUsedLine) == Line(from: Point(x: 10, y: 10), to: Point(x: 20, y: 20))
@@ -78,12 +90,12 @@ class MatchViewControllerSpec: QuickSpec {
             describe("moves") {
                 context("when moves controller emits move") {
                     beforeEach {
-                        sut.currentPosition = Point(x: 0, y: 0)
+                        sut.move(to: Point(x: 0, y: 0))
 
                         movesControllerSpy.movesSubject.onNext(.downRight)
                     }
 
-                    it("should apply move vector to current position") {
+                    it("should move in emitted direction") {
                         expect(sut.currentPosition) == Point(x: 1, y: -1)
                     }
                 }
