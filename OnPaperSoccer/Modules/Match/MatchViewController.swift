@@ -4,12 +4,26 @@ import RxSwift
 enum Player {
     case player1
     case player2
+
+    func nextPlayer() -> Player {
+        switch self {
+            case .player1: return .player2
+            case .player2: return .player1
+        }
+    }
 }
 
 class MatchViewController: UIViewController {
     @IBOutlet weak var fieldView: UIView!
 
-    var currentPlayer: Player = .player1
+    var currentPlayer: Player = .player1 {
+        didSet {
+            switch currentPlayer {
+                case .player1: fieldDrawer.setLine(color: .red)
+                case .player2: fieldDrawer.setLine(color: .green)
+            }
+        }
+    }
     private(set) var currentPosition: Point
 
     private let fieldDrawer: FieldDrawer
@@ -57,6 +71,8 @@ class MatchViewController: UIViewController {
         movesValidator.setLineAsUsed(line)
         updateMovesPossibility()
         currentPosition = point
+
+        currentPlayer = currentPlayer.nextPlayer()
     }
 
     //MARK: Helpers

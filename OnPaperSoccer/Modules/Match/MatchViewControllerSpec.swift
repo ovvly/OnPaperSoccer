@@ -89,6 +89,30 @@ class MatchViewControllerSpec: QuickSpec {
                         expect(movesValidatorSpy.capturedUsedLine) == Line(from: Point(x: 10, y: 10), to: Point(x: 20, y: 20))
                     }
                 }
+
+                context("when player 1 finished move") {
+                    beforeEach {
+                        sut.currentPlayer = .player1
+
+                        sut.move(to: Point.fixture)
+                    }
+
+                    it("should change player to player 2") {
+                        expect(sut.currentPlayer) == .player2
+                    }
+                }
+
+                context("when player 2 finished move") {
+                    beforeEach {
+                        sut.currentPlayer = .player2
+
+                        sut.move(to: Point.fixture)
+                    }
+
+                    it("should change player to player 1") {
+                        expect(sut.currentPlayer) == .player1
+                    }
+                }
             }
 
             describe("moves") {
@@ -104,11 +128,34 @@ class MatchViewControllerSpec: QuickSpec {
                     }
                 }
             }
+
+            describe("current player") {
+                context("when set to player 1") {
+                    beforeEach {
+                        sut.currentPlayer = .player1
+                    }
+
+                    it("should set field drawer color to red") {
+                        expect(fieldDrawerSpy.capturedLineColor) == .red
+                    }
+                }
+
+                context("when set to player 2") {
+                    beforeEach {
+                        sut.currentPlayer = .player2
+                    }
+
+                    it("should set field drawer color to green") {
+                        expect(fieldDrawerSpy.capturedLineColor) == .green
+                    }
+                }
+            }
         }
     }
 }
 
 private class FieldDrawerSpy: FieldDrawer {
+    var capturedLineColor: UIColor? = nil
     var capturedLine: Line? = nil
     var didDrawNewField = false
     var viewController = UIViewController()
@@ -119,6 +166,10 @@ private class FieldDrawerSpy: FieldDrawer {
 
     func draw(line: Line) {
         capturedLine = line
+    }
+
+    func setLine(color: UIColor) {
+        capturedLineColor = color
     }
 }
 
