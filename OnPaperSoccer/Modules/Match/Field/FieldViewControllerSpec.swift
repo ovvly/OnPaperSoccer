@@ -34,6 +34,18 @@ class FieldViewControllerSpec: QuickSpec {
                     expect(sut.view).to(haveValidSnapshot())
                 }
             }
+
+            describe("change line color") {
+                beforeEach {
+                    sut.drawNewField()
+                    sut.changeLineColor(to: .brown)
+                    sut.draw(line: Line.fixture)
+                }
+
+                it("should have valid snapshot") {
+                    expect(sut.view).to(haveValidSnapshot())
+                }
+            }
         }
     }
 }

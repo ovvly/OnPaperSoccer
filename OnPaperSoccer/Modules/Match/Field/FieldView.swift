@@ -10,6 +10,9 @@ final class FieldView: UIView {
     private var isFieldDrawn = false
     private var lineToDraw: Line?
     private var drawImage: CGImage?
+    private var currentColor: UIColor = .blue
+
+    //MARK: Lifecycle
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -35,6 +38,8 @@ final class FieldView: UIView {
         }
     }
 
+    //MARK: Actions
+
     func drawNewField(width: Int, height: Int) {
         numberOfRows = height
         numberOfColumns = width
@@ -43,10 +48,16 @@ final class FieldView: UIView {
         setNeedsDisplay()
     }
 
+    func changeLineColor(to color: UIColor) {
+        currentColor = color
+    }
+
     func draw(line: Line) {
         lineToDraw = line
         setNeedsDisplay()
     }
+
+    //MARK: Helpers
 
     private func drawField() {
         let spacing = calculateSpacing()
@@ -107,7 +118,7 @@ final class FieldView: UIView {
         path.addLine(to: endPoint)
 
         path.close()
-        UIColor.blue.setStroke()
+        currentColor.setStroke()
         path.stroke()
     }
 }

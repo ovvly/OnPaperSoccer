@@ -4,7 +4,7 @@ import CoreGraphics
 protocol FieldDrawer: WithViewController {
     func drawNewField()
     func draw(line: Line)
-    func setLine(color: UIColor)
+    func changeLineColor(to color: UIColor)
 }
 
 class FieldViewController: UIViewController, FieldDrawer {
@@ -43,7 +43,7 @@ class FieldViewController: UIViewController, FieldDrawer {
         castView.drawNewField(width: fieldWidth, height: fieldHeight)
     }
 
-    func setLine(color: UIColor) {
-
+    func changeLineColor(to color: UIColor) {
+        castView.changeLineColor(to: color)
     }
 }

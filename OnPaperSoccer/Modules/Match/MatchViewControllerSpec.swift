@@ -135,8 +135,8 @@ class MatchViewControllerSpec: QuickSpec {
                         sut.changePlayer(to: .player1)
                     }
 
-                    it("should set field drawer color to red") {
-                        expect(fieldDrawerSpy.capturedLineColor) == .red
+                    it("should set field drawer color to blue") {
+                        expect(fieldDrawerSpy.capturedLineColor) == .blue
                     }
                 }
 
@@ -168,7 +168,7 @@ private class FieldDrawerSpy: FieldDrawer {
         capturedLine = line
     }
 
-    func setLine(color: UIColor) {
+    func changeLineColor(to color: UIColor) {
         capturedLineColor = color
     }
 }

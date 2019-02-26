@@ -71,8 +71,8 @@ class MatchViewController: UIViewController {
     func changePlayer(to player: Player) {
         currentPlayer = player
         switch currentPlayer {
-            case .player1: fieldDrawer.setLine(color: .red)
-            case .player2: fieldDrawer.setLine(color: .green)
+            case .player1: fieldDrawer.changeLineColor(to: .blue)
+            case .player2: fieldDrawer.changeLineColor(to: .green)
         }
     }
 
