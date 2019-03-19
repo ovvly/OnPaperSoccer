@@ -53,7 +53,6 @@ class MatchViewController: UIViewController {
                 self.move(to: self.currentPosition.shifted(by: move.vector))
             })
             .disposed(by: disposeBag)
-
     }
 
     //MARK: Actions
@@ -61,7 +60,7 @@ class MatchViewController: UIViewController {
     func move(to point: Point) {
         let line = Line(from: currentPosition, to: point)
         currentPosition = point
-        fieldDrawer.draw(line: line)
+        fieldDrawer.draw(line: line, color: currentPlayer.color)
         movesValidator.setLineAsUsed(line)
         updateMovesPossibility()
 
@@ -70,10 +69,6 @@ class MatchViewController: UIViewController {
 
     func changePlayer(to player: Player) {
         currentPlayer = player
-        switch currentPlayer {
-            case .player1: fieldDrawer.changeLineColor(to: .blue)
-            case .player2: fieldDrawer.changeLineColor(to: .green)
-        }
     }
 
     //MARK: Helpers
@@ -81,5 +76,14 @@ class MatchViewController: UIViewController {
     private func updateMovesPossibility() {
         let possibleMoves = movesValidator.possibleMoves(from: currentPosition)
         movesController.updateMovesPossibility(possibleMoves)
+    }
+}
+
+private extension Player {
+    var color: UIColor {
+        switch self {
+            case .player1: return .blue
+            case .player2: return .green
+        }
     }
 }

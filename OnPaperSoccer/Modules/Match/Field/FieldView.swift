@@ -9,8 +9,8 @@ final class FieldView: UIView {
 
     private var isFieldDrawn = false
     private var lineToDraw: Line?
+    private var colorToDraw: UIColor = .black
     private var drawImage: CGImage?
-    private var currentColor: UIColor = .blue
 
     //MARK: Lifecycle
 
@@ -48,12 +48,9 @@ final class FieldView: UIView {
         setNeedsDisplay()
     }
 
-    func changeLineColor(to color: UIColor) {
-        currentColor = color
-    }
-
-    func draw(line: Line) {
+    func draw(line: Line, color: UIColor) {
         lineToDraw = line
+        colorToDraw = color
         setNeedsDisplay()
     }
 
@@ -108,6 +105,7 @@ final class FieldView: UIView {
     private func drawLine(from start: Point, to end: Point) {
         let path = UIBezierPath()
         path.lineWidth = 3
+        colorToDraw.setStroke()
 
         let spacing = calculateSpacing()
         let shiftVector = calculateShiftVector(spacing: spacing)
@@ -118,7 +116,6 @@ final class FieldView: UIView {
         path.addLine(to: endPoint)
 
         path.close()
-        currentColor.setStroke()
         path.stroke()
     }
 }

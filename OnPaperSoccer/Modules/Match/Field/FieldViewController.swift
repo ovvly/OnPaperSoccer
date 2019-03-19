@@ -3,8 +3,7 @@ import CoreGraphics
 
 protocol FieldDrawer: WithViewController {
     func drawNewField()
-    func draw(line: Line)
-    func changeLineColor(to color: UIColor)
+    func draw(line: Line, color: UIColor)
 }
 
 class FieldViewController: UIViewController, FieldDrawer {
@@ -35,15 +34,11 @@ class FieldViewController: UIViewController, FieldDrawer {
 
     // MARK: Actions
 
-    func draw(line: Line) {
-        castView.draw(line: line)
+    func draw(line: Line, color: UIColor) {
+        castView.draw(line: line, color: color)
     }
 
     func drawNewField() {
         castView.drawNewField(width: fieldWidth, height: fieldHeight)
-    }
-
-    func changeLineColor(to color: UIColor) {
-        castView.changeLineColor(to: color)
     }
 }

@@ -68,6 +68,7 @@ class MatchViewControllerSpec: QuickSpec {
                     context("when current position changes twice") {
                         beforeEach {
                             sut.move(to: Point(x: 10, y: 10))
+                            sut.changePlayer(to: .player1)
 
                             sut.move(to: Point(x: 20, y: 20))
                         }
@@ -75,6 +76,10 @@ class MatchViewControllerSpec: QuickSpec {
                         it("should draw line from old to new position") {
                             expect(fieldDrawerSpy.capturedLine?.from) == Point(x: 10, y: 10)
                             expect(fieldDrawerSpy.capturedLine?.to) == Point(x: 20, y: 20)
+                        }
+
+                        it("should draw line of current player color") {
+                            expect(fieldDrawerSpy.capturedLineColor) == UIColor.blue
                         }
                     }
                 }
@@ -128,28 +133,6 @@ class MatchViewControllerSpec: QuickSpec {
                     }
                 }
             }
-
-            describe("change player") {
-                context("when changed to player 1") {
-                    beforeEach {
-                        sut.changePlayer(to: .player1)
-                    }
-
-                    it("should set field drawer color to blue") {
-                        expect(fieldDrawerSpy.capturedLineColor) == .blue
-                    }
-                }
-
-                context("when changed to player 1") {
-                    beforeEach {
-                        sut.changePlayer(to: .player2)
-                    }
-
-                    it("should set field drawer color to green") {
-                        expect(fieldDrawerSpy.capturedLineColor) == .green
-                    }
-                }
-            }
         }
     }
 }
@@ -164,11 +147,8 @@ private class FieldDrawerSpy: FieldDrawer {
         didDrawNewField = true
     }
 
-    func draw(line: Line) {
+    func draw(line: Line, color: UIColor) {
         capturedLine = line
-    }
-
-    func changeLineColor(to color: UIColor) {
         capturedLineColor = color
     }
 }

@@ -27,7 +27,7 @@ class FieldViewControllerSpec: QuickSpec {
             describe("draw line") {
                 beforeEach {
                     sut.drawNewField()
-                    sut.draw(line: Line.fixture)
+                    sut.draw(line: Line.fixture, color: .yellow)
                 }
 
                 it("should have valid snapshot") {
@@ -35,11 +35,11 @@ class FieldViewControllerSpec: QuickSpec {
                 }
             }
 
-            describe("change line color") {
+            describe("draw 2 line with different colors") {
                 beforeEach {
                     sut.drawNewField()
-                    sut.changeLineColor(to: .brown)
-                    sut.draw(line: Line.fixture)
+                    sut.draw(line: Line.fixture, color: .brown)
+                    sut.draw(line: Line.fixture2, color: .purple)
                 }
 
                 it("should have valid snapshot") {
@@ -54,6 +54,12 @@ extension Line {
     static var fixture: Line {
         let fromPoint = Point(x: 1, y: 1)
         let toPoint = Point(x: 2, y: 2)
+        return Line(from: fromPoint, to: toPoint)
+    }
+
+    static var fixture2: Line {
+        let fromPoint = Point(x: 2, y: 2)
+        let toPoint = Point(x: 2, y: 3)
         return Line(from: fromPoint, to: toPoint)
     }
 }
