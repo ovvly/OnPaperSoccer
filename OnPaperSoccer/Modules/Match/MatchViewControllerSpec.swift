@@ -43,12 +43,19 @@ class MatchViewControllerSpec: QuickSpec {
             describe("move to") {
                 describe("current position") {
                     beforeEach {
+                        //FIXME: calling move makes many side effects which makes tests fails
+                        //TODO: simplify set up by extracting move logic to separate objects
                         sut.move(to: Point(x: 0, y: 0))
 
                         sut.move(to: Point(x: 10, y: 10))
                     }
+                    
                     it("should be set correctly") {
                         expect(sut.currentPosition) == Point(x: 10, y: 10)
+                    }
+
+                    it("should set end point as used") {
+                        expect(sut.usedPoints).to(contain(Point(x: 10, y: 10)))
                     }
                 }
 
@@ -67,10 +74,16 @@ class MatchViewControllerSpec: QuickSpec {
                 describe("field drawer") {
                     context("when current position changes twice") {
                         beforeEach {
+                            sut.changePlayer(to: .player2)
                             sut.move(to: Point(x: 10, y: 10))
                             sut.changePlayer(to: .player1)
 
                             sut.move(to: Point(x: 20, y: 20))
+                        }
+                        
+                        
+                        it("should update line color to current player") {
+                            expect(fieldDrawerSpy.capturedLineColor) == .blue
                         }
 
                         it("should draw line from old to new position") {
@@ -96,26 +109,44 @@ class MatchViewControllerSpec: QuickSpec {
                 }
 
                 context("when player 1 moved") {
-                    beforeEach {
-                        sut.changePlayer(to: .player1)
 
-                        sut.move(to: Point.fixture)
+                    context("when end point is used") {
+                        beforeEach {
+                            sut.changePlayer(to: .player1)
+                            sut.setPointAsUsed(Point.fixture)
+
+                            sut.move(to: Point.fixture)
+                        }
+
+                        it("should NOT change player") {
+                            expect(sut.currentPlayer) == .player1
+                        }
                     }
 
-                    it("should change current player to player 2") {
-                        expect(sut.currentPlayer) == .player2
+                    context("when end point is not used") {
+                        beforeEach {
+                            sut.changePlayer(to: .player1)
+
+                            sut.move(to: Point.fixture)
+                        }
+
+                        it("should change current player to player 2") {
+                            expect(sut.currentPlayer) == .player2
+                        }
                     }
                 }
 
                 context("when player 2 moved") {
-                    beforeEach {
-                        sut.changePlayer(to: .player2)
+                    context("when end point is not used") {
+                        beforeEach {
+                            sut.changePlayer(to: .player2)
 
-                        sut.move(to: Point.fixture)
-                    }
+                            sut.move(to: Point.fixture)
+                        }
 
-                    it("should change current player to player 1") {
-                        expect(sut.currentPlayer) == .player1
+                        it("should change current player to player 1") {
+                            expect(sut.currentPlayer) == .player1
+                        }
                     }
                 }
             }

@@ -22,6 +22,7 @@ class MatchViewController: UIViewController {
     private let fieldDrawer: FieldDrawer
     private let movesController: MovesController
     private var movesValidator: MovesValidator
+    private(set) var usedPoints = Set<Point>()
     private let disposeBag = DisposeBag()
 
     // MARK: Init
@@ -64,7 +65,10 @@ class MatchViewController: UIViewController {
         movesValidator.setLineAsUsed(line)
         updateMovesPossibility()
 
-        changePlayer(to: currentPlayer.nextPlayer())
+        if !usedPoints.contains(point) {
+            changePlayer(to: currentPlayer.nextPlayer())
+        }
+        setPointAsUsed(point)
     }
 
     func changePlayer(to player: Player) {
@@ -76,6 +80,10 @@ class MatchViewController: UIViewController {
     private func updateMovesPossibility() {
         let possibleMoves = movesValidator.possibleMoves(from: currentPosition)
         movesController.updateMovesPossibility(possibleMoves)
+    }
+
+    func setPointAsUsed(_ point: Point) {
+        usedPoints.insert(point)
     }
 }
 
