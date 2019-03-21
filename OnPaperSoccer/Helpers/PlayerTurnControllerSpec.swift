@@ -9,7 +9,7 @@ class TurnControllerSpec: QuickSpec {
         describe("DefaultPlayerTurnController") {
             var sut: DefaultPlayerTurnController!
             beforeEach {
-                sut = DefaultPlayerTurnController()
+                sut = DefaultPlayerTurnController(fieldWidth: 42, fieldHeight: 42)
             }
 
             describe("moved to point") {
@@ -20,7 +20,7 @@ class TurnControllerSpec: QuickSpec {
 
                     context("when moving to not visited point") {
                         beforeEach {
-                            sut.moved(to: Point.fixture)
+                            sut.moved(to: Point(x: 10, y: 10))
                         }
 
                         it("should change current player to player 2") {
@@ -48,7 +48,7 @@ class TurnControllerSpec: QuickSpec {
 
                     context("when moving to not visited point") {
                         beforeEach {
-                            sut.moved(to: Point.fixture)
+                            sut.moved(to: Point(x: 10, y: 10))
                         }
 
                         it("should change current player to player 1") {
@@ -58,9 +58,9 @@ class TurnControllerSpec: QuickSpec {
 
                     context("when moving to visited point") {
                         beforeEach {
-                            sut.visitedPoints = [Point.fixture]
+                            sut.visitedPoints = [Point(x: 10, y: 10)]
 
-                            sut.moved(to: Point.fixture)
+                            sut.moved(to: Point(x: 10, y: 10))
                         }
 
                         it("should have player 2 as current player") {
@@ -79,6 +79,46 @@ class TurnControllerSpec: QuickSpec {
 
                     it("should NOT change current player") {
                         expect(sut.currentPlayer) == .player2
+                    }
+                }
+
+                context("when moving to left border point") {
+                    beforeEach {
+                        sut.moved(to: Point(x: 0, y: 42))
+                    }
+
+                    it("should NOT change current player") {
+                        expect(sut.currentPlayer) == .player1
+                    }
+                }
+
+                context("when moving to right border point") {
+                    beforeEach {
+                        sut.moved(to: Point(x: 41, y: 21))
+                    }
+
+                    it("should NOT change current player") {
+                        expect(sut.currentPlayer) == .player1
+                    }
+                }
+
+                context("when moving to top border point") {
+                    beforeEach {
+                        sut.moved(to: Point(x: 21, y: 41))
+                    }
+
+                    it("should NOT change current player") {
+                        expect(sut.currentPlayer) == .player1
+                    }
+                }
+
+                context("when moving to bottom border point") {
+                    beforeEach {
+                        sut.moved(to: Point(x: 21, y: 0))
+                    }
+
+                    it("should NOT change current player") {
+                        expect(sut.currentPlayer) == .player1
                     }
                 }
             }
