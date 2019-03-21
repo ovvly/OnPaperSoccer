@@ -16,16 +16,18 @@ class MatchViewController: UIViewController {
 
     init(fieldDrawer: FieldDrawer,
          movesController: MovesController,
-         turnController: PlayerTurnController,
+         playerTurnController: PlayerTurnController,
          movesValidator: MovesValidator,
          fieldWidth: Int, fieldHeight: Int) {
         self.fieldDrawer = fieldDrawer
         self.movesController = movesController
-        self.turnController = turnController
+        self.turnController = playerTurnController
         self.movesValidator = movesValidator
         self.currentPosition = Point(x: fieldWidth / 2, y: fieldHeight / 2)
 
         super.init(nibName: nil, bundle: nil)
+
+        playerTurnController.set(startingPoint: currentPosition)
     }
 
     required init?(coder aDecoder: NSCoder) {

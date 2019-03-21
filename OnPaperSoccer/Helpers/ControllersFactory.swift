@@ -11,7 +11,7 @@ final class ControllersFactory {
         let movesValidator = DefaultMovesValidator(fieldWidth: fieldWidth, fieldHeight: fieldHeight)
         return MatchViewController(fieldDrawer: fieldViewController,
             movesController: movesViewController,
-            turnController: turnController,
+            playerTurnController: turnController,
             movesValidator: movesValidator,
             fieldWidth: fieldWidth, fieldHeight: fieldHeight)
     }

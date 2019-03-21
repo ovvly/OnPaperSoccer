@@ -68,6 +68,19 @@ class TurnControllerSpec: QuickSpec {
                         }
                     }
                 }
+
+                context("when moving to starting point") {
+                    beforeEach {
+                        sut.set(startingPoint: Point.fixture)
+                        sut.currentPlayer = .player2
+
+                        sut.moved(to: Point.fixture)
+                    }
+
+                    it("should NOT change current player") {
+                        expect(sut.currentPlayer) == .player2
+                    }
+                }
             }
         }
     }

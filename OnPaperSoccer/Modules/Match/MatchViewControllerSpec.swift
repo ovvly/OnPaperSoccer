@@ -22,7 +22,7 @@ class MatchViewControllerSpec: QuickSpec {
                 movesValidatorSpy = MovesValidatorSpy()
                 sut = MatchViewController(fieldDrawer: fieldDrawerSpy,
                     movesController: movesControllerSpy,
-                    turnController: turnControllerSpy,
+                    playerTurnController: turnControllerSpy,
                     movesValidator: movesValidatorSpy,
                     fieldWidth: 42, fieldHeight: 43)
                 _ = sut.view
@@ -39,6 +39,10 @@ class MatchViewControllerSpec: QuickSpec {
 
                 it("should have current position set to middle of field size") {
                     expect(sut.currentPosition) == Point(x: 21, y: 21)
+                }
+
+                it("should set starting point in player turn controller") {
+                    expect(turnControllerSpy.capturedStartingPoint) == Point(x: 21, y: 21)
                 }
             }
 
@@ -140,9 +144,14 @@ private class MovesControllerSpy: MovesController {
 private class TurnControllerSpy: PlayerTurnController {
     var currentPlayer: Player = .player1
     var capturedPoint: Point? = nil
+    var capturedStartingPoint: Point? = nil
 
     func moved(to point: Point) {
         capturedPoint = point
+    }
+
+    func set(startingPoint: Point) {
+        capturedStartingPoint = startingPoint
     }
 }
 
