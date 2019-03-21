@@ -11,14 +11,20 @@ class MatchViewControllerSpec: QuickSpec {
 
             var fieldDrawerSpy: FieldDrawerSpy!
             var movesControllerSpy: MovesControllerSpy!
+            var turnControllerSpy: TurnControllerSpy!
             var movesValidatorSpy: MovesValidatorSpy!
             var sut: MatchViewController!
 
             beforeEach {
                 fieldDrawerSpy = FieldDrawerSpy()
                 movesControllerSpy = MovesControllerSpy()
+                turnControllerSpy = TurnControllerSpy()
                 movesValidatorSpy = MovesValidatorSpy()
-                sut = MatchViewController(fieldDrawer: fieldDrawerSpy, movesController: movesControllerSpy, movesValidator: movesValidatorSpy, fieldWidth: 42, fieldHeight: 43)
+                sut = MatchViewController(fieldDrawer: fieldDrawerSpy,
+                    movesController: movesControllerSpy,
+                    turnController: turnControllerSpy,
+                    movesValidator: movesValidatorSpy,
+                    fieldWidth: 42, fieldHeight: 43)
                 _ = sut.view
             }
             
@@ -34,38 +40,25 @@ class MatchViewControllerSpec: QuickSpec {
                 it("should have current position set to middle of field size") {
                     expect(sut.currentPosition) == Point(x: 21, y: 21)
                 }
-                
-                it("should have current player set as 1") {
-                    expect(sut.currentPlayer) == .player1    
-                }
             }
 
             describe("move to") {
                 describe("current position") {
                     beforeEach {
-                        //FIXME: calling move makes many side effects which makes tests fails
-                        //TODO: simplify set up by extracting move logic to separate objects
-                        sut.move(to: Point(x: 0, y: 0))
-
                         sut.move(to: Point(x: 10, y: 10))
                     }
-                    
                     it("should be set correctly") {
                         expect(sut.currentPosition) == Point(x: 10, y: 10)
                     }
-
-                    it("should set end point as used") {
-                        expect(sut.usedPoints).to(contain(Point(x: 10, y: 10)))
+                    it("should inform turn controller about move") {
+                        expect(turnControllerSpy.capturedPoint) == Point(x: 10, y: 10)
                     }
                 }
-
                 describe("possible moves") {
                     beforeEach {
                         movesValidatorSpy.possibleMoves = [.up, .down, .left]
-
                         sut.move(to: Point(x: 10, y: 10))
                     }
-
                     it("should be updated") {
                         expect(movesControllerSpy.capturedPossibleMoves) == [.up, .down, .left]
                     }
@@ -74,79 +67,28 @@ class MatchViewControllerSpec: QuickSpec {
                 describe("field drawer") {
                     context("when current position changes twice") {
                         beforeEach {
-                            sut.changePlayer(to: .player2)
-                            sut.move(to: Point(x: 10, y: 10))
-                            sut.changePlayer(to: .player1)
+                            turnControllerSpy.currentPlayer = .player2
 
+                            sut.move(to: Point(x: 10, y: 10))
                             sut.move(to: Point(x: 20, y: 20))
                         }
-                        
-                        
-                        it("should update line color to current player") {
-                            expect(fieldDrawerSpy.capturedLineColor) == .blue
-                        }
-
                         it("should draw line from old to new position") {
                             expect(fieldDrawerSpy.capturedLine?.from) == Point(x: 10, y: 10)
                             expect(fieldDrawerSpy.capturedLine?.to) == Point(x: 20, y: 20)
                         }
-
-                        it("should draw line of current player color") {
-                            expect(fieldDrawerSpy.capturedLineColor) == UIColor.blue
+                        it("should draw line with current player color") {
+                            expect(fieldDrawerSpy.capturedLineColor) == Player.player2.color
                         }
                     }
                 }
-                
+
                 describe("line from current position to new position") {
                     beforeEach {
                         sut.move(to: Point(x: 10, y: 10))
-
                         sut.move(to: Point(x: 20, y: 20))
                     }
                     it("should be marked as used") {
                         expect(movesValidatorSpy.capturedUsedLine) == Line(from: Point(x: 10, y: 10), to: Point(x: 20, y: 20))
-                    }
-                }
-
-                context("when player 1 moved") {
-
-                    context("when end point is used") {
-                        beforeEach {
-                            sut.changePlayer(to: .player1)
-                            sut.setPointAsUsed(Point.fixture)
-
-                            sut.move(to: Point.fixture)
-                        }
-
-                        it("should NOT change player") {
-                            expect(sut.currentPlayer) == .player1
-                        }
-                    }
-
-                    context("when end point is not used") {
-                        beforeEach {
-                            sut.changePlayer(to: .player1)
-
-                            sut.move(to: Point.fixture)
-                        }
-
-                        it("should change current player to player 2") {
-                            expect(sut.currentPlayer) == .player2
-                        }
-                    }
-                }
-
-                context("when player 2 moved") {
-                    context("when end point is not used") {
-                        beforeEach {
-                            sut.changePlayer(to: .player2)
-
-                            sut.move(to: Point.fixture)
-                        }
-
-                        it("should change current player to player 1") {
-                            expect(sut.currentPlayer) == .player1
-                        }
                     }
                 }
             }
@@ -192,6 +134,15 @@ private class MovesControllerSpy: MovesController {
     var moves: Observable<Move> { return movesSubject.asObservable() }
     func updateMovesPossibility(_ moves: Set<Move>) {
         capturedPossibleMoves = moves
+    }
+}
+
+private class TurnControllerSpy: PlayerTurnController {
+    var currentPlayer: Player = .player1
+    var capturedPoint: Point? = nil
+
+    func moved(to point: Point) {
+        capturedPoint = point
     }
 }
 

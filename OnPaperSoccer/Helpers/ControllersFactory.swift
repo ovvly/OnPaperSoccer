@@ -6,9 +6,13 @@ final class ControllersFactory {
         let fieldHeight = 11
 
         let movesViewController = MovesViewController()
+        let turnController = DefaultPlayerTurnController()
         let fieldViewController = FieldViewController(fieldWidth: fieldWidth, fieldHeight: fieldHeight)
         let movesValidator = DefaultMovesValidator(fieldWidth: fieldWidth, fieldHeight: fieldHeight)
-        return MatchViewController(fieldDrawer: fieldViewController, movesController: movesViewController,
-            movesValidator: movesValidator, fieldWidth: fieldWidth, fieldHeight: fieldHeight)
+        return MatchViewController(fieldDrawer: fieldViewController,
+            movesController: movesViewController,
+            turnController: turnController,
+            movesValidator: movesValidator,
+            fieldWidth: fieldWidth, fieldHeight: fieldHeight)
     }
 }

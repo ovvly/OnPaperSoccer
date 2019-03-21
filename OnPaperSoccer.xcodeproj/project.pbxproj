@@ -26,8 +26,11 @@
 		AA24B2F3C919EEC95E187E86 /* FieldViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B13D18BFBF3DDCDC0F91 /* FieldViewControllerSpec.swift */; };
 		AA24B4171DFA4220F577787F /* Point+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BC0B623729163EC253E7 /* Point+Fixture.swift */; };
 		AA24B42B6DE4E267CAB7CFAD /* MovesViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B4F322735060BBE4226E /* MovesViewControllerSpec.swift */; };
+		AA24B4B4A793D3B2FF4D0D6E /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BD2C9FBB272298F04DC4 /* Player.swift */; };
 		AA24B4FFA5A98FA1002F8BE1 /* ControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BCB1E19522BE044C014E /* ControllersFactory.swift */; };
 		AA24B6302B864E0EE4257AA3 /* MatchViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B240A48A18440B46E320 /* MatchViewControllerSpec.swift */; };
+		AA24B696C655F461F39434E4 /* UIColor+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BB10F9C1929C5A53998D /* UIColor+Fixture.swift */; };
+		AA24B7130118B052140EC799 /* PlayerTurnControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B77DCFCFB2BA9F8CC272 /* PlayerTurnControllerSpec.swift */; };
 		AA24B7F2356C873ECB235CBD /* UIButton+Specs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B1B708C98F1A574B73A2 /* UIButton+Specs.swift */; };
 		AA24B801CF942F9DB6416223 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B05A388611DD00323809 /* Vector.swift */; };
 		AA24B896F14743827284DDCB /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BEE8D0DE024FC81EBD3A /* Move.swift */; };
@@ -35,6 +38,7 @@
 		AA24B9D40713DEC4441E3456 /* CoreGraphics+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B10771B109B53597B92F /* CoreGraphics+Extensions.swift */; };
 		AA24BB0EB5F03F92D472BEDA /* MovesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B5092F1425DDB1948782 /* MovesViewController.swift */; };
 		AA24BBD836740507532F5610 /* MovesValidatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B89C3CD561A829494264 /* MovesValidatorSpec.swift */; };
+		AA24BE4D7DBC4D7FEB821CBC /* PlayerTurnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B06D05D5533EA3B990A2 /* PlayerTurnController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,7 @@
 		2CB51B0B202CDC96009C3B71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B84FDFCEC62331B26D25449 /* Pods_OnPaperSoccer_OnPaperSoccerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnPaperSoccer_OnPaperSoccerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA24B05A388611DD00323809 /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
+		AA24B06D05D5533EA3B990A2 /* PlayerTurnController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTurnController.swift; sourceTree = "<group>"; };
 		AA24B10771B109B53597B92F /* CoreGraphics+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreGraphics+Extensions.swift"; sourceTree = "<group>"; };
 		AA24B13D18BFBF3DDCDC0F91 /* FieldViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldViewControllerSpec.swift; sourceTree = "<group>"; };
 		AA24B1B708C98F1A574B73A2 /* UIButton+Specs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Specs.swift"; sourceTree = "<group>"; };
@@ -76,10 +81,13 @@
 		AA24B25C83A75A67DF1244E5 /* WithViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithViewController.swift; sourceTree = "<group>"; };
 		AA24B4F322735060BBE4226E /* MovesViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesViewControllerSpec.swift; sourceTree = "<group>"; };
 		AA24B5092F1425DDB1948782 /* MovesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesViewController.swift; sourceTree = "<group>"; };
+		AA24B77DCFCFB2BA9F8CC272 /* PlayerTurnControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTurnControllerSpec.swift; sourceTree = "<group>"; };
 		AA24B89C3CD561A829494264 /* MovesValidatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesValidatorSpec.swift; sourceTree = "<group>"; };
 		AA24BA9C383BCEDACB8CD8E5 /* MovesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovesViewController.xib; sourceTree = "<group>"; };
+		AA24BB10F9C1929C5A53998D /* UIColor+Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Fixture.swift"; sourceTree = "<group>"; };
 		AA24BC0B623729163EC253E7 /* Point+Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Point+Fixture.swift"; sourceTree = "<group>"; };
 		AA24BCB1E19522BE044C014E /* ControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllersFactory.swift; sourceTree = "<group>"; };
+		AA24BD2C9FBB272298F04DC4 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		AA24BEE8D0DE024FC81EBD3A /* Move.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
 		C3CFDFF8E1AEE55F84192E36 /* Pods-OnPaperSoccer-OnPaperSoccerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnPaperSoccer-OnPaperSoccerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OnPaperSoccer-OnPaperSoccerTests/Pods-OnPaperSoccer-OnPaperSoccerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CA66CA537D937603362FBED7 /* Pods-OnPaperSoccer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnPaperSoccer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OnPaperSoccer/Pods-OnPaperSoccer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +132,7 @@
 				2C320B942178DBE500CDADF5 /* Line.swift */,
 				AA24B05A388611DD00323809 /* Vector.swift */,
 				AA24BEE8D0DE024FC81EBD3A /* Move.swift */,
+				AA24BD2C9FBB272298F04DC4 /* Player.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -136,6 +145,8 @@
 				2C9A70A621BE747000B801C9 /* MovesValidator.swift */,
 				AA24B89C3CD561A829494264 /* MovesValidatorSpec.swift */,
 				AA24BCB1E19522BE044C014E /* ControllersFactory.swift */,
+				AA24B06D05D5533EA3B990A2 /* PlayerTurnController.swift */,
+				AA24B77DCFCFB2BA9F8CC272 /* PlayerTurnControllerSpec.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -237,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				AA24BC0B623729163EC253E7 /* Point+Fixture.swift */,
+				AA24BB10F9C1929C5A53998D /* UIColor+Fixture.swift */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -475,6 +487,8 @@
 				AA24B801CF942F9DB6416223 /* Vector.swift in Sources */,
 				AA24B4FFA5A98FA1002F8BE1 /* ControllersFactory.swift in Sources */,
 				AA24B896F14743827284DDCB /* Move.swift in Sources */,
+				AA24BE4D7DBC4D7FEB821CBC /* PlayerTurnController.swift in Sources */,
+				AA24B4B4A793D3B2FF4D0D6E /* Player.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +502,8 @@
 				AA24B6302B864E0EE4257AA3 /* MatchViewControllerSpec.swift in Sources */,
 				AA24BBD836740507532F5610 /* MovesValidatorSpec.swift in Sources */,
 				AA24B4171DFA4220F577787F /* Point+Fixture.swift in Sources */,
+				AA24B7130118B052140EC799 /* PlayerTurnControllerSpec.swift in Sources */,
+				AA24B696C655F461F39434E4 /* UIColor+Fixture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
