@@ -1,11 +1,17 @@
 import UIKit
 import RxSwift
 
+protocol MatchViewControllerDelegate: class {
+    func playerDidWin(_ player: Player)
+}
+
 class MatchViewController: UIViewController {
     @IBOutlet weak var fieldView: UIView!
 
+    weak var delegate: MatchViewControllerDelegate?
     private(set) var currentPosition: Point
 
+    private var winingPoints: [Point: Player] = [:]
     private let fieldDrawer: FieldDrawer
     private let movesController: MovesController
     private let turnController: PlayerTurnController
@@ -50,7 +56,7 @@ class MatchViewController: UIViewController {
             .disposed(by: disposeBag)
     }
 
-    //MARK: Actions
+    //MARK: Pubic
 
     func move(to point: Point) {
         let line = Line(from: currentPosition, to: point)
@@ -58,7 +64,15 @@ class MatchViewController: UIViewController {
         fieldDrawer.draw(line: line, color: turnController.currentPlayer.color)
         movesValidator.setLineAsUsed(line)
         updateMovesPossibility()
-        turnController.moved(to: point)
+        if let player = winingPoints[point] {
+            delegate?.playerDidWin(player)
+        } else {
+            turnController.moved(to: point)
+        }
+    }
+
+    func set(winingPoint: Point, for player: Player) {
+        winingPoints[winingPoint] = player
     }
 
     //MARK: Helpers

@@ -1,18 +1,16 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+private class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+
+    let flowController = FlowController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
         launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        let controllersFactory = ControllersFactory()
-        let matchViewController = controllersFactory.createMatchViewController()
-        
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = matchViewController
+        window?.rootViewController = flowController.rootViewController()
         window?.makeKeyAndVisible()
 
         return true

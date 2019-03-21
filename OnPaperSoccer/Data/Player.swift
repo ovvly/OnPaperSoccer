@@ -21,3 +21,12 @@ extension Player {
         }
     }
 }
+
+extension Player {
+    var name: String {
+        switch self {
+        case .player1: return "Player 1"
+        case .player2: return "Player 2"
+        }
+    }
+}

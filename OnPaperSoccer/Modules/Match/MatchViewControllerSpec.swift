@@ -13,6 +13,7 @@ class MatchViewControllerSpec: QuickSpec {
             var movesControllerSpy: MovesControllerSpy!
             var turnControllerSpy: TurnControllerSpy!
             var movesValidatorSpy: MovesValidatorSpy!
+            var delegate: MatchViewControllerDelegateSpy!
             var sut: MatchViewController!
 
             beforeEach {
@@ -20,6 +21,7 @@ class MatchViewControllerSpec: QuickSpec {
                 movesControllerSpy = MovesControllerSpy()
                 turnControllerSpy = TurnControllerSpy()
                 movesValidatorSpy = MovesValidatorSpy()
+                delegate = MatchViewControllerDelegateSpy()
                 sut = MatchViewController(fieldDrawer: fieldDrawerSpy,
                     movesController: movesControllerSpy,
                     playerTurnController: turnControllerSpy,
@@ -93,6 +95,19 @@ class MatchViewControllerSpec: QuickSpec {
                     }
                     it("should be marked as used") {
                         expect(movesValidatorSpy.capturedUsedLine) == Line(from: Point(x: 10, y: 10), to: Point(x: 20, y: 20))
+                    }
+                }
+
+                context("when moving to player 1 wining point") {
+                    beforeEach {
+                        sut.delegate = delegate
+                        sut.set(winingPoint: Point(x: 10, y: 10), for: .player1)
+
+                        sut.move(to: Point(x: 10, y: 10))
+                    }
+
+                    it("should inform about player 1 win") {
+                        expect(delegate.capturedPlayer) == .player1
                     }
                 }
             }
@@ -169,3 +184,12 @@ private class MovesValidatorSpy: MovesValidator {
         capturedUsedLine = line
     }
 }
+
+class MatchViewControllerDelegateSpy: MatchViewControllerDelegate {
+    var capturedPlayer: Player? = nil
+
+    func playerDidWin(_ player: Player) {
+        capturedPlayer = player
+    }
+}
+
