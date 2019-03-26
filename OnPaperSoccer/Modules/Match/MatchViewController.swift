@@ -64,11 +64,8 @@ class MatchViewController: UIViewController {
         fieldDrawer.draw(line: line, color: turnController.currentPlayer.color)
         movesValidator.setLineAsUsed(line)
         updateMovesPossibility()
-        if let player = winingPoints[point] {
-            delegate?.playerDidWin(player)
-        } else {
-            turnController.moved(to: point)
-        }
+        checkWiningGameConditions(from: point)
+        turnController.moved(to: point)
     }
 
     func set(winingPoint: Point, for player: Player) {
@@ -80,5 +77,22 @@ class MatchViewController: UIViewController {
     private func updateMovesPossibility() {
         let possibleMoves = movesValidator.possibleMoves(from: currentPosition)
         movesController.updateMovesPossibility(possibleMoves)
+    }
+
+    private func checkWiningGameConditions(from point: Point) {
+        endGameIfNoMovesLeft(from: point)
+        endGameIfInWiningPoint(from: point)
+    }
+
+    private func endGameIfNoMovesLeft(from point: Point) {
+        if movesValidator.possibleMoves(from: point).isEmpty {
+            delegate?.playerDidWin(turnController.currentPlayer.nextPlayer())
+        }
+    }
+
+    private func endGameIfInWiningPoint(from point: Point) {
+        if let player = winingPoints[point] {
+            delegate?.playerDidWin(player)
+        }
     }
 }

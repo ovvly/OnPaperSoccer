@@ -17,7 +17,7 @@ class FlowController {
 
 extension FlowController: MatchViewControllerDelegate {
     func playerDidWin(_ player: Player) {
-        let alert = UIAlertController(title: "Game Over", message: "\(player.name) WON!!!", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Game Over", message: "\(player.name) WON!!!111one1one!", preferredStyle: .alert)
         let confirmAction = UIAlertAction(title: "Ok", style: .default)
         alert.addAction(confirmAction)
 

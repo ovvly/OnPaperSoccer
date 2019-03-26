@@ -27,6 +27,7 @@ class MatchViewControllerSpec: QuickSpec {
                     playerTurnController: turnControllerSpy,
                     movesValidator: movesValidatorSpy,
                     fieldWidth: 42, fieldHeight: 43)
+                sut.delegate = delegate
                 _ = sut.view
             }
             
@@ -100,14 +101,24 @@ class MatchViewControllerSpec: QuickSpec {
 
                 context("when moving to player 1 wining point") {
                     beforeEach {
-                        sut.delegate = delegate
                         sut.set(winingPoint: Point(x: 10, y: 10), for: .player1)
 
                         sut.move(to: Point(x: 10, y: 10))
                     }
 
                     it("should inform about player 1 win") {
-                        expect(delegate.capturedPlayer) == .player1
+                        expect(delegate.playerDidWin) == .player1
+                    }
+                }
+
+                context("when player 1 does not have any moves") {
+                    beforeEach {
+                        movesValidatorSpy.possibleMoves = Set()
+                        sut.move(to: Point(x: 10, y: 10))
+                    }
+                    
+                    it("should inform about player 2 win") {
+                        expect(delegate.playerDidWin) == .player2
                     }
                 }
             }
@@ -186,10 +197,10 @@ private class MovesValidatorSpy: MovesValidator {
 }
 
 class MatchViewControllerDelegateSpy: MatchViewControllerDelegate {
-    var capturedPlayer: Player? = nil
+    var playerDidWin: Player? = nil
 
     func playerDidWin(_ player: Player) {
-        capturedPlayer = player
+        playerDidWin = player
     }
 }
 
