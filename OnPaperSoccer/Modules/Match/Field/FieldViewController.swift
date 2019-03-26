@@ -1,7 +1,7 @@
 import UIKit
 import CoreGraphics
 
-protocol FieldDrawer: WithViewController {
+protocol FieldDrawer: WithViewController, Resetable {
     func drawNewField()
     func draw(line: Line, color: UIColor)
 }
@@ -40,5 +40,9 @@ class FieldViewController: UIViewController, FieldDrawer {
 
     func drawNewField() {
         castView.drawNewField(width: fieldWidth, height: fieldHeight)
+    }
+
+    func reset() {
+
     }
 }

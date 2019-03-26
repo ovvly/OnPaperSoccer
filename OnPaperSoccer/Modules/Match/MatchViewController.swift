@@ -5,7 +5,7 @@ protocol MatchViewControllerDelegate: class {
     func playerDidWin(_ player: Player)
 }
 
-class MatchViewController: UIViewController {
+class MatchViewController: UIViewController, Resetable {
     @IBOutlet weak var fieldView: UIView!
 
     weak var delegate: MatchViewControllerDelegate?
@@ -34,6 +34,12 @@ class MatchViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
 
         playerTurnController.set(startingPoint: currentPosition)
+    }
+
+    func reset() {
+        fieldDrawer.reset()
+        turnController.reset()
+        movesValidator.reset()
     }
 
     required init?(coder aDecoder: NSCoder) {

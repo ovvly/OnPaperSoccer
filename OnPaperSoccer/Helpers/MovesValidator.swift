@@ -1,6 +1,6 @@
 import Foundation
 
-protocol MovesValidator {
+protocol MovesValidator: Resetable {
     func possibleMoves(from point: Point) -> Set<Move>
     func setLineAsUsed(_ line: Line)
 }
@@ -11,10 +11,14 @@ final class DefaultMovesValidator: MovesValidator {
     private let fieldWidth: Int
     private let fieldHeight: Int
 
+    //MARK: Lifecycle
+
     init(fieldWidth: Int, fieldHeight: Int) {
         self.fieldWidth = fieldWidth
         self.fieldHeight = fieldHeight
     }
+
+    //MARK: Actions
 
     func possibleMoves(from point: Point) -> Set<Move> {
         return Set(Move.allCases.filter { move in
@@ -25,6 +29,12 @@ final class DefaultMovesValidator: MovesValidator {
     func setLineAsUsed(_ line: Line) {
         usedLines.insert(line)
     }
+
+    func reset() {
+
+    }
+
+    //MARK: Helpers
 
     private func isValidMove(from point: Point, moving move: Move) -> Bool {
         let endPoint = point.shifted(by: move.vector)

@@ -136,11 +136,30 @@ class MatchViewControllerSpec: QuickSpec {
                     }
                 }
             }
+
+            describe("reset") {
+                beforeEach {
+                    sut.reset()
+                }
+
+                it("should reset field drawer") {
+                    expect(fieldDrawerSpy.didReset) == true
+                }
+
+                it("should reset moves validator controller") {
+                    expect(movesValidatorSpy.didReset) == true
+                }
+
+                it("should reset player turn controller") {
+                    expect(turnControllerSpy.didReset) == true
+                }
+            }
         }
     }
 }
 
 private class FieldDrawerSpy: FieldDrawer {
+    var didReset = false
     var capturedLineColor: UIColor? = nil
     var capturedLine: Line? = nil
     var didDrawNewField = false
@@ -154,20 +173,25 @@ private class FieldDrawerSpy: FieldDrawer {
         capturedLine = line
         capturedLineColor = color
     }
+
+    func reset() {
+        didReset = true
+    }
 }
 
 private class MovesControllerSpy: MovesController {
     var capturedPossibleMoves = Set<Move>()
     var viewController = UIViewController()
     let movesSubject = PublishSubject<Move>()
-
     var moves: Observable<Move> { return movesSubject.asObservable() }
+
     func updateMovesPossibility(_ moves: Set<Move>) {
         capturedPossibleMoves = moves
     }
 }
 
 private class TurnControllerSpy: PlayerTurnController {
+    var didReset = false
     var currentPlayer: Player = .player1
     var capturedPoint: Point? = nil
     var capturedStartingPoint: Point? = nil
@@ -179,9 +203,14 @@ private class TurnControllerSpy: PlayerTurnController {
     func set(startingPoint: Point) {
         capturedStartingPoint = startingPoint
     }
+
+    func reset() {
+        didReset = true
+    }
 }
 
 private class MovesValidatorSpy: MovesValidator {
+    var didReset = false
     var possibleMoves = Set<Move>()
     var isMoveValid: Bool = false
 
@@ -193,6 +222,10 @@ private class MovesValidatorSpy: MovesValidator {
 
     func setLineAsUsed(_ line: Line) {
         capturedUsedLine = line
+    }
+
+    func reset() {
+        didReset = true
     }
 }
 

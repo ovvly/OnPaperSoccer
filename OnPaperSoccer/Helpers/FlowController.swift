@@ -17,10 +17,9 @@ class FlowController {
 
 extension FlowController: MatchViewControllerDelegate {
     func playerDidWin(_ player: Player) {
-        let alert = UIAlertController(title: "Game Over", message: "\(player.name) WON!!!111one1one!", preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "Ok", style: .default)
-        alert.addAction(confirmAction)
-
-        matchViewController.present(alert, animated: true)
+        let alertController = controllersFactory.createAftermatchViewController(playerName: player.name) { [weak self] in
+            self?.matchViewController.reset()
+        }
+        matchViewController.present(alertController, animated: true)
     }
 }
