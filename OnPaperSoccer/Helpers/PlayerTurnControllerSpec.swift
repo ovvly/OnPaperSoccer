@@ -122,6 +122,20 @@ class TurnControllerSpec: QuickSpec {
                     }
                 }
             }
+
+            describe("reset") {
+                beforeEach {
+                    sut.currentPlayer = .player2
+                    sut.visitedPoints = [Point.fixture]
+
+                    sut.reset()
+                }
+
+                it("should reset") {
+                    expect(sut.currentPlayer) == Player.player1
+                    expect(sut.visitedPoints).to(beEmpty())
+                }
+            }
         }
     }
 }

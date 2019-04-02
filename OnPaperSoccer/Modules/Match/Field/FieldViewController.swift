@@ -8,7 +8,7 @@ protocol FieldDrawer: WithViewController, Resetable {
 
 class FieldViewController: UIViewController, FieldDrawer {
     var viewController: UIViewController { return self }
-    var castView: FieldView {
+    var fieldView: FieldView {
         return view as! FieldView
     }
 
@@ -35,14 +35,14 @@ class FieldViewController: UIViewController, FieldDrawer {
     // MARK: Actions
 
     func draw(line: Line, color: UIColor) {
-        castView.draw(line: line, color: color)
+        fieldView.draw(line: line, color: color)
     }
 
     func drawNewField() {
-        castView.drawNewField(width: fieldWidth, height: fieldHeight)
+        fieldView.drawNewField(width: fieldWidth, height: fieldHeight)
     }
 
     func reset() {
-
+        fieldView.reset()
     }
 }

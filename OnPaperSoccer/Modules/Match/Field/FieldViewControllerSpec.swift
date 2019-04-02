@@ -46,6 +46,20 @@ class FieldViewControllerSpec: QuickSpec {
                     expect(sut.view).to(haveValidSnapshot())
                 }
             }
+            
+            describe("reset") {
+                beforeEach {
+                    sut.drawNewField()
+                    sut.draw(line: Line.fixture, color: .brown)
+                    sut.draw(line: Line.fixture2, color: .purple)
+
+                    sut.reset()
+                }
+
+                it("should reset") {
+                    expect(sut.view).to(haveValidSnapshot())
+                }
+            }
         }
     }
 }

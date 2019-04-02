@@ -41,8 +41,8 @@ final class FieldView: UIView {
     //MARK: Actions
 
     func drawNewField(width: Int, height: Int) {
-        numberOfRows = height
         numberOfColumns = width
+        numberOfRows = height
 
         isFieldDrawn = false
         setNeedsDisplay()
@@ -52,6 +52,12 @@ final class FieldView: UIView {
         lineToDraw = line
         colorToDraw = color
         setNeedsDisplay()
+    }
+
+    func reset() {
+        drawNewField(width: numberOfColumns, height: numberOfRows)
+        lineToDraw = nil
+        drawImage = nil
     }
 
     //MARK: Helpers

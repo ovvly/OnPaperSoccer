@@ -10,6 +10,7 @@ class MatchViewController: UIViewController, Resetable {
 
     weak var delegate: MatchViewControllerDelegate?
     private(set) var currentPosition: Point
+    private let startingPosition: Point
 
     private var winingPoints: [Point: Player] = [:]
     private let fieldDrawer: FieldDrawer
@@ -29,17 +30,11 @@ class MatchViewController: UIViewController, Resetable {
         self.movesController = movesController
         self.turnController = playerTurnController
         self.movesValidator = movesValidator
+        self.startingPosition = Point(x: fieldWidth / 2, y: fieldHeight / 2)
         self.currentPosition = Point(x: fieldWidth / 2, y: fieldHeight / 2)
-
         super.init(nibName: nil, bundle: nil)
 
         playerTurnController.set(startingPoint: currentPosition)
-    }
-
-    func reset() {
-        fieldDrawer.reset()
-        turnController.reset()
-        movesValidator.reset()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -76,6 +71,15 @@ class MatchViewController: UIViewController, Resetable {
 
     func set(winingPoint: Point, for player: Player) {
         winingPoints[winingPoint] = player
+    }
+
+    func reset() {
+        self.currentPosition = startingPosition
+
+        fieldDrawer.reset()
+        turnController.reset()
+        movesValidator.reset()
+        movesController.reset()
     }
 
     //MARK: Helpers

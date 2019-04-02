@@ -31,7 +31,7 @@ final class DefaultMovesValidator: MovesValidator {
     }
 
     func reset() {
-
+        usedLines = []
     }
 
     //MARK: Helpers

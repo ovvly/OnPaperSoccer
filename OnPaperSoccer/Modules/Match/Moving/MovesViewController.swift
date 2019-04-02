@@ -1,14 +1,12 @@
 import UIKit
 import RxSwift
 
-protocol MovesController: WithViewController {
+protocol MovesController: WithViewController, Resetable {
     var moves: Observable<Move> { get }
     func updateMovesPossibility(_ moves: Set<Move>)
 }
 
 class MovesViewController: UIViewController, MovesController {
-    var viewController: UIViewController { return self }
-
     @IBOutlet weak var upButton: UIButton!
     @IBOutlet weak var downButton: UIButton!
     @IBOutlet weak var leftButton: UIButton!
@@ -21,6 +19,7 @@ class MovesViewController: UIViewController, MovesController {
     var moves: Observable<Move> {
        return movesSubject.asObservable()
     }
+    var viewController: UIViewController { return self }
 
     private let movesSubject = PublishSubject<Move>()
 
@@ -34,6 +33,8 @@ class MovesViewController: UIViewController, MovesController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: Actions
+
     func updateMovesPossibility(_ moves: Set<Move>) {
         Move.allCases.forEach { move in
             let button = directionButton(for: move)
@@ -41,21 +42,10 @@ class MovesViewController: UIViewController, MovesController {
         }
     }
 
-    private func directionButton(for move: Move) -> UIButton {
-        switch move {
-            case .up: return upButton
-            case .down: return downButton
-            case .left: return leftButton
-            case .right: return rightButton
-            case .upLeft: return upLeftButton
-            case .upRight: return upRightButton
-            case .downLeft: return downLeftButton
-            case .downRight: return downRightButton
-        }
+    func reset() {
+        updateMovesPossibility(Set(Move.allCases))
     }
 
-    // MARK: Actions
-    
     @IBAction
     private func upButtonTapped(_ sender: UIButton) {
         movesSubject.onNext(Move.up)
@@ -94,5 +84,20 @@ class MovesViewController: UIViewController, MovesController {
     @IBAction
     func downRightButtonTapped(_ sender: UIButton) {
         movesSubject.onNext(Move.downRight)
+    }
+
+    // MARK: Helpers
+
+    private func directionButton(for move: Move) -> UIButton {
+        switch move {
+        case .up: return upButton
+        case .down: return downButton
+        case .left: return leftButton
+        case .right: return rightButton
+        case .upLeft: return upLeftButton
+        case .upRight: return upRightButton
+        case .downLeft: return downLeftButton
+        case .downRight: return downRightButton
+        }
     }
 }

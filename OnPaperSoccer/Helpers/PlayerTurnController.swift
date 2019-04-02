@@ -36,7 +36,8 @@ final class DefaultPlayerTurnController: PlayerTurnController {
     }
 
     func reset() {
-
+        currentPlayer = .player1
+        visitedPoints = []
     }
 
     //MARK: Helpers

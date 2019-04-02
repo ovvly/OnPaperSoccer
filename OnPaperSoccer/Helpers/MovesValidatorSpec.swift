@@ -127,6 +127,18 @@ class MovesValidatorSpec: QuickSpec {
                     expect(possibleMoves).toNot(contain([Move.up]))
                 }
             }
+
+            describe("reset") {
+                beforeEach {
+                    sut.usedLines = [Line.fixture, Line.fixture2]
+
+                    sut.reset()
+                }
+
+                it("should reset") {
+                    expect(sut.usedLines).to(beEmpty())
+                }
+            }
         }
     }
 }

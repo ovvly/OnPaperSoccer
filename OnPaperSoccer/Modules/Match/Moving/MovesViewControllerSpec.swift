@@ -113,6 +113,25 @@ class MovesViewControllerSpec: QuickSpec {
                     expect(sut.downRightButton.isEnabled) == true
                 }
             }
+            
+            describe("reset") {
+                beforeEach {
+                    sut.updateMovesPossibility(Set([]))
+
+                    sut.reset()
+                }    
+                
+                it("should make all moves possible") {
+                    expect(sut.upButton.isEnabled) == true
+                    expect(sut.downButton.isEnabled) == true
+                    expect(sut.leftButton.isEnabled) == true
+                    expect(sut.rightButton.isEnabled) == true
+                    expect(sut.upLeftButton.isEnabled) == true
+                    expect(sut.upRightButton.isEnabled) == true
+                    expect(sut.downLeftButton.isEnabled) == true
+                    expect(sut.downRightButton.isEnabled) == true
+                }
+            }
         }
     }
 }

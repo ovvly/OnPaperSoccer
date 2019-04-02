@@ -139,7 +139,13 @@ class MatchViewControllerSpec: QuickSpec {
 
             describe("reset") {
                 beforeEach {
+                    sut.move(to: Point(x: 0, y: 0))
+
                     sut.reset()
+                }
+
+                it("should set current position to starting position") {
+                    expect(sut.currentPosition) == Point(x: 21, y: 21)
                 }
 
                 it("should reset field drawer") {
@@ -152,6 +158,10 @@ class MatchViewControllerSpec: QuickSpec {
 
                 it("should reset player turn controller") {
                     expect(turnControllerSpy.didReset) == true
+                }
+                
+                it("should reset moves controller") {
+                    expect(movesControllerSpy.didReset) == true
                 }
             }
         }
@@ -180,6 +190,7 @@ private class FieldDrawerSpy: FieldDrawer {
 }
 
 private class MovesControllerSpy: MovesController {
+    var didReset = false
     var capturedPossibleMoves = Set<Move>()
     var viewController = UIViewController()
     let movesSubject = PublishSubject<Move>()
@@ -187,6 +198,10 @@ private class MovesControllerSpy: MovesController {
 
     func updateMovesPossibility(_ moves: Set<Move>) {
         capturedPossibleMoves = moves
+    }
+
+    func reset() {
+        didReset = true
     }
 }
 
