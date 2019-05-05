@@ -7,9 +7,13 @@ import Nimble
 class TurnControllerSpec: QuickSpec {
     override func spec() {
         describe("DefaultPlayerTurnController") {
+            var gameSettings: GameSettings!
             var sut: DefaultPlayerTurnController!
+
             beforeEach {
-                sut = DefaultPlayerTurnController(fieldWidth: 42, fieldHeight: 42)
+                gameSettings = GameSettings(fieldWidth: 42, fieldHeight: 42)
+
+                sut = DefaultPlayerTurnController(settings: gameSettings)
             }
 
             describe("moved to point") {

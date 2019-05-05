@@ -5,9 +5,9 @@ final class ControllersFactory {
     func createMatchViewController() -> MatchViewController {
         let gameSettings = GameSettings.default
         let movesViewController = MovesViewController()
-        let turnController = DefaultPlayerTurnController(fieldWidth: gameSettings.fieldWidth, fieldHeight: gameSettings.fieldHeight)
-        let fieldViewController = FieldViewController(fieldWidth: gameSettings.fieldWidth, fieldHeight: gameSettings.fieldHeight)
-        let movesValidator = DefaultMovesValidator(fieldWidth: gameSettings.fieldWidth, fieldHeight: gameSettings.fieldHeight)
+        let turnController = DefaultPlayerTurnController(settings: gameSettings)
+        let fieldViewController = FieldViewController(settings: gameSettings)
+        let movesValidator = DefaultMovesValidator(settings: gameSettings)
         let viewController = MatchViewController(fieldDrawer: fieldViewController,
             movesController: movesViewController,
             playerTurnController: turnController,

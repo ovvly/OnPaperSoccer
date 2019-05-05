@@ -12,14 +12,12 @@ class FieldViewController: UIViewController, FieldDrawer {
         return view as! FieldView
     }
 
-    private var fieldWidth: Int
-    private var fieldHeight: Int
+    private let settings: GameSettings
 
     // MARK: Init
 
-    init(fieldWidth: Int, fieldHeight: Int) {
-        self.fieldWidth = fieldWidth
-        self.fieldHeight = fieldHeight
+    init(settings: GameSettings) {
+        self.settings = settings
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -39,7 +37,7 @@ class FieldViewController: UIViewController, FieldDrawer {
     }
 
     func drawNewField() {
-        fieldView.drawNewField(width: fieldWidth, height: fieldHeight)
+        fieldView.drawNewField(width: settings.fieldWidth, height: settings.fieldHeight)
     }
 
     func reset() {

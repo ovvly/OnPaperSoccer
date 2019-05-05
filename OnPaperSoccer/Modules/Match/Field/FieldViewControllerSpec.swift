@@ -8,10 +8,14 @@ import Nimble_Snapshots
 class FieldViewControllerSpec: QuickSpec {
     override func spec() {
         describe("FieldViewController") {
+            var settings: GameSettings!
+
             var sut: FieldViewController!
 
             beforeEach {
-                sut = FieldViewController(fieldWidth: 9, fieldHeight: 11)
+                settings = GameSettings(fieldWidth: 9, fieldHeight: 11)
+
+                sut = FieldViewController(settings: settings)
             }
 
             describe("draw new field") {

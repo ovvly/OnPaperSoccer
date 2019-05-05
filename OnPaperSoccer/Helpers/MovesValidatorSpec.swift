@@ -8,9 +8,11 @@ class MovesValidatorSpec: QuickSpec {
     override func spec() {
         describe("MovesValidator") {
             var sut: DefaultMovesValidator!
-            
+            var settings: GameSettings!
+
             beforeEach {
-                sut = DefaultMovesValidator(fieldWidth: 42, fieldHeight: 43)
+                settings = GameSettings(fieldWidth: 42, fieldHeight: 43)
+                sut = DefaultMovesValidator(settings: settings)
             }
 
             describe("sidelines") {
