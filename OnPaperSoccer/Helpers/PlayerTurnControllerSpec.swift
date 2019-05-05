@@ -16,6 +16,12 @@ class TurnControllerSpec: QuickSpec {
                 sut = DefaultPlayerTurnController(settings: gameSettings)
             }
 
+            describe("init") {
+                it("should visited points should have contain starting point") {
+                    expect(sut.visitedPoints) == [gameSettings.startingPosition]
+                }
+            }
+
             describe("moved to point") {
                 context("when is player 1") {
                     beforeEach {
@@ -75,10 +81,9 @@ class TurnControllerSpec: QuickSpec {
 
                 context("when moving to starting point") {
                     beforeEach {
-                        sut.set(startingPoint: Point.fixture)
                         sut.currentPlayer = .player2
 
-                        sut.moved(to: Point.fixture)
+                        sut.moved(to: gameSettings.startingPosition)
                     }
 
                     it("should NOT change current player") {
@@ -130,14 +135,14 @@ class TurnControllerSpec: QuickSpec {
             describe("reset") {
                 beforeEach {
                     sut.currentPlayer = .player2
-                    sut.visitedPoints = [Point.fixture]
+                    sut.visitedPoints = [Point.fixture, Point(x: 42, y: 42)]
 
                     sut.reset()
                 }
 
                 it("should reset") {
                     expect(sut.currentPlayer) == Player.player1
-                    expect(sut.visitedPoints).to(beEmpty())
+                    expect(sut.visitedPoints) == [gameSettings.startingPosition]
                 }
             }
         }

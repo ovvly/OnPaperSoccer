@@ -4,21 +4,19 @@ import UIKit
 protocol PlayerTurnController: Resetable {
     var currentPlayer: Player { get }
     func moved(to: Point)
-    func set(startingPoint: Point)
 }
 
 final class DefaultPlayerTurnController: PlayerTurnController {
     var currentPlayer: Player = .player1
-    var visitedPoints = Set<Point>()
+    var visitedPoints: Set<Point>
 
-    private let fieldWidth: Int
-    private let fieldHeight: Int
+    private let settings: GameSettings
 
     //MARK: Lifecycle
 
     init(settings: GameSettings) {
-        self.fieldWidth = settings.fieldWidth
-        self.fieldHeight = settings.fieldHeight
+        self.settings = settings
+        visitedPoints = [settings.startingPosition]
     }
 
     //MARK: Actions
@@ -31,19 +29,15 @@ final class DefaultPlayerTurnController: PlayerTurnController {
         visitedPoints.insert(point)
     }
 
-    func set(startingPoint: Point) {
-        visitedPoints.insert(startingPoint)
-    }
-
     func reset() {
         currentPlayer = .player1
-        visitedPoints = []
+        visitedPoints = [settings.startingPosition]
     }
 
     //MARK: Helpers
 
     private func isEndingOnBorderLine(point: Point) -> Bool {
-        return point.x == 0 || point.x == fieldWidth - 1 ||
-            point.y == 0 || point.y == fieldHeight - 1
+        return point.x == 0 || point.x == settings.fieldWidth - 1 ||
+            point.y == 0 || point.y == settings.fieldHeight - 1
     }
 }

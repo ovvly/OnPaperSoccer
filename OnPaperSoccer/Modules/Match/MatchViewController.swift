@@ -32,9 +32,8 @@ class MatchViewController: UIViewController, Resetable {
         self.movesValidator = movesValidator
         self.startingPosition = startingPoint
         self.currentPosition = startingPoint
-        super.init(nibName: nil, bundle: nil)
 
-        playerTurnController.set(startingPoint: currentPosition)
+        super.init(nibName: nil, bundle: nil)
     }
 
     required init?(coder aDecoder: NSCoder) {
