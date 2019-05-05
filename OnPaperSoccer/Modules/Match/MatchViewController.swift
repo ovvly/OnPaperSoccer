@@ -25,13 +25,13 @@ class MatchViewController: UIViewController, Resetable {
          movesController: MovesController,
          playerTurnController: PlayerTurnController,
          movesValidator: MovesValidator,
-         gameSettings: GameSettings) {
+         startingPoint: Point) {
         self.fieldDrawer = fieldDrawer
         self.movesController = movesController
         self.turnController = playerTurnController
         self.movesValidator = movesValidator
-        self.startingPosition = Point(x: gameSettings.fieldWidth / 2, y: gameSettings.fieldHeight / 2)
-        self.currentPosition = Point(x: gameSettings.fieldWidth / 2, y: gameSettings.fieldHeight / 2)
+        self.startingPosition = startingPoint
+        self.currentPosition = startingPoint
         super.init(nibName: nil, bundle: nil)
 
         playerTurnController.set(startingPoint: currentPosition)

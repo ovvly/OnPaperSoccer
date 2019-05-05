@@ -11,7 +11,7 @@ class MovesValidatorSpec: QuickSpec {
             var settings: GameSettings!
 
             beforeEach {
-                settings = GameSettings(fieldWidth: 42, fieldHeight: 43)
+                settings = GameSettings.fixture
                 sut = DefaultMovesValidator(settings: settings)
             }
 

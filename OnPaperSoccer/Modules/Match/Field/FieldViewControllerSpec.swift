@@ -13,7 +13,7 @@ class FieldViewControllerSpec: QuickSpec {
             var sut: FieldViewController!
 
             beforeEach {
-                settings = GameSettings(fieldWidth: 9, fieldHeight: 11)
+                settings = GameSettings(fieldWidth: 9, fieldHeight: 11, startingPosition: Point.fixture)
 
                 sut = FieldViewController(settings: settings)
             }

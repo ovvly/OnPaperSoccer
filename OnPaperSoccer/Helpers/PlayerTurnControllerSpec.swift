@@ -11,7 +11,7 @@ class TurnControllerSpec: QuickSpec {
             var sut: DefaultPlayerTurnController!
 
             beforeEach {
-                gameSettings = GameSettings(fieldWidth: 42, fieldHeight: 42)
+                gameSettings = GameSettings.fixture
 
                 sut = DefaultPlayerTurnController(settings: gameSettings)
             }
@@ -108,7 +108,7 @@ class TurnControllerSpec: QuickSpec {
 
                 context("when moving to top border point") {
                     beforeEach {
-                        sut.moved(to: Point(x: 21, y: 41))
+                        sut.moved(to: Point(x: 21, y: 42))
                     }
 
                     it("should NOT change current player") {

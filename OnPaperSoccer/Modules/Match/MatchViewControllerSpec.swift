@@ -14,7 +14,7 @@ class MatchViewControllerSpec: QuickSpec {
             var turnControllerSpy: TurnControllerSpy!
             var movesValidatorSpy: MovesValidatorSpy!
             var delegate: MatchViewControllerDelegateSpy!
-            var gameSettings: GameSettings!
+            var startingPoint: Point!
             var sut: MatchViewController!
 
             beforeEach {
@@ -23,13 +23,14 @@ class MatchViewControllerSpec: QuickSpec {
                 turnControllerSpy = TurnControllerSpy()
                 movesValidatorSpy = MovesValidatorSpy()
                 delegate = MatchViewControllerDelegateSpy()
-                gameSettings = GameSettings(fieldWidth: 42, fieldHeight: 43)
+                startingPoint = Point.fixture
 
                 sut = MatchViewController(fieldDrawer: fieldDrawerSpy,
                     movesController: movesControllerSpy,
                     playerTurnController: turnControllerSpy,
                     movesValidator: movesValidatorSpy,
-                    gameSettings: gameSettings)
+                    startingPoint: startingPoint)
+
                 sut.delegate = delegate
                 _ = sut.view
             }
@@ -44,11 +45,11 @@ class MatchViewControllerSpec: QuickSpec {
                 }
 
                 it("should have current position set to middle of field size") {
-                    expect(sut.currentPosition) == Point(x: 21, y: 21)
+                    expect(sut.currentPosition) == startingPoint
                 }
 
                 it("should set starting point in player turn controller") {
-                    expect(turnControllerSpy.capturedStartingPoint) == Point(x: 21, y: 21)
+                    expect(turnControllerSpy.capturedStartingPoint) == startingPoint
                 }
             }
 
@@ -148,7 +149,7 @@ class MatchViewControllerSpec: QuickSpec {
                 }
 
                 it("should set current position to starting position") {
-                    expect(sut.currentPosition) == Point(x: 21, y: 21)
+                    expect(sut.currentPosition) == startingPoint
                 }
 
                 it("should reset field drawer") {
