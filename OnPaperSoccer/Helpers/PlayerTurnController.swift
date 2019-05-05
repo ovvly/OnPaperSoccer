@@ -16,7 +16,7 @@ final class DefaultPlayerTurnController: PlayerTurnController {
 
     init(settings: GameSettings) {
         self.settings = settings
-        visitedPoints = [settings.startingPosition]
+        visitedPoints = [settings.startingPoint]
     }
 
     //MARK: Actions
@@ -31,7 +31,7 @@ final class DefaultPlayerTurnController: PlayerTurnController {
 
     func reset() {
         currentPlayer = .player1
-        visitedPoints = [settings.startingPosition]
+        visitedPoints = [settings.startingPoint]
     }
 
     //MARK: Helpers

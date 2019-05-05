@@ -14,7 +14,10 @@ class MatchViewControllerSpec: QuickSpec {
             var turnControllerSpy: TurnControllerSpy!
             var movesValidatorSpy: MovesValidatorSpy!
             var delegate: MatchViewControllerDelegateSpy!
-            var startingPoint: Point!
+            var gameSettings: GameSettings!
+            var player1WinningPoint: Point!
+            var player2WinningPoint: Point!
+
             var sut: MatchViewController!
 
             beforeEach {
@@ -23,13 +26,15 @@ class MatchViewControllerSpec: QuickSpec {
                 turnControllerSpy = TurnControllerSpy()
                 movesValidatorSpy = MovesValidatorSpy()
                 delegate = MatchViewControllerDelegateSpy()
-                startingPoint = Point.fixture
+                player1WinningPoint = Point(x: 44, y: 45)
+                player2WinningPoint = Point(x: 46, y: 47)
+                gameSettings = GameSettings.fixture(winningPoints: [player1WinningPoint: .player1, player2WinningPoint: .player2])
 
                 sut = MatchViewController(fieldDrawer: fieldDrawerSpy,
                     movesController: movesControllerSpy,
                     playerTurnController: turnControllerSpy,
                     movesValidator: movesValidatorSpy,
-                    startingPoint: startingPoint)
+                    settings: gameSettings)
 
                 sut.delegate = delegate
                 _ = sut.view
@@ -45,7 +50,7 @@ class MatchViewControllerSpec: QuickSpec {
                 }
 
                 it("should have current position set to middle of field size") {
-                    expect(sut.currentPosition) == startingPoint
+                    expect(sut.currentPosition) == gameSettings.startingPoint
                 }
             }
 
@@ -101,9 +106,7 @@ class MatchViewControllerSpec: QuickSpec {
 
                 context("when moving to player 1 wining point") {
                     beforeEach {
-                        sut.set(winingPoint: Point(x: 10, y: 10), for: .player1)
-
-                        sut.move(to: Point(x: 10, y: 10))
+                        sut.move(to: player1WinningPoint)
                     }
 
                     it("should inform about player 1 win") {
@@ -145,7 +148,7 @@ class MatchViewControllerSpec: QuickSpec {
                 }
 
                 it("should set current position to starting position") {
-                    expect(sut.currentPosition) == startingPoint
+                    expect(sut.currentPosition) == gameSettings.startingPoint
                 }
 
                 it("should reset field drawer") {

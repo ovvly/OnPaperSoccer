@@ -4,6 +4,10 @@ import Foundation
 
 extension GameSettings {
     static var fixture: GameSettings {
-        return GameSettings(fieldWidth: 42, fieldHeight: 43, startingPosition: Point.fixture)
+        return GameSettings.fixture(winningPoints: [:])
+    }
+
+    static func fixture(winningPoints: WinningPoints) -> GameSettings {
+        return GameSettings(fieldWidth: 42, fieldHeight: 43, startingPoint: Point.fixture, winingPoints: winningPoints)
     }
 }

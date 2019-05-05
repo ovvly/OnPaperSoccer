@@ -12,9 +12,7 @@ final class ControllersFactory {
             movesController: movesViewController,
             playerTurnController: turnController,
             movesValidator: movesValidator,
-            startingPoint: gameSettings.startingPosition)
-        viewController.set(winingPoint: Point(x: 4, y: 10), for: .player1)
-        viewController.set(winingPoint: Point(x: 4, y: 0), for: .player2)
+            settings: gameSettings)
         return viewController
     }
 
