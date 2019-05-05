@@ -14,6 +14,7 @@ class MatchViewControllerSpec: QuickSpec {
             var turnControllerSpy: TurnControllerSpy!
             var movesValidatorSpy: MovesValidatorSpy!
             var delegate: MatchViewControllerDelegateSpy!
+            var gameSettings: GameSettings!
             var sut: MatchViewController!
 
             beforeEach {
@@ -22,11 +23,13 @@ class MatchViewControllerSpec: QuickSpec {
                 turnControllerSpy = TurnControllerSpy()
                 movesValidatorSpy = MovesValidatorSpy()
                 delegate = MatchViewControllerDelegateSpy()
+                gameSettings = GameSettings(fieldWidth: 42, fieldHeight: 43)
+
                 sut = MatchViewController(fieldDrawer: fieldDrawerSpy,
                     movesController: movesControllerSpy,
                     playerTurnController: turnControllerSpy,
                     movesValidator: movesValidatorSpy,
-                    fieldWidth: 42, fieldHeight: 43)
+                    gameSettings: gameSettings)
                 sut.delegate = delegate
                 _ = sut.view
             }

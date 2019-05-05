@@ -40,6 +40,7 @@
 		AA24BBEA3ABD8329D82E7FDF /* WithViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BE820377AE917733B251 /* WithViewController.swift */; };
 		AA24BD0F214B46C2945C2BEB /* Resetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B87021212FBB69C0BD00 /* Resetable.swift */; };
 		AA24BD5D752D52F0BD6889C0 /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B44D98711ED2BADE4D3A /* FlowController.swift */; };
+		AA24BDC8FA9191EEC7BC25D2 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B24D03DBEAA9F3641B24 /* GameSettings.swift */; };
 		AA24BE4D7DBC4D7FEB821CBC /* PlayerTurnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B06D05D5533EA3B990A2 /* PlayerTurnController.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		AA24B13D18BFBF3DDCDC0F91 /* FieldViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldViewControllerSpec.swift; sourceTree = "<group>"; };
 		AA24B1B708C98F1A574B73A2 /* UIButton+Specs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Specs.swift"; sourceTree = "<group>"; };
 		AA24B240A48A18440B46E320 /* MatchViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchViewControllerSpec.swift; sourceTree = "<group>"; };
+		AA24B24D03DBEAA9F3641B24 /* GameSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
 		AA24B44D98711ED2BADE4D3A /* FlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
 		AA24B4F322735060BBE4226E /* MovesViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesViewControllerSpec.swift; sourceTree = "<group>"; };
 		AA24B5092F1425DDB1948782 /* MovesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				AA24B05A388611DD00323809 /* Vector.swift */,
 				AA24BEE8D0DE024FC81EBD3A /* Move.swift */,
 				AA24BD2C9FBB272298F04DC4 /* Player.swift */,
+				AA24B24D03DBEAA9F3641B24 /* GameSettings.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				AA24BD5D752D52F0BD6889C0 /* FlowController.swift in Sources */,
 				AA24BBEA3ABD8329D82E7FDF /* WithViewController.swift in Sources */,
 				AA24BD0F214B46C2945C2BEB /* Resetable.swift in Sources */,
+				AA24BDC8FA9191EEC7BC25D2 /* GameSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

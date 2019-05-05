@@ -3,18 +3,16 @@ import UIKit
 
 final class ControllersFactory {
     func createMatchViewController() -> MatchViewController {
-        let fieldWidth = 9
-        let fieldHeight = 11
-
+        let gameSettings = GameSettings.default
         let movesViewController = MovesViewController()
-        let turnController = DefaultPlayerTurnController(fieldWidth: fieldWidth, fieldHeight: fieldHeight)
-        let fieldViewController = FieldViewController(fieldWidth: fieldWidth, fieldHeight: fieldHeight)
-        let movesValidator = DefaultMovesValidator(fieldWidth: fieldWidth, fieldHeight: fieldHeight)
+        let turnController = DefaultPlayerTurnController(fieldWidth: gameSettings.fieldWidth, fieldHeight: gameSettings.fieldHeight)
+        let fieldViewController = FieldViewController(fieldWidth: gameSettings.fieldWidth, fieldHeight: gameSettings.fieldHeight)
+        let movesValidator = DefaultMovesValidator(fieldWidth: gameSettings.fieldWidth, fieldHeight: gameSettings.fieldHeight)
         let viewController = MatchViewController(fieldDrawer: fieldViewController,
             movesController: movesViewController,
             playerTurnController: turnController,
             movesValidator: movesValidator,
-            fieldWidth: fieldWidth, fieldHeight: fieldHeight)
+            gameSettings: gameSettings)
         viewController.set(winingPoint: Point(x: 4, y: 10), for: .player1)
         viewController.set(winingPoint: Point(x: 4, y: 0), for: .player2)
         return viewController
