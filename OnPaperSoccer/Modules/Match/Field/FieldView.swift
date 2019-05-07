@@ -162,5 +162,20 @@ final class FieldView: UIView {
 
         path.close()
         path.stroke()
+
+        UIColor.App.lineEnd.setFill()
+        drawPoint(in: startPoint)
+        drawPoint(in: endPoint)
+    }
+
+    private func drawPoint(in point: CGPoint) {
+        let context = UIGraphicsGetCurrentContext()
+        let pointShift = Constants.lineEndSize / 2
+
+        context?.fillEllipse(in: CGRect(x: point.x - pointShift, y: point.y - pointShift, width: Constants.lineEndSize, height: Constants.lineEndSize))
+    }
+
+    private struct Constants {
+        static let lineEndSize: CGFloat = 6
     }
 }
