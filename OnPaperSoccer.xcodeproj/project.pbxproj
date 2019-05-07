@@ -36,6 +36,7 @@
 		AA24B8B08AD975D581E6AF56 /* MovesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA24BA9C383BCEDACB8CD8E5 /* MovesViewController.xib */; };
 		AA24B9D40713DEC4441E3456 /* CoreGraphics+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B10771B109B53597B92F /* CoreGraphics+Extensions.swift */; };
 		AA24BB0EB5F03F92D472BEDA /* MovesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B5092F1425DDB1948782 /* MovesViewController.swift */; };
+		AA24BBCAAF24F051B2E66253 /* UIColor+OnPaperSoccer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B9766E353BB7D3ED0546 /* UIColor+OnPaperSoccer.swift */; };
 		AA24BBD836740507532F5610 /* MovesValidatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B89C3CD561A829494264 /* MovesValidatorSpec.swift */; };
 		AA24BBEA3ABD8329D82E7FDF /* WithViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BE820377AE917733B251 /* WithViewController.swift */; };
 		AA24BC1CBAE58A5B5DF58308 /* GameSettings+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B82E6F9EF90FAA3E9470 /* GameSettings+Fixture.swift */; };
@@ -43,7 +44,6 @@
 		AA24BD5D752D52F0BD6889C0 /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B44D98711ED2BADE4D3A /* FlowController.swift */; };
 		AA24BDC8FA9191EEC7BC25D2 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B24D03DBEAA9F3641B24 /* GameSettings.swift */; };
 		AA24BE4D7DBC4D7FEB821CBC /* PlayerTurnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B06D05D5533EA3B990A2 /* PlayerTurnController.swift */; };
-		AA24BEAFF870352831B9CBF6 /* ExtendedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B55B3ABD0F89127E1E51 /* ExtendedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +92,7 @@
 		AA24B82E6F9EF90FAA3E9470 /* GameSettings+Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameSettings+Fixture.swift"; sourceTree = "<group>"; };
 		AA24B87021212FBB69C0BD00 /* Resetable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resetable.swift; sourceTree = "<group>"; };
 		AA24B89C3CD561A829494264 /* MovesValidatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesValidatorSpec.swift; sourceTree = "<group>"; };
+		AA24B9766E353BB7D3ED0546 /* UIColor+OnPaperSoccer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+OnPaperSoccer.swift"; sourceTree = "<group>"; };
 		AA24BA9C383BCEDACB8CD8E5 /* MovesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovesViewController.xib; sourceTree = "<group>"; };
 		AA24BB10F9C1929C5A53998D /* UIColor+Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Fixture.swift"; sourceTree = "<group>"; };
 		AA24BC0B623729163EC253E7 /* Point+Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Point+Fixture.swift"; sourceTree = "<group>"; };
@@ -169,6 +170,7 @@
 				2C320B9E2178E2F600CDADF5 /* UIView+AddContentSubview.swift */,
 				2C320BA02178E32E00CDADF5 /* UIViewController+AddChildViewController.swift */,
 				AA24B10771B109B53597B92F /* CoreGraphics+Extensions.swift */,
+				AA24B9766E353BB7D3ED0546 /* UIColor+OnPaperSoccer.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -523,6 +525,7 @@
 				AA24BBEA3ABD8329D82E7FDF /* WithViewController.swift in Sources */,
 				AA24BD0F214B46C2945C2BEB /* Resetable.swift in Sources */,
 				AA24BDC8FA9191EEC7BC25D2 /* GameSettings.swift in Sources */,
+				AA24BBCAAF24F051B2E66253 /* UIColor+OnPaperSoccer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,7 +542,6 @@
 				AA24B7130118B052140EC799 /* PlayerTurnControllerSpec.swift in Sources */,
 				AA24B696C655F461F39434E4 /* UIColor+Fixture.swift in Sources */,
 				AA24BC1CBAE58A5B5DF58308 /* GameSettings+Fixture.swift in Sources */,
-				AA24BEAFF870352831B9CBF6 /* ExtendedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

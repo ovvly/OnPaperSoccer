@@ -63,12 +63,26 @@ final class FieldView: UIView {
     //MARK: Helpers
 
     private func drawField() {
+        guard let context = UIGraphicsGetCurrentContext() else { return }
+
+        let borderPath = calculateBorderLine()
+        drawBackgroundField(in: context, using: borderPath)
+        drawLines(in: context)
+        drawBorderLines(in: context, using: borderPath)
+        drawImage = context.makeImage()
+    }
+
+    private func drawBackgroundField(in context: CGContext, using path: UIBezierPath) {
+        UIColor.App.field.setFill()
+        path.fill()
+    }
+
+    private func drawLines(in context: CGContext) {
         let spacing = calculateSpacing()
         let shiftVector = calculateShiftVector(spacing: spacing)
 
-        let context = UIGraphicsGetCurrentContext()
         let path = UIBezierPath()
-        path.lineWidth = 2
+        path.lineWidth = 1
 
         for column in 0..<numberOfColumns {
             let start = CGPoint(x: CGFloat(column) * spacing, y: 0).apply(vector: shiftVector)
@@ -85,10 +99,35 @@ final class FieldView: UIView {
         }
 
         path.close()
-        UIColor.red.setStroke()
+        UIColor.App.lines.setStroke()
         path.stroke()
+    }
 
-        drawImage = context?.makeImage()
+    private func drawBorderLines(in context: CGContext, using path: UIBezierPath) {
+        UIColor.App.borderlines.setStroke()
+        path.stroke()
+    }
+
+    private func calculateBorderLine() -> UIBezierPath {
+        let spacing = calculateSpacing()
+        let shiftVector = calculateShiftVector(spacing: spacing)
+
+        let path = UIBezierPath()
+        path.lineWidth = 1
+
+        let upLeftCornerPoint = CGPoint(x: 0, y: 0).apply(vector: shiftVector)
+        let upRightCornerPoint = CGPoint(x: 0, y: CGFloat(numberOfRows - 1) * spacing).apply(vector: shiftVector)
+        let downRightCornerPoint = CGPoint(x: spacing * CGFloat(numberOfColumns - 1), y: CGFloat(numberOfRows - 1) * spacing).apply(vector: shiftVector)
+        let downLeftCornerPoint = CGPoint(x: spacing * CGFloat(numberOfColumns - 1), y: 0).apply(vector: shiftVector)
+
+        path.move(to: upLeftCornerPoint)
+        path.addLine(to: upRightCornerPoint)
+        path.addLine(to: downRightCornerPoint)
+        path.addLine(to: downLeftCornerPoint)
+        path.addLine(to: upLeftCornerPoint)
+        path.close()
+
+        return path
     }
 
     private func calculateShiftVector(spacing: CGFloat) -> CGVector {
