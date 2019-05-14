@@ -28,7 +28,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amN-xT-aku">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amN-xT-aku" customClass="MoveButton" customModule="OnPaperSoccer" customModuleProvider="target">
                     <rect key="frame" x="10" y="273.5" width="120" height="120"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -41,7 +41,7 @@
                         <action selector="leftButtonTapped:" destination="-1" eventType="touchUpInside" id="O0X-KC-x6U"/>
                     </connections>
                 </button>
-                <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJ1-lm-8mk">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJ1-lm-8mk" customClass="MoveButton" customModule="OnPaperSoccer" customModuleProvider="target">
                     <rect key="frame" x="245" y="273.5" width="120" height="120"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -54,7 +54,7 @@
                         <action selector="rightButtonTapped:" destination="-1" eventType="touchUpInside" id="3NS-nc-Ea9"/>
                     </connections>
                 </button>
-                <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NY2-79-ygI">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NY2-79-ygI" customClass="MoveButton" customModule="OnPaperSoccer" customModuleProvider="target">
                     <rect key="frame" x="127.5" y="30" width="120" height="120"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -67,7 +67,7 @@
                         <action selector="upButtonTapped:" destination="-1" eventType="touchUpInside" id="S5G-0Y-Gom"/>
                     </connections>
                 </button>
-                <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8r-c1-Kfj">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8r-c1-Kfj" customClass="MoveButton" customModule="OnPaperSoccer" customModuleProvider="target">
                     <rect key="frame" x="127.5" y="537" width="120" height="120"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -80,7 +80,7 @@
                         <action selector="downButtonTapped:" destination="-1" eventType="touchUpInside" id="FJK-Jy-lXo"/>
                     </connections>
                 </button>
-                <button opaque="NO" alpha="0.5" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Hx-PS-Q9i">
+                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Hx-PS-Q9i" customClass="MoveButton" customModule="OnPaperSoccer" customModuleProvider="target">
                     <rect key="frame" x="10" y="30" width="100" height="200"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -93,7 +93,7 @@
                         <action selector="upLeftButtonTapped:" destination="-1" eventType="touchUpInside" id="tXr-NJ-rb5"/>
                     </connections>
                 </button>
-                <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFf-5Q-msP">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFf-5Q-msP" customClass="MoveButton" customModule="OnPaperSoccer" customModuleProvider="target">
                     <rect key="frame" x="265" y="30" width="100" height="200"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -106,7 +106,7 @@
                         <action selector="upRightButtonTapped:" destination="-1" eventType="touchUpInside" id="j2K-6x-cQw"/>
                     </connections>
                 </button>
-                <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QjD-xc-z4b">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QjD-xc-z4b" customClass="MoveButton" customModule="OnPaperSoccer" customModuleProvider="target">
                     <rect key="frame" x="10" y="457" width="100" height="200"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -119,7 +119,7 @@
                         <action selector="downLeftButtonTapped:" destination="-1" eventType="touchUpInside" id="kLj-DS-uVa"/>
                     </connections>
                 </button>
-                <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ip-7D-6h0">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ip-7D-6h0" customClass="MoveButton" customModule="OnPaperSoccer" customModuleProvider="target">
                     <rect key="frame" x="265" y="457" width="100" height="200"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>

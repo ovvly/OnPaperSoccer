@@ -20,6 +20,7 @@
 		2CB51AF5202CDC96009C3B71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB51AF4202CDC96009C3B71 /* AppDelegate.swift */; };
 		2CB51AFC202CDC96009C3B71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB51AFB202CDC96009C3B71 /* Assets.xcassets */; };
 		2CB51AFF202CDC96009C3B71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB51AFD202CDC96009C3B71 /* LaunchScreen.storyboard */; };
+		2CCE26C3228AF0B10028D291 /* MoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCE26C2228AF0B10028D291 /* MoveButton.swift */; };
 		2DE7783BAEE9C6896C6DE789 /* Pods_OnPaperSoccer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C997CA20A546BDB0661357 /* Pods_OnPaperSoccer.framework */; };
 		9756ACC4D1309DCDA4E43A32 /* Pods_OnPaperSoccer_OnPaperSoccerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B84FDFCEC62331B26D25449 /* Pods_OnPaperSoccer_OnPaperSoccerTests.framework */; };
 		AA24B2F3C919EEC95E187E86 /* FieldViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B13D18BFBF3DDCDC0F91 /* FieldViewControllerSpec.swift */; };
@@ -76,6 +77,7 @@
 		2CB51B00202CDC96009C3B71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CB51B05202CDC96009C3B71 /* OnPaperSoccerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnPaperSoccerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB51B0B202CDC96009C3B71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CCE26C2228AF0B10028D291 /* MoveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveButton.swift; sourceTree = "<group>"; };
 		9B84FDFCEC62331B26D25449 /* Pods_OnPaperSoccer_OnPaperSoccerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnPaperSoccer_OnPaperSoccerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA24B05A388611DD00323809 /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		AA24B06D05D5533EA3B990A2 /* PlayerTurnController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTurnController.swift; sourceTree = "<group>"; };
@@ -87,7 +89,6 @@
 		AA24B44D98711ED2BADE4D3A /* FlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
 		AA24B4F322735060BBE4226E /* MovesViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesViewControllerSpec.swift; sourceTree = "<group>"; };
 		AA24B5092F1425DDB1948782 /* MovesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesViewController.swift; sourceTree = "<group>"; };
-		AA24B55B3ABD0F89127E1E51 /* ExtendedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedButton.swift; sourceTree = "<group>"; };
 		AA24B77DCFCFB2BA9F8CC272 /* PlayerTurnControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTurnControllerSpec.swift; sourceTree = "<group>"; };
 		AA24B82E6F9EF90FAA3E9470 /* GameSettings+Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameSettings+Fixture.swift"; sourceTree = "<group>"; };
 		AA24B87021212FBB69C0BD00 /* Resetable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resetable.swift; sourceTree = "<group>"; };
@@ -271,7 +272,7 @@
 		AA24B565916B6B419C730B97 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				AA24B55B3ABD0F89127E1E51 /* ExtendedButton.swift */,
+				2CCE26C2228AF0B10028D291 /* MoveButton.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -513,6 +514,7 @@
 				2CB51AF5202CDC96009C3B71 /* AppDelegate.swift in Sources */,
 				2C320B952178DBE500CDADF5 /* Line.swift in Sources */,
 				2C320B982178DD1E00CDADF5 /* FieldViewController.swift in Sources */,
+				2CCE26C3228AF0B10028D291 /* MoveButton.swift in Sources */,
 				2C9A70A721BE747000B801C9 /* MovesValidator.swift in Sources */,
 				AA24B9D40713DEC4441E3456 /* CoreGraphics+Extensions.swift in Sources */,
 				AA24BB0EB5F03F92D472BEDA /* MovesViewController.swift in Sources */,
