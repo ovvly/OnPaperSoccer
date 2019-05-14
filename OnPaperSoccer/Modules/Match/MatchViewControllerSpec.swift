@@ -117,11 +117,48 @@ class MatchViewControllerSpec: QuickSpec {
                 context("when player 1 does not have any moves") {
                     beforeEach {
                         movesValidatorSpy.possibleMoves = Set()
+
                         sut.move(to: Point(x: 10, y: 10))
                     }
                     
                     it("should inform about player 2 win") {
                         expect(delegate.playerDidWin) == .player2
+                    }
+                }
+
+                describe("turn updating") {
+                    context("when moved to new point") {
+                        context("when current player is now player 1") {
+                            beforeEach {
+                                turnControllerSpy.currentPlayer = .player1
+
+                                movesControllerSpy.movesSubject.onNext(.downRight)
+                            }
+
+                            it("should set correct text on turn label") {
+                                expect(sut.turnLabel.text) == "RED PLAYER TURN"
+                            }
+
+                            it("should set correct color on turn view") {
+                                expect(sut.turnView.backgroundColor) == UIColor.App.player1
+                            }
+                        }
+
+                        context("when current player is now player 2") {
+                            beforeEach {
+                                turnControllerSpy.currentPlayer = .player2
+
+                                movesControllerSpy.movesSubject.onNext(.downRight)
+                            }
+
+                            it("should set correct text on turn label") {
+                                expect(sut.turnLabel.text) == "BLUE PLAYER TURN"
+                            }
+
+                            it("should set correct color on turn view") {
+                                expect(sut.turnView.backgroundColor) == UIColor.App.player2
+                            }
+                        }
                     }
                 }
             }
@@ -133,7 +170,6 @@ class MatchViewControllerSpec: QuickSpec {
 
                         movesControllerSpy.movesSubject.onNext(.downRight)
                     }
-
                     it("should move in emitted direction") {
                         expect(sut.currentPosition) == Point(x: 1, y: -1)
                     }

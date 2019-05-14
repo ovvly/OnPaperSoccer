@@ -13,6 +13,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MatchViewController" customModule="OnPaperSoccer" customModuleProvider="target">
             <connections>
                 <outlet property="fieldView" destination="TEk-6w-Tf8" id="1dl-E4-kN4"/>
+                <outlet property="mainContentView" destination="Dc4-IY-lEp" id="ZWc-xS-lhG"/>
+                <outlet property="turnLabel" destination="Hei-Ei-hbs" id="yPL-hW-gk7"/>
+                <outlet property="turnView" destination="2aJ-7X-DGM" id="ePT-bV-l9e"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,19 +24,54 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TEk-6w-Tf8">
-                    <rect key="frame" x="60" y="60" width="255" height="567"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dc4-IY-lEp" userLabel="MainContentView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="602"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TEk-6w-Tf8">
+                            <rect key="frame" x="60" y="60" width="255" height="482"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="TEk-6w-Tf8" firstAttribute="leading" secondItem="Dc4-IY-lEp" secondAttribute="leading" constant="60" id="Ino-h7-43w"/>
+                        <constraint firstAttribute="trailing" secondItem="TEk-6w-Tf8" secondAttribute="trailing" constant="60" id="Qbo-e8-RgF"/>
+                        <constraint firstAttribute="bottom" secondItem="TEk-6w-Tf8" secondAttribute="bottom" constant="60" id="TgH-vc-9Q1"/>
+                        <constraint firstItem="TEk-6w-Tf8" firstAttribute="top" secondItem="Dc4-IY-lEp" secondAttribute="top" constant="60" id="XjO-gk-wyd"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2aJ-7X-DGM" userLabel="TurnView">
+                    <rect key="frame" x="0.0" y="602" width="375" height="65"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hei-Ei-hbs">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Hei-Ei-hbs" firstAttribute="top" secondItem="2aJ-7X-DGM" secondAttribute="top" id="K7o-C6-q87"/>
+                        <constraint firstAttribute="bottom" secondItem="Hei-Ei-hbs" secondAttribute="bottom" id="Wds-vx-SAp"/>
+                        <constraint firstAttribute="height" constant="65" id="YV0-AE-5s3"/>
+                        <constraint firstItem="Hei-Ei-hbs" firstAttribute="leading" secondItem="2aJ-7X-DGM" secondAttribute="leading" id="fCU-sl-qcP"/>
+                        <constraint firstAttribute="trailing" secondItem="Hei-Ei-hbs" secondAttribute="trailing" id="pZ2-fT-ET2"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="TEk-6w-Tf8" secondAttribute="bottom" constant="40" id="H4f-jE-VWy"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TEk-6w-Tf8" secondAttribute="trailing" constant="60" id="KFg-wM-wpR"/>
-                <constraint firstItem="TEk-6w-Tf8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="OBZ-2a-3Zm"/>
-                <constraint firstItem="TEk-6w-Tf8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="stm-VY-m1I"/>
+                <constraint firstAttribute="bottom" secondItem="2aJ-7X-DGM" secondAttribute="bottom" id="14f-NK-u6w"/>
+                <constraint firstItem="2aJ-7X-DGM" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="1D5-e7-DP1"/>
+                <constraint firstItem="2aJ-7X-DGM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2hU-jx-mMs"/>
+                <constraint firstItem="2aJ-7X-DGM" firstAttribute="top" secondItem="Dc4-IY-lEp" secondAttribute="bottom" id="Axa-V1-Iaj"/>
+                <constraint firstItem="Dc4-IY-lEp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="QCy-Qx-0Nj"/>
+                <constraint firstItem="Dc4-IY-lEp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fKa-XS-Yoy"/>
+                <constraint firstItem="Dc4-IY-lEp" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ve5-pe-hRf"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138.40000000000001" y="152.47376311844079"/>
         </view>
     </objects>
 </document>

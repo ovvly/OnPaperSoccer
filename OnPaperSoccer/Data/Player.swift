@@ -25,8 +25,8 @@ extension Player {
 extension Player {
     var name: String {
         switch self {
-        case .player1: return "Player 1"
-        case .player2: return "Player 2"
+        case .player1: return "RED"
+        case .player2: return "BLUE"
         }
     }
 }

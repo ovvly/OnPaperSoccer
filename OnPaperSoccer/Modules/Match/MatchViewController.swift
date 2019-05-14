@@ -7,7 +7,10 @@ protocol MatchViewControllerDelegate: class {
 
 class MatchViewController: UIViewController, Resetable {
     @IBOutlet weak var fieldView: UIView!
-
+    @IBOutlet weak var mainContentView: UIView!
+    @IBOutlet weak var turnView: UIView!
+    @IBOutlet weak var turnLabel: UILabel!
+    
     weak var delegate: MatchViewControllerDelegate?
     private(set) var currentPosition: Point
     private let settings: GameSettings
@@ -45,7 +48,7 @@ class MatchViewController: UIViewController, Resetable {
         super.viewDidLoad()
 
         addChild(viewController: fieldDrawer.viewController, to: fieldView)
-        addChild(viewController: movesController.viewController, to: view)
+        addChild(viewController: movesController.viewController, to: mainContentView)
         fieldDrawer.drawNewField()
 
         movesController.moves
@@ -65,6 +68,8 @@ class MatchViewController: UIViewController, Resetable {
         updateMovesPossibility()
         checkWiningGameConditions(from: point)
         turnController.moved(to: point)
+        turnView.backgroundColor = turnController.currentPlayer.color
+        turnLabel.text = "\(turnController.currentPlayer.name) PLAYER TURN"
     }
 
     func reset() {
