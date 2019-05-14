@@ -50,6 +50,7 @@ class MatchViewController: UIViewController, Resetable {
         addChild(viewController: fieldDrawer.viewController, to: fieldView)
         addChild(viewController: movesController.viewController, to: mainContentView)
         fieldDrawer.drawNewField()
+        updateTurnIndicator(with: turnController.currentPlayer)
 
         movesController.moves
             .subscribe(onNext: { [unowned self] move in
@@ -68,8 +69,7 @@ class MatchViewController: UIViewController, Resetable {
         updateMovesPossibility()
         checkWiningGameConditions(from: point)
         turnController.moved(to: point)
-        turnView.backgroundColor = turnController.currentPlayer.color
-        turnLabel.text = "\(turnController.currentPlayer.name) PLAYER TURN"
+        updateTurnIndicator(with: turnController.currentPlayer)
     }
 
     func reset() {
@@ -103,5 +103,10 @@ class MatchViewController: UIViewController, Resetable {
         if let player = settings.winingPoints[point] {
             delegate?.playerDidWin(player)
         }
+    }
+
+    private func updateTurnIndicator(with player: Player) {
+        turnView.backgroundColor = player.color
+        turnLabel.text = "\(player.name) PLAYER TURN"
     }
 }

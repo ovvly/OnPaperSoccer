@@ -52,6 +52,11 @@ class MatchViewControllerSpec: QuickSpec {
                 it("should have current position set to middle of field size") {
                     expect(sut.currentPosition) == gameSettings.startingPoint
                 }
+                
+                it("should indicate player 1 turn") {
+                    expect(sut.turnLabel.text) == "RED PLAYER TURN"
+                    expect(sut.turnView.backgroundColor) == UIColor.App.player1
+                }
             }
 
             describe("move to") {
