@@ -4,6 +4,7 @@ import CoreGraphics
 protocol FieldDrawer: WithViewController, Resetable {
     func drawNewField()
     func draw(line: Line, color: UIColor)
+    func mark(currentPoint: Point, with color: UIColor)
 }
 
 class FieldViewController: UIViewController, FieldDrawer {
@@ -26,14 +27,14 @@ class FieldViewController: UIViewController, FieldDrawer {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     // MARK: Actions
 
     func draw(line: Line, color: UIColor) {
         fieldView.draw(line: line, color: color)
+    }
+
+    func mark(currentPoint: Point, with color: UIColor) {
+        fieldView.mark(currentPoint: currentPoint, with: color)
     }
 
     func drawNewField() {

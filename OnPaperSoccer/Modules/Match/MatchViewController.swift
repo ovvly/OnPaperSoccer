@@ -46,9 +46,7 @@ class MatchViewController: UIViewController, Resetable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        addChild(viewController: fieldDrawer.viewController, to: fieldView)
-        addChild(viewController: movesController.viewController, to: mainContentView)
+        addChildrenViewControllers()
         fieldDrawer.drawNewField()
         updateTurnIndicator(with: turnController.currentPlayer)
 
@@ -57,6 +55,12 @@ class MatchViewController: UIViewController, Resetable {
                 self.move(to: self.currentPosition.shifted(by: move.vector))
             })
             .disposed(by: disposeBag)
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        fieldDrawer.mark(currentPoint: currentPosition, with: turnController.currentPlayer.color)
     }
 
     //MARK: Pubic
@@ -69,6 +73,7 @@ class MatchViewController: UIViewController, Resetable {
         updateMovesPossibility()
         checkWiningGameConditions(from: point)
         turnController.moved(to: point)
+        fieldDrawer.mark(currentPoint: currentPosition, with: turnController.currentPlayer.color)
         updateTurnIndicator(with: turnController.currentPlayer)
     }
 
@@ -79,9 +84,15 @@ class MatchViewController: UIViewController, Resetable {
         turnController.reset()
         movesValidator.reset()
         movesController.reset()
+        fieldDrawer.mark(currentPoint: currentPosition, with: turnController.currentPlayer.color)
     }
 
     //MARK: Helpers
+
+    private func addChildrenViewControllers() {
+        addChild(viewController: fieldDrawer.viewController, to: fieldView)
+        addChild(viewController: movesController.viewController, to: mainContentView)
+    }
 
     private func updateMovesPossibility() {
         let possibleMoves = movesValidator.possibleMoves(from: currentPosition)

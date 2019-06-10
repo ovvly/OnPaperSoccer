@@ -59,18 +59,41 @@ class MatchViewControllerSpec: QuickSpec {
                 }
             }
 
+            describe("view did layout subviews") {
+                beforeEach {
+                    sut.viewDidLayoutSubviews()
+                }
+
+                it("should mark middle of field as current position") {
+                    expect(fieldDrawerSpy.markedPoint) == gameSettings.startingPoint
+                    expect(fieldDrawerSpy.markingColor) == UIColor.App.player1
+                }
+            }
+
             describe("move to") {
                 describe("current position") {
                     beforeEach {
+                        turnControllerSpy.currentPlayer = .player2
                         sut.move(to: Point(x: 10, y: 10))
                     }
+
                     it("should be set correctly") {
                         expect(sut.currentPosition) == Point(x: 10, y: 10)
                     }
+
                     it("should inform turn controller about move") {
                         expect(turnControllerSpy.capturedPoint) == Point(x: 10, y: 10)
                     }
+
+                    it("should mark current position on field drawer") {
+                        expect(fieldDrawerSpy.markedPoint) == Point(x: 10, y: 10)
+                    }
+
+                    it("should mark current position with current player color") {
+                        expect(fieldDrawerSpy.markingColor) == Player.player2.color
+                    }
                 }
+
                 describe("possible moves") {
                     beforeEach {
                         movesValidatorSpy.possibleMoves = [.up, .down, .left]
@@ -184,6 +207,8 @@ class MatchViewControllerSpec: QuickSpec {
             describe("reset") {
                 beforeEach {
                     sut.move(to: Point(x: 0, y: 0))
+                    fieldDrawerSpy.markingColor = nil
+                    fieldDrawerSpy.markedPoint = nil
 
                     sut.reset()
                 }
@@ -207,6 +232,11 @@ class MatchViewControllerSpec: QuickSpec {
                 it("should reset moves controller") {
                     expect(movesControllerSpy.didReset) == true
                 }
+
+                it("should mark middle of field as current position") {
+                    expect(fieldDrawerSpy.markedPoint) == gameSettings.startingPoint
+                    expect(fieldDrawerSpy.markingColor) == UIColor.App.player1
+                }
             }
         }
     }
@@ -218,6 +248,8 @@ private class FieldDrawerSpy: FieldDrawer {
     var capturedLine: Line? = nil
     var didDrawNewField = false
     var viewController = UIViewController()
+    var markedPoint: Point? = nil
+    var markingColor: UIColor? = nil
 
     func drawNewField() {
         didDrawNewField = true
@@ -230,6 +262,11 @@ private class FieldDrawerSpy: FieldDrawer {
 
     func reset() {
         didReset = true
+    }
+
+    func mark(currentPoint: Point, with color: UIColor) {
+        markedPoint = currentPoint
+        markingColor = color
     }
 }
 

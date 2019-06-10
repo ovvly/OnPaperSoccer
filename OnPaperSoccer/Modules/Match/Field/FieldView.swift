@@ -14,12 +14,22 @@ final class FieldView: UIView {
 
     //MARK: Lifecycle
 
+    private let currentPointView: UIView = {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        view.layer.cornerRadius = 5.0
+        return view
+    }()
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+
+        setup()
     }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+
+        setup()
     }
 
     override func draw(_ rect: CGRect) {
@@ -54,6 +64,14 @@ final class FieldView: UIView {
         setNeedsDisplay()
     }
 
+    func mark(currentPoint: Point, with color: UIColor) {
+        currentPointView.backgroundColor = color
+        let spacing = calculateSpacing()
+        let shiftVector = calculateShiftVector(spacing: spacing)
+        let currentPointCenter = CGPoint(x: currentPoint.x * spacing, y: (numberOfRows - currentPoint.y - 1) * spacing).apply(vector: shiftVector)
+        currentPointView.center = currentPointCenter
+    }
+
     func reset() {
         drawNewField(width: numberOfColumns, height: numberOfRows)
         lineToDraw = nil
@@ -61,6 +79,10 @@ final class FieldView: UIView {
     }
 
     //MARK: Helpers
+
+    private func setup() {
+        addSubview(currentPointView)
+    }
 
     private func drawField() {
         guard let context = UIGraphicsGetCurrentContext() else { return }
