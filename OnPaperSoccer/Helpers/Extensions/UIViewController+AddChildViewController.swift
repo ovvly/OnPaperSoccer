@@ -3,8 +3,8 @@ import UIKit
 extension UIViewController {
 
     func addChild(viewController: UIViewController, to container: UIView) {
-        addChildViewController(viewController)
+        addChild(viewController)
         container.addContentSubview(viewController.view)
-        viewController.didMove(toParentViewController: self)
+        viewController.didMove(toParent: self)
     }
 }

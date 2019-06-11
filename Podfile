@@ -4,15 +4,15 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'OnPaperSoccer' do
-  pod 'RxSwift', '~> 4.2'
-  pod 'RxCocoa', '~> 4.2'
+  pod 'RxSwift', '~> 4.5'
+  pod 'RxCocoa', '~> 4.5'
 
   target 'OnPaperSoccerTests' do
-    pod 'Quick', '~> 1.3'
-    pod 'Nimble', '~> 7.3'
-    pod 'RxTest', '~> 4.4'
-    pod 'iOSSnapshotTestCase', '~> 4.0'
-    pod 'Nimble-Snapshots', '~> 6.8'
+    pod 'Quick', '~> 2.0'
+    pod 'Nimble', '~> 8.0'
+    pod 'RxTest', '~> 4.5'
+    pod 'iOSSnapshotTestCase', '~> 6.0'
+    pod 'Nimble-Snapshots', '~> 7.0'
   end
 
 end

@@ -42,7 +42,7 @@ class MatchViewControllerSpec: QuickSpec {
             
             describe("init") {
                 it("should add field drawer view as subview") {
-                    expect(sut.childViewControllers).to(contain(fieldDrawerSpy.viewController))
+                    expect(sut.children).to(contain(fieldDrawerSpy.viewController))
                 }
 
                 it("should draw initial field") {

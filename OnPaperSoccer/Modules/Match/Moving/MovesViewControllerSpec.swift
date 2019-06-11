@@ -43,56 +43,56 @@ class MovesViewControllerSpec: QuickSpec {
                 describe("up button") {
                     itBehavesLike("move") {
                         ["direction": Move.up,
-                         "tapping": sut.upButton]
+                         "tapping": sut.upButton!]
                     }
                 }
 
                 describe("down button") {
                     itBehavesLike("move") {
                         ["direction": Move.down,
-                         "tapping": sut.downButton]
+                         "tapping": sut.downButton!]
                     }
                 }
 
                 describe("left button") {
                     itBehavesLike("move") {
                         ["direction": Move.left,
-                         "tapping": sut.leftButton]
+                         "tapping": sut.leftButton!]
                     }
                 }
 
                 describe("right button") {
                     itBehavesLike("move") {
                         ["direction": Move.right,
-                         "tapping": sut.rightButton]
+                         "tapping": sut.rightButton!]
                     }
                 }
 
                 describe("up-left button") {
                     itBehavesLike("move") {
                         ["direction": Move.upLeft,
-                         "tapping": sut.upLeftButton]
+                         "tapping": sut.upLeftButton!]
                     }
                 }
 
                 describe("up-right button") {
                     itBehavesLike("move") {
                         ["direction": Move.upRight,
-                         "tapping": sut.upRightButton]
+                         "tapping": sut.upRightButton!]
                     }
                 }
 
                 describe("down-left button") {
                     itBehavesLike("move") {
                         ["direction": Move.downLeft,
-                         "tapping": sut.downLeftButton]
+                         "tapping": sut.downLeftButton!]
                     }
                 }
 
                 describe("down-right button") {
                     itBehavesLike("move") {
                         ["direction": Move.downRight,
-                         "tapping": sut.downRightButton]
+                         "tapping": sut.downRightButton!]
                     }
                 }
             }
