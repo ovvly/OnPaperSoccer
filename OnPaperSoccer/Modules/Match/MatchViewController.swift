@@ -1,5 +1,4 @@
 import UIKit
-import RxSwift
 
 protocol MatchViewControllerDelegate: class {
     func playerDidWin(_ player: Player)
@@ -19,7 +18,6 @@ class MatchViewController: UIViewController, Resetable {
     private let movesController: MovesController
     private let turnController: PlayerTurnController
     private var movesValidator: MovesValidator
-    private let disposeBag = DisposeBag()
 
     // MARK: Init
 
@@ -49,12 +47,7 @@ class MatchViewController: UIViewController, Resetable {
         addChildrenViewControllers()
         fieldDrawer.drawNewField()
         updateTurnIndicator(with: turnController.currentPlayer)
-
-        movesController.moves
-            .subscribe(onNext: { [unowned self] move in
-                self.move(to: self.currentPosition.shifted(by: move.vector))
-            })
-            .disposed(by: disposeBag)
+        movesController.delegate = self
     }
 
     override func viewDidLayoutSubviews() {
@@ -119,5 +112,11 @@ class MatchViewController: UIViewController, Resetable {
     private func updateTurnIndicator(with player: Player) {
         turnView.backgroundColor = player.color
         turnLabel.text = "\(player.name) PLAYER TURN"
+    }
+}
+
+extension MatchViewController: MovesControllerDelegate {
+    func didMove(_ move: Move) {
+        self.move(to: self.currentPosition.shifted(by: move.vector))
     }
 }

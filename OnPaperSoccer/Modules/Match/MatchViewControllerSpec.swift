@@ -1,7 +1,6 @@
 import Foundation
 import Quick
 import Nimble
-import RxSwift
 
 @testable import OnPaperSoccer
 
@@ -74,6 +73,7 @@ class MatchViewControllerSpec: QuickSpec {
                 describe("current position") {
                     beforeEach {
                         turnControllerSpy.currentPlayer = .player2
+
                         sut.move(to: Point(x: 10, y: 10))
                     }
 
@@ -92,13 +92,19 @@ class MatchViewControllerSpec: QuickSpec {
                     it("should mark current position with current player color") {
                         expect(fieldDrawerSpy.markingColor) == Player.player2.color
                     }
+
+                    it("should set self as moves controller delegate") {
+                        expect(movesControllerSpy.delegate) === sut
+                    }
                 }
 
                 describe("possible moves") {
                     beforeEach {
                         movesValidatorSpy.possibleMoves = [.up, .down, .left]
+
                         sut.move(to: Point(x: 10, y: 10))
                     }
+
                     it("should be updated") {
                         expect(movesControllerSpy.capturedPossibleMoves) == [.up, .down, .left]
                     }
@@ -112,6 +118,7 @@ class MatchViewControllerSpec: QuickSpec {
                             sut.move(to: Point(x: 10, y: 10))
                             sut.move(to: Point(x: 20, y: 20))
                         }
+                        
                         it("should draw line from old to new position") {
                             expect(fieldDrawerSpy.capturedLine?.from) == Point(x: 10, y: 10)
                             expect(fieldDrawerSpy.capturedLine?.to) == Point(x: 20, y: 20)
@@ -159,8 +166,7 @@ class MatchViewControllerSpec: QuickSpec {
                         context("when current player is now player 1") {
                             beforeEach {
                                 turnControllerSpy.currentPlayer = .player1
-
-                                movesControllerSpy.movesSubject.onNext(.downRight)
+                                sut.didMove(.downRight)
                             }
 
                             it("should set correct text on turn label") {
@@ -175,8 +181,7 @@ class MatchViewControllerSpec: QuickSpec {
                         context("when current player is now player 2") {
                             beforeEach {
                                 turnControllerSpy.currentPlayer = .player2
-
-                                movesControllerSpy.movesSubject.onNext(.downRight)
+                                sut.didMove(.downRight)
                             }
 
                             it("should set correct text on turn label") {
@@ -196,7 +201,7 @@ class MatchViewControllerSpec: QuickSpec {
                     beforeEach {
                         sut.move(to: Point(x: 0, y: 0))
 
-                        movesControllerSpy.movesSubject.onNext(.downRight)
+                        sut.didMove(.downRight)
                     }
                     it("should move in emitted direction") {
                         expect(sut.currentPosition) == Point(x: 1, y: -1)
@@ -274,8 +279,7 @@ private class MovesControllerSpy: MovesController {
     var didReset = false
     var capturedPossibleMoves = Set<Move>()
     var viewController = UIViewController()
-    let movesSubject = PublishSubject<Move>()
-    var moves: Observable<Move> { return movesSubject.asObservable() }
+    var delegate: MovesControllerDelegate? = nil
 
     func updateMovesPossibility(_ moves: Set<Move>) {
         capturedPossibleMoves = moves

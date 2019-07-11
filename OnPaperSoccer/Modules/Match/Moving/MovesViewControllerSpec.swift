@@ -1,7 +1,6 @@
 import Foundation
 import Quick
 import Nimble
-import RxSwift
 
 @testable import OnPaperSoccer
 
@@ -10,33 +9,28 @@ class MovesViewControllerSpec: QuickSpec {
 
         describe("MatchViewController") {
             var sut: MovesViewController!
-            var disposeBag: DisposeBag!
+            var delegate: MovesViewControllerDelegateSpy!
 
             beforeEach {
-                disposeBag = DisposeBag()
                 sut = MovesViewController()
+                delegate = MovesViewControllerDelegateSpy()
+                sut.delegate = delegate
+
                 _ = sut.view
             }
 
             describe("actions") {
                 sharedExamples("move") { context in
-                    var capturedMove: Move!
                     var expectedMove: Move!
 
                     beforeEach {
-                        sut.moves
-                            .subscribe(onNext: { move in
-                                capturedMove = move
-                            })
-                            .disposed(by: disposeBag)
-
                         expectedMove = context()["direction"] as? Move
                         let button = context()["tapping"] as! UIButton
 
                         button.simulateTap()
                     }
-                    it("should emit move in correct direction") {
-                        expect(expectedMove) == capturedMove
+                    it("should inform delegate about moving in correct direction") {
+                        expect(delegate.capturedMove) == expectedMove
                     }
                 }
 
@@ -133,5 +127,13 @@ class MovesViewControllerSpec: QuickSpec {
                 }
             }
         }
+    }
+}
+
+private class MovesViewControllerDelegateSpy: MovesControllerDelegate {
+    var capturedMove: Move?
+
+    func didMove(_ move: Move) {
+        capturedMove = move
     }
 }

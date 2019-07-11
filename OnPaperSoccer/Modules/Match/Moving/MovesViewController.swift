@@ -1,8 +1,11 @@
 import UIKit
-import RxSwift
 
-protocol MovesController: WithViewController, Resetable {
-    var moves: Observable<Move> { get }
+protocol MovesControllerDelegate: class {
+    func didMove(_ move: Move)
+}
+
+protocol MovesController: class, WithViewController, Resetable {
+    var delegate: MovesControllerDelegate? { get set }
     func updateMovesPossibility(_ moves: Set<Move>)
 }
 
@@ -16,12 +19,8 @@ class MovesViewController: UIViewController, MovesController {
     @IBOutlet weak var downLeftButton: UIButton!
     @IBOutlet weak var downRightButton: UIButton!
 
-    var moves: Observable<Move> {
-       return movesSubject.asObservable()
-    }
+    weak var delegate: MovesControllerDelegate?
     var viewController: UIViewController { return self }
-
-    private let movesSubject = PublishSubject<Move>()
 
     // MARK: Init
 
@@ -48,42 +47,42 @@ class MovesViewController: UIViewController, MovesController {
 
     @IBAction
     private func upButtonTapped(_ sender: UIButton) {
-        movesSubject.onNext(Move.up)
+        delegate?.didMove(.up)
     }
 
     @IBAction
     func downButtonTapped(_ sender: UIButton) {
-        movesSubject.onNext(Move.down)
+        delegate?.didMove(.down)
     }
 
     @IBAction
     func leftButtonTapped(_ sender: UIButton) {
-        movesSubject.onNext(Move.left)
+        delegate?.didMove(.left)
     }
 
     @IBAction
     func rightButtonTapped(_ sender: UIButton) {
-        movesSubject.onNext(Move.right)
+        delegate?.didMove(.right)
     }
 
     @IBAction
     private func upLeftButtonTapped(_ sender: UIButton) {
-        movesSubject.onNext(Move.upLeft)
+        delegate?.didMove(.upLeft)
     }
 
     @IBAction
     func upRightButtonTapped(_ sender: UIButton) {
-        movesSubject.onNext(Move.upRight)
+        delegate?.didMove(.upRight)
     }
 
     @IBAction
     func downLeftButtonTapped(_ sender: UIButton) {
-        movesSubject.onNext(Move.downLeft)
+        delegate?.didMove(.downLeft)
     }
 
     @IBAction
     func downRightButtonTapped(_ sender: UIButton) {
-        movesSubject.onNext(Move.downRight)
+        delegate?.didMove(.downRight)
     }
 
     // MARK: Helpers
