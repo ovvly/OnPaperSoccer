@@ -1,7 +1,7 @@
 import Foundation
 import Quick
 import Nimble
-import Nimble_Snapshots
+import SnapshotTesting
 
 @testable import OnPaperSoccer
 
@@ -25,7 +25,7 @@ class FieldViewControllerSpec: QuickSpec {
                 }
 
                 it("should have valid snapshot") {
-                    expect(sut.view).to(haveValidSnapshot())
+                    assertSnapshot(matching: sut, as: .image(on: .iPhone8))
                 }
             }
 
@@ -37,7 +37,7 @@ class FieldViewControllerSpec: QuickSpec {
                 }
 
                 it("should have valid snapshot") {
-                    expect(sut.view).to(haveValidSnapshot())
+                    assertSnapshot(matching: sut, as: .image(on: .iPhone8))
                 }
             }
 
@@ -50,7 +50,7 @@ class FieldViewControllerSpec: QuickSpec {
                 }
 
                 it("should have valid snapshot") {
-                    expect(sut.view).to(haveValidSnapshot())
+                    assertSnapshot(matching: sut, as: .image(on: .iPhone8))
                 }
             }
             
@@ -63,8 +63,8 @@ class FieldViewControllerSpec: QuickSpec {
                     sut.reset()
                 }
 
-                it("should reset") {
-                    expect(sut.view).to(haveValidSnapshot())
+               it("should reset") {
+                    assertSnapshot(matching: sut, as: .image(on: .iPhone8))
                 }
             }
         }

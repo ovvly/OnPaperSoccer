@@ -8,8 +8,7 @@ target 'OnPaperSoccer' do
   target 'OnPaperSoccerTests' do
     pod 'Quick', '~> 2.0'
     pod 'Nimble', '~> 8.0'
-    pod 'iOSSnapshotTestCase', '~> 6.0'
-    pod 'Nimble-Snapshots', '~> 7.0'
+    pod 'SnapshotTesting', '~> 1.5'
   end
 
 end
