@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,9 @@
 		2C320B992178DD1E00CDADF5 /* FieldViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C320B972178DD1E00CDADF5 /* FieldViewController.xib */; };
 		2C320B9F2178E2F600CDADF5 /* UIView+AddContentSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B9E2178E2F600CDADF5 /* UIView+AddContentSubview.swift */; };
 		2C320BA12178E32E00CDADF5 /* UIViewController+AddChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320BA02178E32E00CDADF5 /* UIViewController+AddChildViewController.swift */; };
+		2C97553722E08B360018964A /* SnapshotTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C97553422E08B360018964A /* SnapshotTesting.framework */; };
+		2C97553822E08B360018964A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C97553522E08B360018964A /* Nimble.framework */; };
+		2C97553922E08B360018964A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C97553622E08B360018964A /* Quick.framework */; };
 		2C9A70A421BE615C00B801C9 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A70A221BE615C00B801C9 /* MatchViewController.swift */; };
 		2C9A70A521BE615C00B801C9 /* MatchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C9A70A321BE615C00B801C9 /* MatchViewController.xib */; };
 		2C9A70A721BE747000B801C9 /* MovesValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A70A621BE747000B801C9 /* MovesValidator.swift */; };
@@ -21,8 +24,6 @@
 		2CB51AFC202CDC96009C3B71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB51AFB202CDC96009C3B71 /* Assets.xcassets */; };
 		2CB51AFF202CDC96009C3B71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB51AFD202CDC96009C3B71 /* LaunchScreen.storyboard */; };
 		2CCE26C3228AF0B10028D291 /* MoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCE26C2228AF0B10028D291 /* MoveButton.swift */; };
-		2DE7783BAEE9C6896C6DE789 /* Pods_OnPaperSoccer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C997CA20A546BDB0661357 /* Pods_OnPaperSoccer.framework */; };
-		9756ACC4D1309DCDA4E43A32 /* Pods_OnPaperSoccer_OnPaperSoccerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B84FDFCEC62331B26D25449 /* Pods_OnPaperSoccer_OnPaperSoccerTests.framework */; };
 		AA24B2F3C919EEC95E187E86 /* FieldViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B13D18BFBF3DDCDC0F91 /* FieldViewControllerSpec.swift */; };
 		AA24B4171DFA4220F577787F /* Point+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BC0B623729163EC253E7 /* Point+Fixture.swift */; };
 		AA24B42B6DE4E267CAB7CFAD /* MovesViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B4F322735060BBE4226E /* MovesViewControllerSpec.swift */; };
@@ -58,8 +59,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		040D6B35AB64C4F38C776C43 /* Pods-OnPaperSoccer-OnPaperSoccerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnPaperSoccer-OnPaperSoccerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OnPaperSoccer-OnPaperSoccerTests/Pods-OnPaperSoccer-OnPaperSoccerTests.release.xcconfig"; sourceTree = "<group>"; };
-		27C997CA20A546BDB0661357 /* Pods_OnPaperSoccer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnPaperSoccer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C2BDD4521874587009D48BC /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
 		2C320B922178DBC800CDADF5 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		2C320B942178DBE500CDADF5 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
@@ -67,6 +66,9 @@
 		2C320B972178DD1E00CDADF5 /* FieldViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FieldViewController.xib; sourceTree = "<group>"; };
 		2C320B9E2178E2F600CDADF5 /* UIView+AddContentSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddContentSubview.swift"; sourceTree = "<group>"; };
 		2C320BA02178E32E00CDADF5 /* UIViewController+AddChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AddChildViewController.swift"; sourceTree = "<group>"; };
+		2C97553422E08B360018964A /* SnapshotTesting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapshotTesting.framework; path = Carthage/Build/iOS/SnapshotTesting.framework; sourceTree = "<group>"; };
+		2C97553522E08B360018964A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		2C97553622E08B360018964A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		2C9A70A221BE615C00B801C9 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		2C9A70A321BE615C00B801C9 /* MatchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchViewController.xib; sourceTree = "<group>"; };
 		2C9A70A621BE747000B801C9 /* MovesValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovesValidator.swift; sourceTree = "<group>"; };
@@ -78,7 +80,6 @@
 		2CB51B05202CDC96009C3B71 /* OnPaperSoccerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnPaperSoccerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB51B0B202CDC96009C3B71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CCE26C2228AF0B10028D291 /* MoveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveButton.swift; sourceTree = "<group>"; };
-		9B84FDFCEC62331B26D25449 /* Pods_OnPaperSoccer_OnPaperSoccerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnPaperSoccer_OnPaperSoccerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA24B05A388611DD00323809 /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		AA24B06D05D5533EA3B990A2 /* PlayerTurnController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTurnController.swift; sourceTree = "<group>"; };
 		AA24B10771B109B53597B92F /* CoreGraphics+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreGraphics+Extensions.swift"; sourceTree = "<group>"; };
@@ -101,9 +102,6 @@
 		AA24BD2C9FBB272298F04DC4 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		AA24BE820377AE917733B251 /* WithViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithViewController.swift; sourceTree = "<group>"; };
 		AA24BEE8D0DE024FC81EBD3A /* Move.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
-		C3CFDFF8E1AEE55F84192E36 /* Pods-OnPaperSoccer-OnPaperSoccerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnPaperSoccer-OnPaperSoccerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OnPaperSoccer-OnPaperSoccerTests/Pods-OnPaperSoccer-OnPaperSoccerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		CA66CA537D937603362FBED7 /* Pods-OnPaperSoccer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnPaperSoccer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OnPaperSoccer/Pods-OnPaperSoccer.debug.xcconfig"; sourceTree = "<group>"; };
-		F1287B65CACC13F62FA27AC4 /* Pods-OnPaperSoccer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnPaperSoccer.release.xcconfig"; path = "Pods/Target Support Files/Pods-OnPaperSoccer/Pods-OnPaperSoccer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +109,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DE7783BAEE9C6896C6DE789 /* Pods_OnPaperSoccer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,24 +116,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9756ACC4D1309DCDA4E43A32 /* Pods_OnPaperSoccer_OnPaperSoccerTests.framework in Frameworks */,
+				2C97553722E08B360018964A /* SnapshotTesting.framework in Frameworks */,
+				2C97553822E08B360018964A /* Nimble.framework in Frameworks */,
+				2C97553922E08B360018964A /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		10E1D3514C0C10ADD8B61CC5 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				CA66CA537D937603362FBED7 /* Pods-OnPaperSoccer.debug.xcconfig */,
-				F1287B65CACC13F62FA27AC4 /* Pods-OnPaperSoccer.release.xcconfig */,
-				C3CFDFF8E1AEE55F84192E36 /* Pods-OnPaperSoccer-OnPaperSoccerTests.debug.xcconfig */,
-				040D6B35AB64C4F38C776C43 /* Pods-OnPaperSoccer-OnPaperSoccerTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		2C320B912178DBBF00CDADF5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +164,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		2C97553322E08B360018964A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C97553522E08B360018964A /* Nimble.framework */,
+				2C97553622E08B360018964A /* Quick.framework */,
+				2C97553422E08B360018964A /* SnapshotTesting.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2C9A70A121BE608900B801C9 /* Moving */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,8 +190,7 @@
 				2CB51AF3202CDC96009C3B71 /* OnPaperSoccer */,
 				2CB51B08202CDC96009C3B71 /* OnPaperSoccerTests */,
 				2CB51AF2202CDC96009C3B71 /* Products */,
-				10E1D3514C0C10ADD8B61CC5 /* Pods */,
-				6B7F3ED2EA6208B16576E814 /* Frameworks */,
+				2C97553322E08B360018964A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -251,15 +248,6 @@
 			path = Match;
 			sourceTree = "<group>";
 		};
-		6B7F3ED2EA6208B16576E814 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				27C997CA20A546BDB0661357 /* Pods_OnPaperSoccer.framework */,
-				9B84FDFCEC62331B26D25449 /* Pods_OnPaperSoccer_OnPaperSoccerTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		AA24B38927CB41932430085C /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,7 +301,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CB51B0E202CDC96009C3B71 /* Build configuration list for PBXNativeTarget "OnPaperSoccer" */;
 			buildPhases = (
-				DCAD1F4DA6BA30E586A9A57C /* [CP] Check Pods Manifest.lock */,
 				2CB51AED202CDC95009C3B71 /* Sources */,
 				2CB51AEE202CDC95009C3B71 /* Frameworks */,
 				2CB51AEF202CDC95009C3B71 /* Resources */,
@@ -331,11 +318,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CB51B11202CDC96009C3B71 /* Build configuration list for PBXNativeTarget "OnPaperSoccerTests" */;
 			buildPhases = (
-				4B86497C4A3B0264B46CBAA4 /* [CP] Check Pods Manifest.lock */,
 				2CB51B01202CDC96009C3B71 /* Sources */,
 				2CB51B02202CDC96009C3B71 /* Frameworks */,
 				2CB51B03202CDC96009C3B71 /* Resources */,
-				FFEFA3CF7DC9C3B84CE14779 /* [CP] Embed Pods Frameworks */,
+				2C97553B22E08B640018964A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -412,63 +398,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4B86497C4A3B0264B46CBAA4 /* [CP] Check Pods Manifest.lock */ = {
+		2C97553B22E08B640018964A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
+			inputFileListPaths = (
+				"$(SRCROOT)/Carthage/input.xcfilelist",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			inputPaths = (
+			);
+			outputFileListPaths = (
+				"$(SRCROOT)/Carthage/output.xcfilelist",
+			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OnPaperSoccer-OnPaperSoccerTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DCAD1F4DA6BA30E586A9A57C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OnPaperSoccer-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FFEFA3CF7DC9C3B84CE14779 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OnPaperSoccer-OnPaperSoccerTests/Pods-OnPaperSoccer-OnPaperSoccerTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapshotTesting/SnapshotTesting.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapshotTesting.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OnPaperSoccer-OnPaperSoccerTests/Pods-OnPaperSoccer-OnPaperSoccerTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -646,20 +593,23 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		2CB51B0F202CDC96009C3B71 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CA66CA537D937603362FBED7 /* Pods-OnPaperSoccer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TN3WPQAA2X;
 				INFOPLIST_FILE = OnPaperSoccer/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = OwlyApps.OnPaperSoccer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -669,13 +619,15 @@
 		};
 		2CB51B10202CDC96009C3B71 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F1287B65CACC13F62FA27AC4 /* Pods-OnPaperSoccer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TN3WPQAA2X;
 				INFOPLIST_FILE = OnPaperSoccer/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = OwlyApps.OnPaperSoccer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -685,14 +637,21 @@
 		};
 		2CB51B12202CDC96009C3B71 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C3CFDFF8E1AEE55F84192E36 /* Pods-OnPaperSoccer-OnPaperSoccerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TN3WPQAA2X;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = OnPaperSoccerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = OwlyApps.OnPaperSoccerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -703,14 +662,21 @@
 		};
 		2CB51B13202CDC96009C3B71 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 040D6B35AB64C4F38C776C43 /* Pods-OnPaperSoccer-OnPaperSoccerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TN3WPQAA2X;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = OnPaperSoccerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = OwlyApps.OnPaperSoccerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
