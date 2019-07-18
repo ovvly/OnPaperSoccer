@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C1D2C8322E1F637000DEF4B /* UIFont+OnPaperSoccer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1D2C8222E1F637000DEF4B /* UIFont+OnPaperSoccer.swift */; };
+		2C1D2C8522E1FD31000DEF4B /* MenuRowButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1D2C8422E1FD31000DEF4B /* MenuRowButton.xib */; };
 		2C2BDD4621874587009D48BC /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2BDD4521874587009D48BC /* FieldView.swift */; };
 		2C320B932178DBC800CDADF5 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B922178DBC800CDADF5 /* Point.swift */; };
 		2C320B952178DBE500CDADF5 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B942178DBE500CDADF5 /* Line.swift */; };
@@ -17,11 +19,17 @@
 		2C97553722E08B360018964A /* SnapshotTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C97553422E08B360018964A /* SnapshotTesting.framework */; };
 		2C97553822E08B360018964A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C97553522E08B360018964A /* Nimble.framework */; };
 		2C97553922E08B360018964A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C97553622E08B360018964A /* Quick.framework */; };
+		2C97553F22E095AA0018964A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C97553D22E095AA0018964A /* MenuViewController.swift */; };
+		2C97554022E095AA0018964A /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C97553E22E095AA0018964A /* MenuViewController.xib */; };
+		2C97554522E09B320018964A /* Dreamwalker.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C97554422E09B320018964A /* Dreamwalker.otf */; };
+		2C97554722E09BF60018964A /* Eurostile.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C97554622E09BF60018964A /* Eurostile.ttf */; };
+		2C97554922E09C8A0018964A /* MenuRowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C97554822E09C8A0018964A /* MenuRowButton.swift */; };
+		2C97554F22E0A4370018964A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C97554E22E0A4370018964A /* Assets.xcassets */; };
+		2C97555222E0B1EF0018964A /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C97555022E0B1980018964A /* SnapKit.framework */; };
 		2C9A70A421BE615C00B801C9 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A70A221BE615C00B801C9 /* MatchViewController.swift */; };
 		2C9A70A521BE615C00B801C9 /* MatchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C9A70A321BE615C00B801C9 /* MatchViewController.xib */; };
 		2C9A70A721BE747000B801C9 /* MovesValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A70A621BE747000B801C9 /* MovesValidator.swift */; };
 		2CB51AF5202CDC96009C3B71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB51AF4202CDC96009C3B71 /* AppDelegate.swift */; };
-		2CB51AFC202CDC96009C3B71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB51AFB202CDC96009C3B71 /* Assets.xcassets */; };
 		2CB51AFF202CDC96009C3B71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB51AFD202CDC96009C3B71 /* LaunchScreen.storyboard */; };
 		2CCE26C3228AF0B10028D291 /* MoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCE26C2228AF0B10028D291 /* MoveButton.swift */; };
 		AA24B2F3C919EEC95E187E86 /* FieldViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B13D18BFBF3DDCDC0F91 /* FieldViewControllerSpec.swift */; };
@@ -31,9 +39,11 @@
 		AA24B4FFA5A98FA1002F8BE1 /* ControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BCB1E19522BE044C014E /* ControllersFactory.swift */; };
 		AA24B6302B864E0EE4257AA3 /* MatchViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B240A48A18440B46E320 /* MatchViewControllerSpec.swift */; };
 		AA24B696C655F461F39434E4 /* UIColor+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BB10F9C1929C5A53998D /* UIColor+Fixture.swift */; };
+		AA24B6CD59CC1876FC87674E /* MenuViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BAF8AC8464C4CA23C9D8 /* MenuViewControllerSpec.swift */; };
 		AA24B7130118B052140EC799 /* PlayerTurnControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B77DCFCFB2BA9F8CC272 /* PlayerTurnControllerSpec.swift */; };
 		AA24B7F2356C873ECB235CBD /* UIButton+Specs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B1B708C98F1A574B73A2 /* UIButton+Specs.swift */; };
 		AA24B801CF942F9DB6416223 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B05A388611DD00323809 /* Vector.swift */; };
+		AA24B85978E9CBC61199D413 /* MenuRowButtonSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B69EA01AE4A38448BB7E /* MenuRowButtonSpec.swift */; };
 		AA24B896F14743827284DDCB /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BEE8D0DE024FC81EBD3A /* Move.swift */; };
 		AA24B8B08AD975D581E6AF56 /* MovesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA24BA9C383BCEDACB8CD8E5 /* MovesViewController.xib */; };
 		AA24B9D40713DEC4441E3456 /* CoreGraphics+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B10771B109B53597B92F /* CoreGraphics+Extensions.swift */; };
@@ -59,6 +69,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C1D2C8222E1F637000DEF4B /* UIFont+OnPaperSoccer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+OnPaperSoccer.swift"; sourceTree = "<group>"; };
+		2C1D2C8422E1FD31000DEF4B /* MenuRowButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuRowButton.xib; sourceTree = "<group>"; };
 		2C2BDD4521874587009D48BC /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
 		2C320B922178DBC800CDADF5 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		2C320B942178DBE500CDADF5 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
@@ -69,12 +81,18 @@
 		2C97553422E08B360018964A /* SnapshotTesting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapshotTesting.framework; path = Carthage/Build/iOS/SnapshotTesting.framework; sourceTree = "<group>"; };
 		2C97553522E08B360018964A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		2C97553622E08B360018964A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		2C97553D22E095AA0018964A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		2C97553E22E095AA0018964A /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		2C97554422E09B320018964A /* Dreamwalker.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dreamwalker.otf; sourceTree = "<group>"; };
+		2C97554622E09BF60018964A /* Eurostile.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Eurostile.ttf; sourceTree = "<group>"; };
+		2C97554822E09C8A0018964A /* MenuRowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRowButton.swift; sourceTree = "<group>"; };
+		2C97554E22E0A4370018964A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2C97555022E0B1980018964A /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		2C9A70A221BE615C00B801C9 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		2C9A70A321BE615C00B801C9 /* MatchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchViewController.xib; sourceTree = "<group>"; };
 		2C9A70A621BE747000B801C9 /* MovesValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovesValidator.swift; sourceTree = "<group>"; };
 		2CB51AF1202CDC96009C3B71 /* OnPaperSoccer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnPaperSoccer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB51AF4202CDC96009C3B71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2CB51AFB202CDC96009C3B71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CB51AFE202CDC96009C3B71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CB51B00202CDC96009C3B71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CB51B05202CDC96009C3B71 /* OnPaperSoccerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnPaperSoccerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,12 +108,14 @@
 		AA24B44D98711ED2BADE4D3A /* FlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
 		AA24B4F322735060BBE4226E /* MovesViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesViewControllerSpec.swift; sourceTree = "<group>"; };
 		AA24B5092F1425DDB1948782 /* MovesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesViewController.swift; sourceTree = "<group>"; };
+		AA24B69EA01AE4A38448BB7E /* MenuRowButtonSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuRowButtonSpec.swift; sourceTree = "<group>"; };
 		AA24B77DCFCFB2BA9F8CC272 /* PlayerTurnControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTurnControllerSpec.swift; sourceTree = "<group>"; };
 		AA24B82E6F9EF90FAA3E9470 /* GameSettings+Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameSettings+Fixture.swift"; sourceTree = "<group>"; };
 		AA24B87021212FBB69C0BD00 /* Resetable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resetable.swift; sourceTree = "<group>"; };
 		AA24B89C3CD561A829494264 /* MovesValidatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesValidatorSpec.swift; sourceTree = "<group>"; };
 		AA24B9766E353BB7D3ED0546 /* UIColor+OnPaperSoccer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+OnPaperSoccer.swift"; sourceTree = "<group>"; };
 		AA24BA9C383BCEDACB8CD8E5 /* MovesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovesViewController.xib; sourceTree = "<group>"; };
+		AA24BAF8AC8464C4CA23C9D8 /* MenuViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewControllerSpec.swift; sourceTree = "<group>"; };
 		AA24BB10F9C1929C5A53998D /* UIColor+Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Fixture.swift"; sourceTree = "<group>"; };
 		AA24BC0B623729163EC253E7 /* Point+Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Point+Fixture.swift"; sourceTree = "<group>"; };
 		AA24BCB1E19522BE044C014E /* ControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllersFactory.swift; sourceTree = "<group>"; };
@@ -109,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C97555222E0B1EF0018964A /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +146,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C1D2C8122E1F622000DEF4B /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				AA24B9766E353BB7D3ED0546 /* UIColor+OnPaperSoccer.swift */,
+				2C1D2C8222E1F637000DEF4B /* UIFont+OnPaperSoccer.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
 		2C320B912178DBBF00CDADF5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +171,7 @@
 		2C320B9C2178E2D500CDADF5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				2C1D2C8122E1F622000DEF4B /* Styles */,
 				2C320B9D2178E2DC00CDADF5 /* Extensions */,
 				2C9A70A621BE747000B801C9 /* MovesValidator.swift */,
 				AA24B89C3CD561A829494264 /* MovesValidatorSpec.swift */,
@@ -159,7 +190,6 @@
 				2C320B9E2178E2F600CDADF5 /* UIView+AddContentSubview.swift */,
 				2C320BA02178E32E00CDADF5 /* UIViewController+AddChildViewController.swift */,
 				AA24B10771B109B53597B92F /* CoreGraphics+Extensions.swift */,
-				AA24B9766E353BB7D3ED0546 /* UIColor+OnPaperSoccer.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -167,11 +197,51 @@
 		2C97553322E08B360018964A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C97555022E0B1980018964A /* SnapKit.framework */,
 				2C97553522E08B360018964A /* Nimble.framework */,
 				2C97553622E08B360018964A /* Quick.framework */,
 				2C97553422E08B360018964A /* SnapshotTesting.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2C97553C22E095840018964A /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				2C97553D22E095AA0018964A /* MenuViewController.swift */,
+				2C97553E22E095AA0018964A /* MenuViewController.xib */,
+				AA24BAF8AC8464C4CA23C9D8 /* MenuViewControllerSpec.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		2C97554122E09AB80018964A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2C97554322E09B000018964A /* Fonts */,
+				2C97554E22E0A4370018964A /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2C97554222E09AD30018964A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AA24B565916B6B419C730B97 /* Custom Views */,
+				2CB51B14202CEB3C009C3B71 /* Modules */,
+				2C320B912178DBBF00CDADF5 /* Data */,
+				2C320B9C2178E2D500CDADF5 /* Helpers */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		2C97554322E09B000018964A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2C97554622E09BF60018964A /* Eurostile.ttf */,
+				2C97554422E09B320018964A /* Dreamwalker.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		2C9A70A121BE608900B801C9 /* Moving */ = {
@@ -206,14 +276,11 @@
 		2CB51AF3202CDC96009C3B71 /* OnPaperSoccer */ = {
 			isa = PBXGroup;
 			children = (
-				2C320B9C2178E2D500CDADF5 /* Helpers */,
-				2C320B912178DBBF00CDADF5 /* Data */,
-				2CB51B14202CEB3C009C3B71 /* Modules */,
+				2C97554222E09AD30018964A /* Classes */,
+				2C97554122E09AB80018964A /* Resources */,
 				2CB51AF4202CDC96009C3B71 /* AppDelegate.swift */,
-				2CB51AFB202CDC96009C3B71 /* Assets.xcassets */,
 				2CB51AFD202CDC96009C3B71 /* LaunchScreen.storyboard */,
 				2CB51B00202CDC96009C3B71 /* Info.plist */,
-				AA24B565916B6B419C730B97 /* Custom Views */,
 			);
 			path = OnPaperSoccer;
 			sourceTree = "<group>";
@@ -231,6 +298,7 @@
 		2CB51B14202CEB3C009C3B71 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2C97553C22E095840018964A /* Menu */,
 				2CB51B1A202CF91F009C3B71 /* Match */,
 			);
 			path = Modules;
@@ -261,6 +329,9 @@
 			isa = PBXGroup;
 			children = (
 				2CCE26C2228AF0B10028D291 /* MoveButton.swift */,
+				2C1D2C8422E1FD31000DEF4B /* MenuRowButton.xib */,
+				2C97554822E09C8A0018964A /* MenuRowButton.swift */,
+				AA24B69EA01AE4A38448BB7E /* MenuRowButtonSpec.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -304,6 +375,7 @@
 				2CB51AED202CDC95009C3B71 /* Sources */,
 				2CB51AEE202CDC95009C3B71 /* Frameworks */,
 				2CB51AEF202CDC95009C3B71 /* Resources */,
+				2C97555322E0B20C0018964A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -381,9 +453,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CB51AFF202CDC96009C3B71 /* LaunchScreen.storyboard in Resources */,
-				2CB51AFC202CDC96009C3B71 /* Assets.xcassets in Resources */,
+				2C97554522E09B320018964A /* Dreamwalker.otf in Resources */,
+				2C97554022E095AA0018964A /* MenuViewController.xib in Resources */,
 				2C9A70A521BE615C00B801C9 /* MatchViewController.xib in Resources */,
+				2C97554722E09BF60018964A /* Eurostile.ttf in Resources */,
 				2C320B992178DD1E00CDADF5 /* FieldViewController.xib in Resources */,
+				2C1D2C8522E1FD31000DEF4B /* MenuRowButton.xib in Resources */,
+				2C97554F22E0A4370018964A /* Assets.xcassets in Resources */,
 				AA24B8B08AD975D581E6AF56 /* MovesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,12 +480,31 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"$(SRCROOT)/Carthage/input.xcfilelist",
+				"$(SRCROOT)/Carthage/OnPaperSoccerTestsInput.xcfilelist",
 			);
 			inputPaths = (
 			);
 			outputFileListPaths = (
-				"$(SRCROOT)/Carthage/output.xcfilelist",
+				"$(SRCROOT)/Carthage/OnPaperSoccerTestsOutput.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		2C97555322E0B20C0018964A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/Carthage/OnPaperSoccerInput.xcfilelist",
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+				"$(SRCROOT)/Carthage/OnPaperSoccerOutput.xcfilelist",
 			);
 			outputPaths = (
 			);
@@ -428,6 +523,7 @@
 				2C2BDD4621874587009D48BC /* FieldView.swift in Sources */,
 				2C320B9F2178E2F600CDADF5 /* UIView+AddContentSubview.swift in Sources */,
 				2C320B932178DBC800CDADF5 /* Point.swift in Sources */,
+				2C97554922E09C8A0018964A /* MenuRowButton.swift in Sources */,
 				2C9A70A421BE615C00B801C9 /* MatchViewController.swift in Sources */,
 				2CB51AF5202CDC96009C3B71 /* AppDelegate.swift in Sources */,
 				2C320B952178DBE500CDADF5 /* Line.swift in Sources */,
@@ -438,6 +534,7 @@
 				AA24BB0EB5F03F92D472BEDA /* MovesViewController.swift in Sources */,
 				AA24B801CF942F9DB6416223 /* Vector.swift in Sources */,
 				AA24B4FFA5A98FA1002F8BE1 /* ControllersFactory.swift in Sources */,
+				2C1D2C8322E1F637000DEF4B /* UIFont+OnPaperSoccer.swift in Sources */,
 				AA24B896F14743827284DDCB /* Move.swift in Sources */,
 				AA24BE4D7DBC4D7FEB821CBC /* PlayerTurnController.swift in Sources */,
 				AA24B4B4A793D3B2FF4D0D6E /* Player.swift in Sources */,
@@ -446,6 +543,7 @@
 				AA24BD0F214B46C2945C2BEB /* Resetable.swift in Sources */,
 				AA24BDC8FA9191EEC7BC25D2 /* GameSettings.swift in Sources */,
 				AA24BBCAAF24F051B2E66253 /* UIColor+OnPaperSoccer.swift in Sources */,
+				2C97553F22E095AA0018964A /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +560,8 @@
 				AA24B7130118B052140EC799 /* PlayerTurnControllerSpec.swift in Sources */,
 				AA24B696C655F461F39434E4 /* UIColor+Fixture.swift in Sources */,
 				AA24BC1CBAE58A5B5DF58308 /* GameSettings+Fixture.swift in Sources */,
+				AA24B6CD59CC1876FC87674E /* MenuViewControllerSpec.swift in Sources */,
+				AA24B85978E9CBC61199D413 /* MenuRowButtonSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +705,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TN3WPQAA2X;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = OnPaperSoccer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -623,6 +727,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TN3WPQAA2X;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = OnPaperSoccer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

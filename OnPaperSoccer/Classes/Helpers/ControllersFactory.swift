@@ -16,6 +16,10 @@ final class ControllersFactory {
         return viewController
     }
 
+    func createMenuViewController() -> MenuViewController {
+        return MenuViewController()
+    }
+
     func createAftermatchViewController(playerName: String, confirm: @escaping () -> Void) -> UIAlertController {
         //TODO: this is temporary controller
         let alertController = UIAlertController(title: "Game Over", message: "\(playerName) WON!!!111one1one!", preferredStyle: .alert)
