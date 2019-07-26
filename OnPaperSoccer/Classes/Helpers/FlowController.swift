@@ -4,12 +4,15 @@ import UIKit
 class FlowController {
     private let controllersFactory = ControllersFactory()
     private let navigationController: UINavigationController
-    private var matchViewController: MatchViewController?
+    private lazy var matchViewController: MatchViewController = {
+        return createMatchViewController()
+    }()
 
     init() {
         let menuViewController = controllersFactory.createMenuViewController()
         navigationController = UINavigationController(rootViewController: menuViewController)
         menuViewController.delegate = self
+        setupNavigationController()
     }
 
     func rootViewController() -> UIViewController {
@@ -21,21 +24,26 @@ class FlowController {
         matchViewController.delegate = self
         return matchViewController
     }
+
+    private func setupNavigationController() {
+        self.navigationController.navigationBar.isTranslucent = true
+        self.navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController.navigationBar.shadowImage = UIImage()
+    }
 }
 
 extension FlowController: MatchViewControllerDelegate {
     func playerDidWin(_ player: Player) {
         let alertController = controllersFactory.createAftermatchViewController(playerName: player.name) { [weak self] in
-            self?.matchViewController?.reset()
+            self?.matchViewController.reset()
         }
-        matchViewController?.present(alertController, animated: true)
+        matchViewController.present(alertController, animated: true)
     }
 }
 
 extension FlowController: MenuViewControllerDelegate {
     func didSelectedPlay() {
-        let matchViewController = self.matchViewController ?? createMatchViewController()
-        navigationController.present(matchViewController, animated: true)
+        navigationController.pushViewController(matchViewController, animated: true)
     }
 
     func didSelectedAbout() {

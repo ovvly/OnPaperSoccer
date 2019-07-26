@@ -31,6 +31,8 @@
 		2C9A70A721BE747000B801C9 /* MovesValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A70A621BE747000B801C9 /* MovesValidator.swift */; };
 		2CB51AF5202CDC96009C3B71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB51AF4202CDC96009C3B71 /* AppDelegate.swift */; };
 		2CB51AFF202CDC96009C3B71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB51AFD202CDC96009C3B71 /* LaunchScreen.storyboard */; };
+		2CC33B6222EB36C9006884FB /* AppStyler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC33B6122EB36C9006884FB /* AppStyler.swift */; };
+		2CC33B6422EB37F4006884FB /* UIBarButtonItem+Specs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC33B6322EB37F4006884FB /* UIBarButtonItem+Specs.swift */; };
 		2CCE26C3228AF0B10028D291 /* MoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCE26C2228AF0B10028D291 /* MoveButton.swift */; };
 		AA24B2F3C919EEC95E187E86 /* FieldViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B13D18BFBF3DDCDC0F91 /* FieldViewControllerSpec.swift */; };
 		AA24B4171DFA4220F577787F /* Point+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BC0B623729163EC253E7 /* Point+Fixture.swift */; };
@@ -97,6 +99,8 @@
 		2CB51B00202CDC96009C3B71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CB51B05202CDC96009C3B71 /* OnPaperSoccerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnPaperSoccerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB51B0B202CDC96009C3B71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CC33B6122EB36C9006884FB /* AppStyler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyler.swift; sourceTree = "<group>"; };
+		2CC33B6322EB37F4006884FB /* UIBarButtonItem+Specs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Specs.swift"; sourceTree = "<group>"; };
 		2CCE26C2228AF0B10028D291 /* MoveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveButton.swift; sourceTree = "<group>"; };
 		AA24B05A388611DD00323809 /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		AA24B06D05D5533EA3B990A2 /* PlayerTurnController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTurnController.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 			children = (
 				AA24B9766E353BB7D3ED0546 /* UIColor+OnPaperSoccer.swift */,
 				2C1D2C8222E1F637000DEF4B /* UIFont+OnPaperSoccer.swift */,
+				2CC33B6122EB36C9006884FB /* AppStyler.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				AA24B1B708C98F1A574B73A2 /* UIButton+Specs.swift */,
+				2CC33B6322EB37F4006884FB /* UIBarButtonItem+Specs.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -531,6 +537,7 @@
 				2CCE26C3228AF0B10028D291 /* MoveButton.swift in Sources */,
 				2C9A70A721BE747000B801C9 /* MovesValidator.swift in Sources */,
 				AA24B9D40713DEC4441E3456 /* CoreGraphics+Extensions.swift in Sources */,
+				2CC33B6222EB36C9006884FB /* AppStyler.swift in Sources */,
 				AA24BB0EB5F03F92D472BEDA /* MovesViewController.swift in Sources */,
 				AA24B801CF942F9DB6416223 /* Vector.swift in Sources */,
 				AA24B4FFA5A98FA1002F8BE1 /* ControllersFactory.swift in Sources */,
@@ -560,6 +567,7 @@
 				AA24B7130118B052140EC799 /* PlayerTurnControllerSpec.swift in Sources */,
 				AA24B696C655F461F39434E4 /* UIColor+Fixture.swift in Sources */,
 				AA24BC1CBAE58A5B5DF58308 /* GameSettings+Fixture.swift in Sources */,
+				2CC33B6422EB37F4006884FB /* UIBarButtonItem+Specs.swift in Sources */,
 				AA24B6CD59CC1876FC87674E /* MenuViewControllerSpec.swift in Sources */,
 				AA24B85978E9CBC61199D413 /* MenuRowButtonSpec.swift in Sources */,
 			);

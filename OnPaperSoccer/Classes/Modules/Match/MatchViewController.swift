@@ -45,6 +45,7 @@ class MatchViewController: UIViewController, Resetable {
     override func viewDidLoad() {
         super.viewDidLoad()
         addChildrenViewControllers()
+        setupNavigationBar()
         fieldDrawer.drawNewField()
         updateTurnIndicator(with: turnController.currentPlayer)
         movesController.delegate = self
@@ -87,6 +88,11 @@ class MatchViewController: UIViewController, Resetable {
         addChild(viewController: movesController.viewController, to: mainContentView)
     }
 
+    private func setupNavigationBar() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Reset", style: .done, target: self, action: #selector(resetTapped))
+        navigationController?.navigationBar.tintColor = UIColor.App.textColor
+    }
+
     private func updateMovesPossibility() {
         let possibleMoves = movesValidator.possibleMoves(from: currentPosition)
         movesController.updateMovesPossibility(possibleMoves)
@@ -112,6 +118,11 @@ class MatchViewController: UIViewController, Resetable {
     private func updateTurnIndicator(with player: Player) {
         turnView.backgroundColor = player.color
         turnLabel.text = "\(player.name) PLAYER TURN"
+    }
+
+    @objc
+    private func resetTapped() {
+        reset()
     }
 }
 

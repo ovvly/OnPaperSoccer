@@ -9,7 +9,7 @@ extension UIColor {
         static let player1 = UIColor(red: 255/255, green: 64/255, blue: 78/255)
         static let player2 = UIColor(red: 0/255, green: 191/255, blue: 243/255)
         static let lineEnd = UIColor.black
-        static let textColor = UIColor(red: 82/155, green: 82/155, blue: 82/155)
+        static let textColor = UIColor(red: 82/255, green: 82/255, blue: 82/255)
     }
 
     convenience init(red: CGFloat, green: CGFloat, blue: CGFloat) {

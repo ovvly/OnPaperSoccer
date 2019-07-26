@@ -233,7 +233,38 @@ class MatchViewControllerSpec: QuickSpec {
                 it("should reset player turn controller") {
                     expect(turnControllerSpy.didReset) == true
                 }
-                
+
+                it("should reset moves controller") {
+                    expect(movesControllerSpy.didReset) == true
+                }
+
+                it("should mark middle of field as current position") {
+                    expect(fieldDrawerSpy.markedPoint) == gameSettings.startingPoint
+                    expect(fieldDrawerSpy.markingColor) == UIColor.App.player1
+                }
+            }
+
+            describe("reset button") {
+                beforeEach {
+                    sut.navigationItem.rightBarButtonItem?.simulateTap()
+                }
+
+                it("should set current position to starting position") {
+                    expect(sut.currentPosition) == gameSettings.startingPoint
+                }
+
+                it("should reset field drawer") {
+                    expect(fieldDrawerSpy.didReset) == true
+                }
+
+                it("should reset moves validator controller") {
+                    expect(movesValidatorSpy.didReset) == true
+                }
+
+                it("should reset player turn controller") {
+                    expect(turnControllerSpy.didReset) == true
+                }
+
                 it("should reset moves controller") {
                     expect(movesControllerSpy.didReset) == true
                 }
