@@ -7,7 +7,6 @@ import Nimble
 class MatchViewControllerSpec: QuickSpec {
     override func spec() {
         describe("MatchViewController") {
-
             var fieldDrawerSpy: FieldDrawerSpy!
             var movesControllerSpy: MovesControllerSpy!
             var turnControllerSpy: TurnControllerSpy!
@@ -209,69 +208,52 @@ class MatchViewControllerSpec: QuickSpec {
                 }
             }
 
-            describe("reset") {
-                beforeEach {
-                    sut.move(to: Point(x: 0, y: 0))
-                    fieldDrawerSpy.markingColor = nil
-                    fieldDrawerSpy.markedPoint = nil
+            describe("reseting") {
+                sharedExamples("reset") { (sharedExampleContext: @escaping SharedExampleContext) in
+                    it("should set current position to starting position") {
+                        expect(sut.currentPosition) == gameSettings.startingPoint
+                    }
 
-                    sut.reset()
+                    it("should reset field drawer") {
+                        expect(fieldDrawerSpy.didReset) == true
+                    }
+
+                    it("should reset moves validator controller") {
+                        expect(movesValidatorSpy.didReset) == true
+                    }
+
+                    it("should reset player turn controller") {
+                        expect(turnControllerSpy.didReset) == true
+                    }
+
+                    it("should reset moves controller") {
+                        expect(movesControllerSpy.didReset) == true
+                    }
+
+                    it("should mark middle of field as current position") {
+                        expect(fieldDrawerSpy.markedPoint) == gameSettings.startingPoint
+                        expect(fieldDrawerSpy.markingColor) == UIColor.App.player1
+                    }
                 }
 
-                it("should set current position to starting position") {
-                    expect(sut.currentPosition) == gameSettings.startingPoint
+                describe("reset") {
+                    beforeEach {
+                        sut.move(to: Point(x: 0, y: 0))
+                        fieldDrawerSpy.markingColor = nil
+                        fieldDrawerSpy.markedPoint = nil
+
+                        sut.reset()
+                    }
+                    
+                    itBehavesLike("reset")
                 }
 
-                it("should reset field drawer") {
-                    expect(fieldDrawerSpy.didReset) == true
-                }
+                describe("reset button") {
+                    beforeEach {
+                        sut.navigationItem.rightBarButtonItem?.simulateTap()
+                    }
 
-                it("should reset moves validator controller") {
-                    expect(movesValidatorSpy.didReset) == true
-                }
-
-                it("should reset player turn controller") {
-                    expect(turnControllerSpy.didReset) == true
-                }
-
-                it("should reset moves controller") {
-                    expect(movesControllerSpy.didReset) == true
-                }
-
-                it("should mark middle of field as current position") {
-                    expect(fieldDrawerSpy.markedPoint) == gameSettings.startingPoint
-                    expect(fieldDrawerSpy.markingColor) == UIColor.App.player1
-                }
-            }
-
-            describe("reset button") {
-                beforeEach {
-                    sut.navigationItem.rightBarButtonItem?.simulateTap()
-                }
-
-                it("should set current position to starting position") {
-                    expect(sut.currentPosition) == gameSettings.startingPoint
-                }
-
-                it("should reset field drawer") {
-                    expect(fieldDrawerSpy.didReset) == true
-                }
-
-                it("should reset moves validator controller") {
-                    expect(movesValidatorSpy.didReset) == true
-                }
-
-                it("should reset player turn controller") {
-                    expect(turnControllerSpy.didReset) == true
-                }
-
-                it("should reset moves controller") {
-                    expect(movesControllerSpy.didReset) == true
-                }
-
-                it("should mark middle of field as current position") {
-                    expect(fieldDrawerSpy.markedPoint) == gameSettings.startingPoint
-                    expect(fieldDrawerSpy.markingColor) == UIColor.App.player1
+                    itBehavesLike("reset")
                 }
             }
         }
