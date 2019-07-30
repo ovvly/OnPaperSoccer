@@ -2,6 +2,7 @@ import UIKit
 
 protocol MatchViewControllerDelegate: class {
     func playerDidWin(_ player: Player)
+    func showResetConfirmation()
 }
 
 class MatchViewController: UIViewController, Resetable {
@@ -122,7 +123,7 @@ class MatchViewController: UIViewController, Resetable {
 
     @objc
     private func resetTapped() {
-        reset()
+        delegate?.showResetConfirmation()
     }
 }
 

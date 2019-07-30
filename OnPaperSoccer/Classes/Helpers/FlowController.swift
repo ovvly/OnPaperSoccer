@@ -39,6 +39,13 @@ extension FlowController: MatchViewControllerDelegate {
         }
         matchViewController.present(alertController, animated: true)
     }
+
+    func showResetConfirmation() {
+        let alertController = controllersFactory.createResetConfirmationViewController(confirm: { [weak self] in
+            self?.matchViewController.reset()
+        })
+        matchViewController.present(alertController, animated: true)
+    }
 }
 
 extension FlowController: MenuViewControllerDelegate {

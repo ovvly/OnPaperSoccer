@@ -253,7 +253,9 @@ class MatchViewControllerSpec: QuickSpec {
                         sut.navigationItem.rightBarButtonItem?.simulateTap()
                     }
 
-                    itBehavesLike("reset")
+                    it("should inform delegate about reset") {
+                        expect(delegate.resetRequested) == true
+                    }
                 }
             }
         }
@@ -339,9 +341,14 @@ private class MovesValidatorSpy: MovesValidator {
 
 class MatchViewControllerDelegateSpy: MatchViewControllerDelegate {
     var playerDidWin: Player? = nil
+    var resetRequested = false
 
     func playerDidWin(_ player: Player) {
         playerDidWin = player
+    }
+
+    func showResetConfirmation() {
+        resetRequested = true
     }
 }
 

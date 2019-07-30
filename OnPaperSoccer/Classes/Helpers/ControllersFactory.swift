@@ -29,4 +29,15 @@ final class ControllersFactory {
         alertController.addAction(confirmAction)
         return alertController
     }
+
+    func createResetConfirmationViewController(confirm: @escaping () -> Void) -> UIAlertController {
+        let alertController = UIAlertController(title: "Reset", message: "Are you sure? All game progress will be lost", preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "Reset", style: .destructive) { _ in
+            confirm()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        alertController.addAction(cancelAction)
+        alertController.addAction(confirmAction)
+        return alertController
+    }
 }
