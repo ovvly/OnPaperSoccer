@@ -40,4 +40,8 @@ final class ControllersFactory {
         alertController.addAction(confirmAction)
         return alertController
     }
+    
+    func createAboutViewController() -> AboutViewController {
+        return AboutViewController()
+    }
 }

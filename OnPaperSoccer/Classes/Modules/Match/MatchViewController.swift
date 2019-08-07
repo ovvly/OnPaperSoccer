@@ -91,7 +91,6 @@ class MatchViewController: UIViewController, Resetable {
 
     private func setupNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Reset", style: .done, target: self, action: #selector(resetTapped))
-        navigationController?.navigationBar.tintColor = UIColor.App.textColor
     }
 
     private func updateMovesPossibility() {

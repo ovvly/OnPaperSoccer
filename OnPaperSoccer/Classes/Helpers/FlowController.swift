@@ -54,6 +54,7 @@ extension FlowController: MenuViewControllerDelegate {
     }
 
     func didSelectedAbout() {
-        print("not implemented yet")
+        let aboutViewController = controllersFactory.createAboutViewController()
+        navigationController.pushViewController(aboutViewController, animated: true)
     }
 }

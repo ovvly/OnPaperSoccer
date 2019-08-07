@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		1B6BB3AD23AD0536002A1B46 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 1B6BB3AC23AD0536002A1B46 /* Cartfile */; };
 		2C1D2C8322E1F637000DEF4B /* UIFont+OnPaperSoccer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1D2C8222E1F637000DEF4B /* UIFont+OnPaperSoccer.swift */; };
-		2C1D2C8522E1FD31000DEF4B /* MenuRowButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1D2C8422E1FD31000DEF4B /* MenuRowButton.xib */; };
 		2C2BDD4621874587009D48BC /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2BDD4521874587009D48BC /* FieldView.swift */; };
+		2C2CFF8122FB39E000258B5A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CFF7F22FB39E000258B5A /* AboutViewController.swift */; };
+		2C2CFF8422FB3B0A00258B5A /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CFF8322FB3B0A00258B5A /* AboutView.swift */; };
+		2C2CFF8622FB410100258B5A /* WithCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CFF8522FB410100258B5A /* WithCustomView.swift */; };
 		2C320B932178DBC800CDADF5 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B922178DBC800CDADF5 /* Point.swift */; };
 		2C320B952178DBE500CDADF5 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B942178DBE500CDADF5 /* Line.swift */; };
 		2C320B982178DD1E00CDADF5 /* FieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B962178DD1E00CDADF5 /* FieldViewController.swift */; };
@@ -74,8 +76,10 @@
 /* Begin PBXFileReference section */
 		1B6BB3AC23AD0536002A1B46 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		2C1D2C8222E1F637000DEF4B /* UIFont+OnPaperSoccer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+OnPaperSoccer.swift"; sourceTree = "<group>"; };
-		2C1D2C8422E1FD31000DEF4B /* MenuRowButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuRowButton.xib; sourceTree = "<group>"; };
 		2C2BDD4521874587009D48BC /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
+		2C2CFF7F22FB39E000258B5A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		2C2CFF8322FB3B0A00258B5A /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		2C2CFF8522FB410100258B5A /* WithCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithCustomView.swift; sourceTree = "<group>"; };
 		2C320B922178DBC800CDADF5 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		2C320B942178DBE500CDADF5 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		2C320B962178DD1E00CDADF5 /* FieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +164,15 @@
 				2CC33B6122EB36C9006884FB /* AppStyler.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		2C2CFF7E22FB39B700258B5A /* About */ = {
+			isa = PBXGroup;
+			children = (
+				2C2CFF7F22FB39E000258B5A /* AboutViewController.swift */,
+				2C2CFF8322FB3B0A00258B5A /* AboutView.swift */,
+			);
+			path = About;
 			sourceTree = "<group>";
 		};
 		2C320B912178DBBF00CDADF5 /* Data */ = {
@@ -306,6 +319,7 @@
 		2CB51B14202CEB3C009C3B71 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2C2CFF7E22FB39B700258B5A /* About */,
 				2C97553C22E095840018964A /* Menu */,
 				2CB51B1A202CF91F009C3B71 /* Match */,
 			);
@@ -329,6 +343,7 @@
 			children = (
 				AA24BE820377AE917733B251 /* WithViewController.swift */,
 				AA24B87021212FBB69C0BD00 /* Resetable.swift */,
+				2C2CFF8522FB410100258B5A /* WithCustomView.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -337,7 +352,6 @@
 			isa = PBXGroup;
 			children = (
 				2CCE26C2228AF0B10028D291 /* MoveButton.swift */,
-				2C1D2C8422E1FD31000DEF4B /* MenuRowButton.xib */,
 				2C97554822E09C8A0018964A /* MenuRowButton.swift */,
 				AA24B69EA01AE4A38448BB7E /* MenuRowButtonSpec.swift */,
 			);
@@ -468,7 +482,6 @@
 				2C9A70A521BE615C00B801C9 /* MatchViewController.xib in Resources */,
 				2C97554722E09BF60018964A /* Eurostile.ttf in Resources */,
 				2C320B992178DD1E00CDADF5 /* FieldViewController.xib in Resources */,
-				2C1D2C8522E1FD31000DEF4B /* MenuRowButton.xib in Resources */,
 				2C97554F22E0A4370018964A /* Assets.xcassets in Resources */,
 				AA24B8B08AD975D581E6AF56 /* MovesViewController.xib in Resources */,
 			);
@@ -530,6 +543,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C320BA12178E32E00CDADF5 /* UIViewController+AddChildViewController.swift in Sources */,
+				2C2CFF8622FB410100258B5A /* WithCustomView.swift in Sources */,
 				2C2BDD4621874587009D48BC /* FieldView.swift in Sources */,
 				2C320B9F2178E2F600CDADF5 /* UIView+AddContentSubview.swift in Sources */,
 				2C320B932178DBC800CDADF5 /* Point.swift in Sources */,
@@ -537,10 +551,12 @@
 				2C9A70A421BE615C00B801C9 /* MatchViewController.swift in Sources */,
 				2CB51AF5202CDC96009C3B71 /* AppDelegate.swift in Sources */,
 				2C320B952178DBE500CDADF5 /* Line.swift in Sources */,
+				2C2CFF8422FB3B0A00258B5A /* AboutView.swift in Sources */,
 				2C320B982178DD1E00CDADF5 /* FieldViewController.swift in Sources */,
 				2CCE26C3228AF0B10028D291 /* MoveButton.swift in Sources */,
 				2C9A70A721BE747000B801C9 /* MovesValidator.swift in Sources */,
 				AA24B9D40713DEC4441E3456 /* CoreGraphics+Extensions.swift in Sources */,
+				2C2CFF8122FB39E000258B5A /* AboutViewController.swift in Sources */,
 				2CC33B6222EB36C9006884FB /* AppStyler.swift in Sources */,
 				AA24BB0EB5F03F92D472BEDA /* MovesViewController.swift in Sources */,
 				AA24B801CF942F9DB6416223 /* Vector.swift in Sources */,
