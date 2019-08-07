@@ -32,7 +32,7 @@
                         <constraint firstAttribute="height" constant="180" id="kNE-hK-OI6"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OnPaperSoccer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNo-Y0-5pr">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="OnPaperSoccer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNo-Y0-5pr">
                     <rect key="frame" x="69" y="124" width="237" height="36"/>
                     <fontDescription key="fontDescription" name="EurostileRegular" family="Eurostile" pointSize="36"/>
                     <nil key="textColor"/>
@@ -74,6 +74,7 @@
             <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="NNo-Y0-5pr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="38h-5f-Usw"/>
+                <constraint firstItem="5io-5F-5im" firstAttribute="top" relation="greaterThanOrEqual" secondItem="l9K-wR-dFc" secondAttribute="bottom" constant="20" id="3fW-Pp-Qve"/>
                 <constraint firstItem="l9K-wR-dFc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6gm-xf-0JQ"/>
                 <constraint firstItem="5io-5F-5im" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="89N-WM-I2b"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="fba-uw-Z29" secondAttribute="bottom" constant="80" id="a5n-jx-JVX"/>
@@ -82,7 +83,7 @@
                 <constraint firstItem="fba-uw-Z29" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fNH-Ja-lKV"/>
                 <constraint firstItem="5io-5F-5im" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="o9M-ZE-l5z"/>
                 <constraint firstItem="l9K-wR-dFc" firstAttribute="top" secondItem="NNo-Y0-5pr" secondAttribute="bottom" constant="20" id="qF3-4e-lKM"/>
-                <constraint firstItem="NNo-Y0-5pr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="r21-8X-Hiv"/>
+                <constraint firstItem="NNo-Y0-5pr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" priority="999" constant="80" id="r21-8X-Hiv"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="-125.59999999999999" y="-18.472906403940886"/>
