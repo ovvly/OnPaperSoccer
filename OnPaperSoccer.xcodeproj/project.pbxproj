@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B6BB3AD23AD0536002A1B46 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 1B6BB3AC23AD0536002A1B46 /* Cartfile */; };
 		2C1D2C8322E1F637000DEF4B /* UIFont+OnPaperSoccer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1D2C8222E1F637000DEF4B /* UIFont+OnPaperSoccer.swift */; };
 		2C1D2C8522E1FD31000DEF4B /* MenuRowButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1D2C8422E1FD31000DEF4B /* MenuRowButton.xib */; };
 		2C2BDD4621874587009D48BC /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2BDD4521874587009D48BC /* FieldView.swift */; };
@@ -71,6 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B6BB3AC23AD0536002A1B46 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		2C1D2C8222E1F637000DEF4B /* UIFont+OnPaperSoccer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+OnPaperSoccer.swift"; sourceTree = "<group>"; };
 		2C1D2C8422E1FD31000DEF4B /* MenuRowButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuRowButton.xib; sourceTree = "<group>"; };
 		2C2BDD4521874587009D48BC /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 		2CB51AE8202CDC95009C3B71 = {
 			isa = PBXGroup;
 			children = (
+				1B6BB3AC23AD0536002A1B46 /* Cartfile */,
 				2CB51AF3202CDC96009C3B71 /* OnPaperSoccer */,
 				2CB51B08202CDC96009C3B71 /* OnPaperSoccerTests */,
 				2CB51AF2202CDC96009C3B71 /* Products */,
@@ -458,6 +461,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B6BB3AD23AD0536002A1B46 /* Cartfile in Resources */,
 				2CB51AFF202CDC96009C3B71 /* LaunchScreen.storyboard in Resources */,
 				2C97554522E09B320018964A /* Dreamwalker.otf in Resources */,
 				2C97554022E095AA0018964A /* MenuViewController.xib in Resources */,
