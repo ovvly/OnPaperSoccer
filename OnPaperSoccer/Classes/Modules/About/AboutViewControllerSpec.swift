@@ -9,12 +9,15 @@ class AboutViewControllerSpec: QuickSpec {
     override func spec() {
         describe("AboutViewController") {
             var sut: AboutViewController!
+            
             var externalLinkHandlerSpy: ExternalLinkHandlerSpy!
+            var emailSenderSpy: EmailSenderSpy!
             
             beforeEach {
                 externalLinkHandlerSpy = ExternalLinkHandlerSpy()
+                emailSenderSpy = EmailSenderSpy()
                 
-                sut = AboutViewController(externalLinkHandler: externalLinkHandlerSpy)
+                sut = AboutViewController(externalLinkHandler: externalLinkHandlerSpy, emailSender: emailSenderSpy)
                 
                 _ = sut.view
             }
@@ -25,12 +28,32 @@ class AboutViewControllerSpec: QuickSpec {
                 }
             }
             
-            context("when source code button is tapped") {
+            context("when 'source code' button is tapped") {
                 beforeEach {
                     sut.customView.sourceCodeButton.simulateTap()
                 }
                 it("should open link to github page") {
                     expect(externalLinkHandlerSpy.capturedURL) == URL(string: "https://github.com/ovvly/OnPaperSoccer")!
+                }
+            }
+            
+            context("when 'contact us' button is tapped") {
+                beforeEach {
+                    sut.customView.contactUsButton.simulateTap()
+                }
+                
+                it("should open mail with predefined mail") {
+                    expect(emailSenderSpy.capturedEmailAddress) == "help@onpapersoccer.com"
+                }
+            }
+            
+            context("when 'ideas' button is tapped") {
+                beforeEach {
+                    sut.customView.ideasButton.simulateTap()
+                }
+                
+                it("should open mail with predefined mail") {
+                    expect(emailSenderSpy.capturedEmailAddress) == "ideas@onpapersoccer.com"
                 }
             }
         }
@@ -42,5 +65,13 @@ private final class ExternalLinkHandlerSpy: ExternalLinkHandler {
     
     func open(url: URL) {
         capturedURL = url
+    }
+}
+
+private final class EmailSenderSpy: EmailSender {
+    var capturedEmailAddress: String?
+    
+    func sendMail(to emailAddress: String) {
+        capturedEmailAddress = emailAddress
     }
 }

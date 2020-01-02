@@ -42,6 +42,7 @@ final class ControllersFactory {
     }
     
     func createAboutViewController() -> AboutViewController {
-        return AboutViewController(externalLinkHandler: UIApplication.shared)
+        let emailSender = DefaultEmailSender()
+        return AboutViewController(externalLinkHandler: UIApplication.shared, emailSender: emailSender)
     }
 }

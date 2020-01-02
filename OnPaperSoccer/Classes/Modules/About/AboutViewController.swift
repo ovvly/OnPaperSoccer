@@ -4,9 +4,12 @@ final class AboutViewController: UIViewController, WithCustomView {
     typealias CustomView = AboutView
  
     private let externalLinkHandler: ExternalLinkHandler
+    private let emailSender: EmailSender
     
-    init(externalLinkHandler: ExternalLinkHandler) {
+    init(externalLinkHandler: ExternalLinkHandler, emailSender: EmailSender) {
         self.externalLinkHandler = externalLinkHandler
+        self.emailSender = emailSender
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -41,10 +44,10 @@ final class AboutViewController: UIViewController, WithCustomView {
     }
     
     @objc private func contactUsButtonTapped() {
-        print("contact us button tapped")
+        emailSender.sendMail(to: "help@onpapersoccer.com")
     }
     
     @objc private func ideasButtonTapped() {
-        print("ideas button tapped")
+        emailSender.sendMail(to: "ideas@onpapersoccer.com")
     }
 }
