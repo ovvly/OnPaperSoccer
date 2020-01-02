@@ -42,6 +42,6 @@ final class ControllersFactory {
     }
     
     func createAboutViewController() -> AboutViewController {
-        return AboutViewController()
+        return AboutViewController(externalLinkHandler: UIApplication.shared)
     }
 }

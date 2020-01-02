@@ -1,6 +1,6 @@
 import UIKit
 
-extension UIButton {
+extension UIControl {
     func simulateTap() {
         sendActions(for: .touchUpInside)
     }
