@@ -8,7 +8,6 @@ protocol FieldDrawer: WithViewController, Resetable {
 }
 
 class FieldViewController: UIViewController, FieldDrawer {
-    var viewController: UIViewController { return self }
     var fieldView: FieldView {
         return view as! FieldView
     }

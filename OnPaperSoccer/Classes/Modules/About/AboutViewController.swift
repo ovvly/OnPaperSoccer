@@ -44,10 +44,10 @@ final class AboutViewController: UIViewController, WithCustomView {
     }
     
     @objc private func contactUsButtonTapped() {
-        emailSender.sendMail(to: "help@onpapersoccer.com")
+        emailSender.sendMail(to: "help@onpapersoccer.com", presentedFrom: self)
     }
     
     @objc private func ideasButtonTapped() {
-        emailSender.sendMail(to: "ideas@onpapersoccer.com")
+        emailSender.sendMail(to: "ideas@onpapersoccer.com", presentedFrom: self)
     }
 }

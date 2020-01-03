@@ -13,6 +13,7 @@
 		1B5FBBA223BE22F8007F9381 /* SnapshotTesting.framework in Carthage Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 2C97553422E08B360018964A /* SnapshotTesting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1B5FBBA423BE28CD007F9381 /* ExternalLinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5FBBA323BE28CD007F9381 /* ExternalLinkHandler.swift */; };
 		1B5FBBA823BE3D0A007F9381 /* EmailSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5FBBA723BE3D0A007F9381 /* EmailSender.swift */; };
+		1B5FBBAA23BF47DD007F9381 /* EmailSenderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5FBBA923BF47DD007F9381 /* EmailSenderSpec.swift */; };
 		1B6BB3AD23AD0536002A1B46 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 1B6BB3AC23AD0536002A1B46 /* Cartfile */; };
 		2C1D2C8322E1F637000DEF4B /* UIFont+OnPaperSoccer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1D2C8222E1F637000DEF4B /* UIFont+OnPaperSoccer.swift */; };
 		2C2BDD4621874587009D48BC /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2BDD4521874587009D48BC /* FieldView.swift */; };
@@ -99,6 +100,7 @@
 		1B5FBB9C23BE20BA007F9381 /* AboutViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewControllerSpec.swift; sourceTree = "<group>"; };
 		1B5FBBA323BE28CD007F9381 /* ExternalLinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalLinkHandler.swift; sourceTree = "<group>"; };
 		1B5FBBA723BE3D0A007F9381 /* EmailSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSender.swift; sourceTree = "<group>"; };
+		1B5FBBA923BF47DD007F9381 /* EmailSenderSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSenderSpec.swift; sourceTree = "<group>"; };
 		1B6BB3AC23AD0536002A1B46 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		2C1D2C8222E1F637000DEF4B /* UIFont+OnPaperSoccer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+OnPaperSoccer.swift"; sourceTree = "<group>"; };
 		2C2BDD4521874587009D48BC /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				AA24B44D98711ED2BADE4D3A /* FlowController.swift */,
 				AA24B38927CB41932430085C /* Protocols */,
 				1B5FBBA723BE3D0A007F9381 /* EmailSender.swift */,
+				1B5FBBA923BF47DD007F9381 /* EmailSenderSpec.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -591,6 +594,7 @@
 			files = (
 				AA24B7F2356C873ECB235CBD /* UIControl+Specs.swift in Sources */,
 				1B5FBB9E23BE2188007F9381 /* AboutViewControllerSpec.swift in Sources */,
+				1B5FBBAA23BF47DD007F9381 /* EmailSenderSpec.swift in Sources */,
 				AA24B2F3C919EEC95E187E86 /* FieldViewControllerSpec.swift in Sources */,
 				AA24B42B6DE4E267CAB7CFAD /* MovesViewControllerSpec.swift in Sources */,
 				AA24B6302B864E0EE4257AA3 /* MatchViewControllerSpec.swift in Sources */,
@@ -766,7 +770,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TN3WPQAA2X;
+				DEVELOPMENT_TEAM = 7LPB42YFV9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

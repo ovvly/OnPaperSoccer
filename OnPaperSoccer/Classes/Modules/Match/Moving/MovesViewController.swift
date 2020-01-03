@@ -20,7 +20,6 @@ class MovesViewController: UIViewController, MovesController {
     @IBOutlet weak var downRightButton: UIButton!
 
     weak var delegate: MovesControllerDelegate?
-    var viewController: UIViewController { return self }
 
     // MARK: Init
 

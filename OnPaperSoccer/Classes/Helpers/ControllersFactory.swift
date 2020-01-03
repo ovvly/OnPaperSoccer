@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import MessageUI
 
 final class ControllersFactory {
     func createMatchViewController() -> MatchViewController {
@@ -42,7 +43,9 @@ final class ControllersFactory {
     }
     
     func createAboutViewController() -> AboutViewController {
-        let emailSender = DefaultEmailSender()
+        let emailSender = DefaultEmailSender(mailComposerBuilder: {
+            return MFMailComposeViewController()
+        })
         return AboutViewController(externalLinkHandler: UIApplication.shared, emailSender: emailSender)
     }
 }

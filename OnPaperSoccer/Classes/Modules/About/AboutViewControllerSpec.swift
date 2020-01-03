@@ -45,6 +45,10 @@ class AboutViewControllerSpec: QuickSpec {
                 it("should open mail with predefined mail") {
                     expect(emailSenderSpy.capturedEmailAddress) == "help@onpapersoccer.com"
                 }
+                
+                it("should present on correct view controller") {
+                    expect(emailSenderSpy.capturedViewController) == sut
+                }
             }
             
             context("when 'ideas' button is tapped") {
@@ -54,6 +58,10 @@ class AboutViewControllerSpec: QuickSpec {
                 
                 it("should open mail with predefined mail") {
                     expect(emailSenderSpy.capturedEmailAddress) == "ideas@onpapersoccer.com"
+                }
+                
+                it("should present on correct view controller") {
+                    expect(emailSenderSpy.capturedViewController) == sut
                 }
             }
         }
@@ -70,8 +78,10 @@ private final class ExternalLinkHandlerSpy: ExternalLinkHandler {
 
 private final class EmailSenderSpy: EmailSender {
     var capturedEmailAddress: String?
+    var capturedViewController: UIViewController?
     
-    func sendMail(to emailAddress: String) {
+    func sendMail(to emailAddress: String, presentedFrom viewController: UIViewController) {
         capturedEmailAddress = emailAddress
+        capturedViewController = viewController
     }
 }
