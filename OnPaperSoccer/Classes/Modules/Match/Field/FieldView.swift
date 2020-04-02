@@ -12,6 +12,14 @@ final class FieldView: UIView {
     private var colorToDraw: UIColor = .black
     private var drawImage: CGImage?
 
+    lazy var spacing: CGFloat = {
+        calculateSpacing()
+    }()
+
+    lazy var shiftVector: CGVector = {
+        calculateShiftVector(spacing: spacing)
+    }()
+
     //MARK: Lifecycle
 
     private let currentPointView: UIView = {
@@ -31,7 +39,13 @@ final class FieldView: UIView {
 
         setup()
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
 
+        spacing = calculateSpacing()
+        shiftVector = calculateShiftVector(spacing: spacing)
+    }
     override func draw(_ rect: CGRect) {
         if !isFieldDrawn {
             drawField()
@@ -66,10 +80,7 @@ final class FieldView: UIView {
 
     func mark(currentPoint: Point, with color: UIColor) {
         currentPointView.backgroundColor = color
-        let spacing = calculateSpacing()
-        let shiftVector = calculateShiftVector(spacing: spacing)
-        let currentPointCenter = CGPoint(x: currentPoint.x * spacing, y: (numberOfRows - currentPoint.y - 1) * spacing).apply(vector: shiftVector)
-        currentPointView.center = currentPointCenter
+        currentPointView.center = cgPoint(from: (currentPoint.x, numberOfRows - currentPoint.y - 1))
     }
 
     func reset() {
@@ -100,22 +111,19 @@ final class FieldView: UIView {
     }
 
     private func drawLines(in context: CGContext) {
-        let spacing = calculateSpacing()
-        let shiftVector = calculateShiftVector(spacing: spacing)
-
         let path = UIBezierPath()
         path.lineWidth = 1
 
         for column in 0..<numberOfColumns {
-            let start = CGPoint(x: CGFloat(column) * spacing, y: 0).apply(vector: shiftVector)
-            let end = CGPoint(x: CGFloat(column) * spacing, y: CGFloat(numberOfRows - 1) * spacing).apply(vector: shiftVector)
+            let start =  cgPoint(from: (column, 0))
+            let end = cgPoint(from: (column, numberOfRows - 1))
             path.move(to: start)
             path.addLine(to: end)
         }
 
         for row in 0..<numberOfRows {
-            let start = CGPoint(x: 0, y: CGFloat(row) * spacing).apply(vector: shiftVector)
-            let end = CGPoint(x: spacing * CGFloat(numberOfColumns - 1), y: CGFloat(row) * spacing).apply(vector: shiftVector)
+            let start = cgPoint(from: (0, row))
+            let end = cgPoint(from: (numberOfColumns - 1, row))
             path.move(to: start)
             path.addLine(to: end)
         }
@@ -126,21 +134,52 @@ final class FieldView: UIView {
     }
 
     private func drawBorderLines(in context: CGContext, using path: UIBezierPath) {
-        UIColor.App.borderlines.setStroke()
-        path.stroke()
-    }
-
-    private func calculateBorderLine() -> UIBezierPath {
-        let spacing = calculateSpacing()
-        let shiftVector = calculateShiftVector(spacing: spacing)
-
         let path = UIBezierPath()
         path.lineWidth = 1
 
-        let upLeftCornerPoint = CGPoint(x: 0, y: 0).apply(vector: shiftVector)
-        let upRightCornerPoint = CGPoint(x: 0, y: CGFloat(numberOfRows - 1) * spacing).apply(vector: shiftVector)
-        let downRightCornerPoint = CGPoint(x: spacing * CGFloat(numberOfColumns - 1), y: CGFloat(numberOfRows - 1) * spacing).apply(vector: shiftVector)
-        let downLeftCornerPoint = CGPoint(x: spacing * CGFloat(numberOfColumns - 1), y: 0).apply(vector: shiftVector)
+        let leftSidePoints = [(0,0),
+                              (0, numberOfRows-1),
+                              (3, numberOfRows-1)]
+            .map(cgPoint(from:))
+        
+        let rightSidePoints = [(numberOfColumns-1, numberOfRows-1),
+                               (numberOfColumns-1, 0),
+                               (5, 0)]
+            .map(cgPoint(from:))
+
+        path.move(to: cgPoint(from: (3, 0)))
+        leftSidePoints.forEach { point in
+            path.addLine(to: point)
+        }
+        
+        path.move(to: cgPoint(from:(5, numberOfRows-1)))
+        rightSidePoints.forEach { point in
+            path.addLine(to: point)
+        }
+
+        UIColor.App.borderlines.setStroke()
+        path.stroke()
+
+        drawGoalPosts(spacing: spacing, shiftVector: shiftVector)
+    }
+    private func drawGoalPosts(spacing: CGFloat, shiftVector: CGVector) {
+        UIColor.App.lineEnd.setFill()
+        [(5, numberOfRows-1),
+         (3, numberOfRows-1),
+         (3, 0),
+         (5, 0)]
+            .map(cgPoint(from:))
+            .forEach { drawPoint(in: $0) }
+    }
+
+    private func calculateBorderLine() -> UIBezierPath {
+        let path = UIBezierPath()
+        path.lineWidth = 1
+
+        let upLeftCornerPoint = cgPoint(from: (0, 0))
+        let upRightCornerPoint = cgPoint(from: (0, numberOfRows-1))
+        let downRightCornerPoint = cgPoint(from: (numberOfColumns-1, numberOfRows-1))
+        let downLeftCornerPoint = cgPoint(from: (numberOfColumns-1, 0))
 
         path.move(to: upLeftCornerPoint)
         path.addLine(to: upRightCornerPoint)
@@ -174,10 +213,8 @@ final class FieldView: UIView {
         path.lineWidth = 3
         colorToDraw.setStroke()
 
-        let spacing = calculateSpacing()
-        let shiftVector = calculateShiftVector(spacing: spacing)
-        let startPoint = CGPoint(x: start.x * spacing, y: (numberOfRows - start.y - 1) * spacing).apply(vector: shiftVector)
-        let endPoint = CGPoint(x: end.x * spacing, y: (numberOfRows - end.y - 1) * spacing).apply(vector: shiftVector)
+        let startPoint = cgPoint(from: (start.x, (numberOfRows - start.y - 1)))
+        let endPoint = cgPoint(from: (end.x, (numberOfRows - end.y - 1)))
 
         path.move(to: startPoint)
         path.addLine(to: endPoint)
@@ -195,6 +232,10 @@ final class FieldView: UIView {
         let pointShift = Constants.lineEndSize / 2
 
         context?.fillEllipse(in: CGRect(x: point.x - pointShift, y: point.y - pointShift, width: Constants.lineEndSize, height: Constants.lineEndSize))
+    }
+
+    private func cgPoint(from point: (Int, Int)) -> CGPoint {
+        CGPoint(x: point.0 * spacing, y: point.1 * spacing).apply(vector: shiftVector)
     }
 
     private struct Constants {
