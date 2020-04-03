@@ -16,6 +16,8 @@
 		1B5FBBAA23BF47DD007F9381 /* EmailSenderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5FBBA923BF47DD007F9381 /* EmailSenderSpec.swift */; };
 		1B6BB3AD23AD0536002A1B46 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 1B6BB3AC23AD0536002A1B46 /* Cartfile */; };
 		2C1D2C8322E1F637000DEF4B /* UIFont+OnPaperSoccer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1D2C8222E1F637000DEF4B /* UIFont+OnPaperSoccer.swift */; };
+		2C28D21024378CF100285D3C /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C28D20E24378CF100285D3C /* SummaryViewController.swift */; };
+		2C28D21124378CF100285D3C /* SummaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C28D20F24378CF100285D3C /* SummaryViewController.xib */; };
 		2C2BDD4621874587009D48BC /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2BDD4521874587009D48BC /* FieldView.swift */; };
 		2C2CFF8122FB39E000258B5A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CFF7F22FB39E000258B5A /* AboutViewController.swift */; };
 		2C2CFF8422FB3B0A00258B5A /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CFF8322FB3B0A00258B5A /* AboutView.swift */; };
@@ -103,6 +105,8 @@
 		1B5FBBA923BF47DD007F9381 /* EmailSenderSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSenderSpec.swift; sourceTree = "<group>"; };
 		1B6BB3AC23AD0536002A1B46 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		2C1D2C8222E1F637000DEF4B /* UIFont+OnPaperSoccer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+OnPaperSoccer.swift"; sourceTree = "<group>"; };
+		2C28D20E24378CF100285D3C /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
+		2C28D20F24378CF100285D3C /* SummaryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryViewController.xib; sourceTree = "<group>"; };
 		2C2BDD4521874587009D48BC /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
 		2C2CFF7F22FB39E000258B5A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		2C2CFF8322FB3B0A00258B5A /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -350,6 +354,7 @@
 		2CB51B14202CEB3C009C3B71 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2CEDB2C1243771C600430951 /* Summary */,
 				2C2CFF7E22FB39B700258B5A /* About */,
 				2C97553C22E095840018964A /* Menu */,
 				2CB51B1A202CF91F009C3B71 /* Match */,
@@ -367,6 +372,15 @@
 				AA24B240A48A18440B46E320 /* MatchViewControllerSpec.swift */,
 			);
 			path = Match;
+			sourceTree = "<group>";
+		};
+		2CEDB2C1243771C600430951 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				2C28D20E24378CF100285D3C /* SummaryViewController.swift */,
+				2C28D20F24378CF100285D3C /* SummaryViewController.xib */,
+			);
+			path = Summary;
 			sourceTree = "<group>";
 		};
 		AA24B38927CB41932430085C /* Protocols */ = {
@@ -515,6 +529,7 @@
 				2C320B992178DD1E00CDADF5 /* FieldViewController.xib in Resources */,
 				2C97554F22E0A4370018964A /* Assets.xcassets in Resources */,
 				AA24B8B08AD975D581E6AF56 /* MovesViewController.xib in Resources */,
+				2C28D21124378CF100285D3C /* SummaryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +572,7 @@
 				2C320BA12178E32E00CDADF5 /* UIViewController+AddChildViewController.swift in Sources */,
 				2C2CFF8622FB410100258B5A /* WithCustomView.swift in Sources */,
 				2C2BDD4621874587009D48BC /* FieldView.swift in Sources */,
+				2C28D21024378CF100285D3C /* SummaryViewController.swift in Sources */,
 				2C320B9F2178E2F600CDADF5 /* UIView+AddContentSubview.swift in Sources */,
 				2C320B932178DBC800CDADF5 /* Point.swift in Sources */,
 				2C97554922E09C8A0018964A /* MenuRowButton.swift in Sources */,

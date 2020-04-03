@@ -21,14 +21,9 @@ final class ControllersFactory {
         return MenuViewController()
     }
 
-    func createAftermatchViewController(playerName: String, confirm: @escaping () -> Void) -> UIAlertController {
-        //TODO: this is temporary controller
-        let alertController = UIAlertController(title: "Game Over", message: "\(playerName) WON!!!111one1one!", preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "Play Again!", style: .default) { _ in
-            confirm()
-        }
-        alertController.addAction(confirmAction)
-        return alertController
+    func createSummaryViewController(player: Player) -> SummaryViewController {
+        let summaryViewController = SummaryViewController(player: player)
+        return summaryViewController
     }
 
     func createResetConfirmationViewController(confirm: @escaping () -> Void) -> UIAlertController {

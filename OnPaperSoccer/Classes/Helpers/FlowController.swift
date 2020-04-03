@@ -34,10 +34,9 @@ class FlowController {
 
 extension FlowController: MatchViewControllerDelegate {
     func playerDidWin(_ player: Player) {
-        let alertController = controllersFactory.createAftermatchViewController(playerName: player.name) { [weak self] in
-            self?.matchViewController.reset()
-        }
-        matchViewController.present(alertController, animated: true)
+        let summaryViewController = controllersFactory.createSummaryViewController(player: player)
+        summaryViewController.delegate = self
+        matchViewController.present(summaryViewController, animated: true)
     }
 
     func showResetConfirmation() {
@@ -56,5 +55,12 @@ extension FlowController: MenuViewControllerDelegate {
     func didSelectedAbout() {
         let aboutViewController = controllersFactory.createAboutViewController()
         navigationController.pushViewController(aboutViewController, animated: true)
+    }
+}
+
+extension FlowController: SummaryViewControllerDelegate {
+    func viewControllerDidFinish(_ viewController: SummaryViewController) {
+        matchViewController.reset()
+        viewController.dismiss(animated: true)
     }
 }
