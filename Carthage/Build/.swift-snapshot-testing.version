@@ -1,0 +1,10 @@
+{
+  "commitish" : "1.7.2",
+  "iOS" : [
+    {
+      "name" : "SnapshotTesting",
+      "hash" : "9a9f6b6ba8b66edf9c1546175d8db2d0113be2ae054c3e00bd812b9690489a87",
+      "swiftToolchainVersion" : "5.2 (swiftlang-1103.0.32.1 clang-1103.0.32.29)"
+    }
+  ]
+}
