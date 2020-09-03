@@ -14,7 +14,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2CB51AF0202CDC95009C3B71"
-               BuildableName = "OnPaperSoccer.app"
+               BuildableName = "Grid Soccer.app"
                BlueprintName = "OnPaperSoccer"
                ReferencedContainer = "container:OnPaperSoccer.xcodeproj">
             </BuildableReference>
@@ -54,7 +54,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2CB51AF0202CDC95009C3B71"
-            BuildableName = "OnPaperSoccer.app"
+            BuildableName = "Grid Soccer.app"
             BlueprintName = "OnPaperSoccer"
             ReferencedContainer = "container:OnPaperSoccer.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2CB51AF0202CDC95009C3B71"
-            BuildableName = "OnPaperSoccer.app"
+            BuildableName = "Grid Soccer.app"
             BlueprintName = "OnPaperSoccer"
             ReferencedContainer = "container:OnPaperSoccer.xcodeproj">
          </BuildableReference>
