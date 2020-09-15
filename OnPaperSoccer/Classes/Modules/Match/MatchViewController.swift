@@ -105,19 +105,24 @@ class MatchViewController: UIViewController, Resetable {
 
     private func endGameIfNoMovesLeft(from point: Point) {
         if movesValidator.possibleMoves(from: point).isEmpty {
-            delegate?.playerDidWin(turnController.currentPlayer.nextPlayer())
+            playerWon(turnController.currentPlayer.nextPlayer())
         }
     }
 
     private func endGameIfInWiningPoint(from point: Point) {
         if let player = settings.winingPoints[point] {
-            delegate?.playerDidWin(player)
+            playerWon(player)
         }
     }
 
     private func updateTurnIndicator(with player: Player) {
         turnView.backgroundColor = player.color
         turnLabel.text = "\(player.name) PLAYER TURN"
+    }
+
+    private func playerWon(_ player: Player) {
+        movesController.disableMoves()
+        delegate?.playerDidWin(player)
     }
 
     @objc

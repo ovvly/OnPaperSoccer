@@ -1,7 +1,8 @@
 import UIKit
 
 protocol SummaryViewControllerDelegate: class {
-    func viewControllerDidFinish(_ viewController: SummaryViewController)
+    func viewControllerDidRestart(_ viewController: SummaryViewController)
+    func viewControllerDidClose(_ viewController: SummaryViewController)
 }
 
 final class SummaryViewController: UIViewController, WithCustomView {
@@ -29,11 +30,27 @@ final class SummaryViewController: UIViewController, WithCustomView {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupView()
+        addActionsToButtons()
+    }
+
+    private func setupView() {
         customView.infoLabel.text = "\(player.name) wins the match"
         customView.infoLabel.textColor = player.color
     }
-    
-    @IBAction func doneButtonTapped(_ sender: UIButton) {
-        delegate?.viewControllerDidFinish(self)
+
+    private func addActionsToButtons() {
+        customView.okButton.addTarget(self, action: #selector(okButtonTapped), for: .touchUpInside)
+        customView.restartButton.addTarget(self, action: #selector(restartButtonTapped), for: .touchUpInside)
+    }
+
+    @objc
+    private func okButtonTapped() {
+        delegate?.viewControllerDidClose(self)
+    }
+
+    @objc
+    private func restartButtonTapped() {
+        delegate?.viewControllerDidRestart(self)
     }
 }

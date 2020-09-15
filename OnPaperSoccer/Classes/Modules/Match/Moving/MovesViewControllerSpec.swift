@@ -126,6 +126,25 @@ class MovesViewControllerSpec: QuickSpec {
                     expect(sut.downRightButton.isEnabled) == true
                 }
             }
+
+            describe("disable moves") {
+                beforeEach {
+                    sut.updateMovesPossibility([.up, .down, .left, .right, .upLeft, .upRight, .downLeft, .downRight])
+
+                    sut.disableMoves()
+                }
+                
+                it("should disable all buttons") {
+                    expect(sut.upButton.isEnabled) == false
+                    expect(sut.downButton.isEnabled) == false
+                    expect(sut.leftButton.isEnabled) == false
+                    expect(sut.rightButton.isEnabled) == false
+                    expect(sut.upLeftButton.isEnabled) == false
+                    expect(sut.upRightButton.isEnabled) == false
+                    expect(sut.downLeftButton.isEnabled) == false
+                    expect(sut.downRightButton.isEnabled) == false
+                }
+            }
         }
     }
 }

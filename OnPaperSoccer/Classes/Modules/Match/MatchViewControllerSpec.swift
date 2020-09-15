@@ -146,6 +146,10 @@ class MatchViewControllerSpec: QuickSpec {
                     it("should inform about player 1 win") {
                         expect(delegate.playerDidWin) == .player1
                     }
+
+                    it("should block further moves") {
+                        expect(movesControllerSpy.movesDisabled) == true
+                    }
                 }
 
                 context("when player 1 does not have any moves") {
@@ -157,6 +161,10 @@ class MatchViewControllerSpec: QuickSpec {
                     
                     it("should inform about player 2 win") {
                         expect(delegate.playerDidWin) == .player2
+                    }
+
+                    it("should block further moves") {
+                        expect(movesControllerSpy.movesDisabled) == true
                     }
                 }
 
@@ -295,6 +303,11 @@ private class MovesControllerSpy: MovesController {
     var capturedPossibleMoves = Set<Move>()
     var viewController = UIViewController()
     var delegate: MovesControllerDelegate? = nil
+    var movesDisabled = false
+
+    func disableMoves() {
+        movesDisabled = true
+    }
 
     func updateMovesPossibility(_ moves: Set<Move>) {
         capturedPossibleMoves = moves
@@ -327,7 +340,7 @@ private class MovesValidatorSpy: MovesValidator {
     var capturedUsedLine: Line?
 
     func possibleMoves(from point: Point) -> Set<Move> {
-        return possibleMoves
+        possibleMoves
     }
 
     func setLineAsUsed(_ line: Line) {

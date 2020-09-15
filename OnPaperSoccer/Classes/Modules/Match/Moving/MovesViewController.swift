@@ -7,6 +7,7 @@ protocol MovesControllerDelegate: class {
 protocol MovesController: class, WithViewController, Resetable {
     var delegate: MovesControllerDelegate? { get set }
     func updateMovesPossibility(_ moves: Set<Move>)
+    func disableMoves()
 }
 
 class MovesViewController: UIViewController, MovesController {
@@ -38,6 +39,10 @@ class MovesViewController: UIViewController, MovesController {
             let button = directionButton(for: move)
             button.isEnabled = moves.contains(move)
         }
+    }
+
+    func disableMoves() {
+        updateMovesPossibility(Set())
     }
 
     func reset() {

@@ -61,8 +61,12 @@ extension FlowController: MenuViewControllerDelegate {
 }
 
 extension FlowController: SummaryViewControllerDelegate {
-    func viewControllerDidFinish(_ viewController: SummaryViewController) {
+    func viewControllerDidRestart(_ viewController: SummaryViewController) {
         matchViewController.reset()
+        viewController.dismiss(animated: true)
+    }
+
+    func viewControllerDidClose(_ viewController: SummaryViewController) {
         viewController.dismiss(animated: true)
     }
 }
