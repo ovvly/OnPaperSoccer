@@ -95,6 +95,7 @@ final class FieldView: UIView {
     //MARK: Helpers
 
     private func setup() {
+        backgroundColor = .clear
         addSubview(currentPointView)
     }
 

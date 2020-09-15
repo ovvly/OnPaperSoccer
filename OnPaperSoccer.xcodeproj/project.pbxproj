@@ -24,7 +24,6 @@
 		2C320B932178DBC800CDADF5 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B922178DBC800CDADF5 /* Point.swift */; };
 		2C320B952178DBE500CDADF5 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B942178DBE500CDADF5 /* Line.swift */; };
 		2C320B982178DD1E00CDADF5 /* FieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B962178DD1E00CDADF5 /* FieldViewController.swift */; };
-		2C320B992178DD1E00CDADF5 /* FieldViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C320B972178DD1E00CDADF5 /* FieldViewController.xib */; };
 		2C320B9F2178E2F600CDADF5 /* UIView+AddContentSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B9E2178E2F600CDADF5 /* UIView+AddContentSubview.swift */; };
 		2C320BA12178E32E00CDADF5 /* UIViewController+AddChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320BA02178E32E00CDADF5 /* UIViewController+AddChildViewController.swift */; };
 		2C97553722E08B360018964A /* SnapshotTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C97553422E08B360018964A /* SnapshotTesting.framework */; };
@@ -114,7 +113,6 @@
 		2C320B922178DBC800CDADF5 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		2C320B942178DBE500CDADF5 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		2C320B962178DD1E00CDADF5 /* FieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldViewController.swift; sourceTree = "<group>"; };
-		2C320B972178DD1E00CDADF5 /* FieldViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FieldViewController.xib; sourceTree = "<group>"; };
 		2C320B9E2178E2F600CDADF5 /* UIView+AddContentSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddContentSubview.swift"; sourceTree = "<group>"; };
 		2C320BA02178E32E00CDADF5 /* UIViewController+AddChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AddChildViewController.swift"; sourceTree = "<group>"; };
 		2C97553422E08B360018964A /* SnapshotTesting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapshotTesting.framework; path = Carthage/Build/iOS/SnapshotTesting.framework; sourceTree = "<group>"; };
@@ -420,7 +418,6 @@
 			isa = PBXGroup;
 			children = (
 				2C320B962178DD1E00CDADF5 /* FieldViewController.swift */,
-				2C320B972178DD1E00CDADF5 /* FieldViewController.xib */,
 				AA24B13D18BFBF3DDCDC0F91 /* FieldViewControllerSpec.swift */,
 				2C2BDD4521874587009D48BC /* FieldView.swift */,
 			);
@@ -528,7 +525,6 @@
 				2C97554522E09B320018964A /* Dreamwalker.otf in Resources */,
 				2C97554022E095AA0018964A /* MenuViewController.xib in Resources */,
 				2C9A70A521BE615C00B801C9 /* MatchViewController.xib in Resources */,
-				2C320B992178DD1E00CDADF5 /* FieldViewController.xib in Resources */,
 				2C97554F22E0A4370018964A /* Assets.xcassets in Resources */,
 				AA24B8B08AD975D581E6AF56 /* MovesViewController.xib in Resources */,
 			);
