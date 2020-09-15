@@ -129,7 +129,7 @@
 		2C9A70A221BE615C00B801C9 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		2C9A70A321BE615C00B801C9 /* MatchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchViewController.xib; sourceTree = "<group>"; };
 		2C9A70A621BE747000B801C9 /* MovesValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovesValidator.swift; sourceTree = "<group>"; };
-		2CB51AF1202CDC96009C3B71 /* OnPaperSoccer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnPaperSoccer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CB51AF1202CDC96009C3B71 /* Grid Soccer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grid Soccer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB51AF4202CDC96009C3B71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CB51AFE202CDC96009C3B71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CB51B00202CDC96009C3B71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -325,7 +325,7 @@
 		2CB51AF2202CDC96009C3B71 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2CB51AF1202CDC96009C3B71 /* OnPaperSoccer.app */,
+				2CB51AF1202CDC96009C3B71 /* Grid Soccer.app */,
 				2CB51B05202CDC96009C3B71 /* OnPaperSoccerTests.xctest */,
 			);
 			name = Products;
@@ -454,7 +454,7 @@
 			);
 			name = OnPaperSoccer;
 			productName = OnPaperSoccer;
-			productReference = 2CB51AF1202CDC96009C3B71 /* OnPaperSoccer.app */;
+			productReference = 2CB51AF1202CDC96009C3B71 /* Grid Soccer.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2CB51B04202CDC96009C3B71 /* OnPaperSoccerTests */ = {
@@ -782,7 +782,7 @@
 				);
 				MARKETING_VERSION = 1.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.owly.onpapersoccer;
-				PRODUCT_NAME = OnPaperSoccer;
+				PRODUCT_NAME = "Grid Soccer";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -807,7 +807,7 @@
 				);
 				MARKETING_VERSION = 1.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.owly.onpapersoccer;
-				PRODUCT_NAME = OnPaperSoccer;
+				PRODUCT_NAME = "Grid Soccer";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
