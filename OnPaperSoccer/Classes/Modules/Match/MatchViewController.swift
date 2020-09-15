@@ -80,6 +80,7 @@ class MatchViewController: UIViewController, Resetable {
         movesValidator.reset()
         movesController.reset()
         fieldDrawer.mark(currentPoint: currentPosition, with: turnController.currentPlayer.color)
+        updateTurnIndicator(with: turnController.currentPlayer)
     }
 
     //MARK: Helpers

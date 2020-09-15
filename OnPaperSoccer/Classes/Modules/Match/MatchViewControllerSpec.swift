@@ -216,7 +216,7 @@ class MatchViewControllerSpec: QuickSpec {
                 }
             }
 
-            describe("reseting") {
+            describe("resetting") {
                 sharedExamples("reset") { (sharedExampleContext: @escaping SharedExampleContext) in
                     it("should set current position to starting position") {
                         expect(sut.currentPosition) == gameSettings.startingPoint
@@ -242,6 +242,11 @@ class MatchViewControllerSpec: QuickSpec {
                         expect(fieldDrawerSpy.markedPoint) == gameSettings.startingPoint
                         expect(fieldDrawerSpy.markingColor) == Player.player1.color
                     }
+
+                    it("should reset turn view") {
+                        expect(sut.turnLabel.text) == "RED PLAYER TURN"
+                        expect(sut.turnView.backgroundColor) == Player.player1.color
+                    }
                 }
 
                 describe("reset") {
@@ -254,6 +259,17 @@ class MatchViewControllerSpec: QuickSpec {
                     }
                     
                     itBehavesLike("reset")
+                    
+                    context("when resetting during blue player turn") {
+                        beforeEach {
+                            sut.turnLabel.text = "BLUE PLAYER TURN"
+                            sut.turnView.backgroundColor = Player.player2.color
+
+                            sut.reset()
+                        }
+
+                        itBehavesLike("reset")
+                    }
                 }
 
                 describe("reset button") {
