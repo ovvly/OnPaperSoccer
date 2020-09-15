@@ -46,19 +46,22 @@ final class FieldView: UIView {
         spacing = calculateSpacing()
         shiftVector = calculateShiftVector(spacing: spacing)
     }
+
     override func draw(_ rect: CGRect) {
         if !isFieldDrawn {
-            drawField()
+            drawFieldInViewContext()
             isFieldDrawn = true
-        }
-        if let line = lineToDraw {
+        } else {
             guard let image = drawImage else { return }
             let context = UIGraphicsGetCurrentContext()
             UIImage(cgImage: image).draw(in: rect)
-            drawLine(from: line.from, to: line.to)
-            drawImage = context?.makeImage()
+            
+            if let line = lineToDraw {
+                drawLine(from: line.from, to: line.to)
+                drawImage = context?.makeImage()
 
-            lineToDraw = nil
+                lineToDraw = nil
+            }
         }
     }
 
@@ -95,7 +98,7 @@ final class FieldView: UIView {
         addSubview(currentPointView)
     }
 
-    private func drawField() {
+    private func drawFieldInViewContext() {
         guard let context = UIGraphicsGetCurrentContext() else { return }
 
         let borderPath = calculateBorderLine()
@@ -162,6 +165,7 @@ final class FieldView: UIView {
 
         drawGoalPosts(spacing: spacing, shiftVector: shiftVector)
     }
+    
     private func drawGoalPosts(spacing: CGFloat, shiftVector: CGVector) {
         UIColor.App.lineEnd.setFill()
         [(5, numberOfRows-1),
