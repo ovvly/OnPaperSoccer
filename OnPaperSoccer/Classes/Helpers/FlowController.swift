@@ -35,6 +35,8 @@ class FlowController {
 extension FlowController: MatchViewControllerDelegate {
     func playerDidWin(_ player: Player) {
         let summaryViewController = controllersFactory.createSummaryViewController(player: player)
+        summaryViewController.modalTransitionStyle = .crossDissolve
+        summaryViewController.modalPresentationStyle = .overCurrentContext
         summaryViewController.delegate = self
         matchViewController.present(summaryViewController, animated: true)
     }

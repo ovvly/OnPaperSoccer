@@ -4,13 +4,15 @@ protocol SummaryViewControllerDelegate: class {
     func viewControllerDidFinish(_ viewController: SummaryViewController)
 }
 
-final class SummaryViewController: UIViewController {
+final class SummaryViewController: UIViewController, WithCustomView {
+    typealias CustomView = SummaryView
 
     weak var delegate: SummaryViewControllerDelegate?
-    
+    private let player: Player
     // MARK: Init
 
     init(player: Player) {
+        self.player = player
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -19,9 +21,16 @@ final class SummaryViewController: UIViewController {
     }
     
     // MARK: Lifecycle
-    
+
+    override func loadView() {
+        view = SummaryView()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        customView.infoLabel.text = "\(player.name) wins the match"
+        customView.infoLabel.textColor = player.color
     }
     
     @IBAction func doneButtonTapped(_ sender: UIButton) {

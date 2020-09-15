@@ -22,7 +22,6 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Eurostile.ttf</string>
 		<string>Dreamwalker.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
@@ -37,6 +36,8 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

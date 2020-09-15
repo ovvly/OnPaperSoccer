@@ -16,9 +16,7 @@ class AboutViewControllerSpec: QuickSpec {
             beforeEach {
                 externalLinkHandlerSpy = ExternalLinkHandlerSpy()
                 emailSenderSpy = EmailSenderSpy()
-                
                 sut = AboutViewController(externalLinkHandler: externalLinkHandlerSpy, emailSender: emailSenderSpy)
-                
                 _ = sut.view
             }
             

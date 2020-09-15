@@ -16,8 +16,8 @@ enum Player {
 extension Player {
     var color: UIColor {
         switch self {
-        case .player1: return UIColor.App.player1
-        case .player2: return UIColor.App.player2
+        case .player1: return UIColor.App.red
+        case .player2: return UIColor.App.blue
         }
     }
 }

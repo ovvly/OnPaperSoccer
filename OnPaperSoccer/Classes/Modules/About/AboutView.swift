@@ -4,7 +4,7 @@ import SnapKit
 final class AboutView: UIView {
     let infoLabel: UILabel = {
         var label = UILabel()
-        label.font = UIFont.App.eurostile(size: 18)
+        label.font = UIFont.App.system(size: 18)
         label.textColor = UIColor.App.textColor
         label.numberOfLines = 0
         label.textAlignment = .justified
@@ -19,13 +19,13 @@ final class AboutView: UIView {
     
     let contactUsButton: MenuRowButton = {
         let button = MenuRowButton()
-        button.tintColor = UIColor.App.player1
+        button.tintColor = UIColor.App.red
         return button
     }()
     
     let ideasButton: MenuRowButton = {
         let button = MenuRowButton()
-        button.tintColor = UIColor.App.player2
+        button.tintColor = UIColor.App.blue
         return button
     }()
     

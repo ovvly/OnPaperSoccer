@@ -4,7 +4,7 @@ import SnapKit
 
 final class MenuRowButton: UIControl {
     @IBInspectable
-    var color: UIColor = UIColor.App.player1 {
+    var color: UIColor = UIColor.App.red {
         didSet {
             rightArrowImageView.tintColor = color
             leftArrowImageView.tintColor = color

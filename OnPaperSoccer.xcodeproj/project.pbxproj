@@ -17,7 +17,6 @@
 		1B6BB3AD23AD0536002A1B46 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 1B6BB3AC23AD0536002A1B46 /* Cartfile */; };
 		2C1D2C8322E1F637000DEF4B /* UIFont+OnPaperSoccer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1D2C8222E1F637000DEF4B /* UIFont+OnPaperSoccer.swift */; };
 		2C28D21024378CF100285D3C /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C28D20E24378CF100285D3C /* SummaryViewController.swift */; };
-		2C28D21124378CF100285D3C /* SummaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C28D20F24378CF100285D3C /* SummaryViewController.xib */; };
 		2C2BDD4621874587009D48BC /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2BDD4521874587009D48BC /* FieldView.swift */; };
 		2C2CFF8122FB39E000258B5A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CFF7F22FB39E000258B5A /* AboutViewController.swift */; };
 		2C2CFF8422FB3B0A00258B5A /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CFF8322FB3B0A00258B5A /* AboutView.swift */; };
@@ -34,7 +33,6 @@
 		2C97553F22E095AA0018964A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C97553D22E095AA0018964A /* MenuViewController.swift */; };
 		2C97554022E095AA0018964A /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C97553E22E095AA0018964A /* MenuViewController.xib */; };
 		2C97554522E09B320018964A /* Dreamwalker.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C97554422E09B320018964A /* Dreamwalker.otf */; };
-		2C97554722E09BF60018964A /* Eurostile.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C97554622E09BF60018964A /* Eurostile.ttf */; };
 		2C97554922E09C8A0018964A /* MenuRowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C97554822E09C8A0018964A /* MenuRowButton.swift */; };
 		2C97554F22E0A4370018964A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C97554E22E0A4370018964A /* Assets.xcassets */; };
 		2C97555222E0B1EF0018964A /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C97555022E0B1980018964A /* SnapKit.framework */; };
@@ -52,6 +50,7 @@
 		AA24B4B4A793D3B2FF4D0D6E /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BD2C9FBB272298F04DC4 /* Player.swift */; };
 		AA24B4FFA5A98FA1002F8BE1 /* ControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BCB1E19522BE044C014E /* ControllersFactory.swift */; };
 		AA24B6302B864E0EE4257AA3 /* MatchViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B240A48A18440B46E320 /* MatchViewControllerSpec.swift */; };
+		AA24B6685BF4D5BB95F01B88 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BBE17CB8F6DFDF63E4FF /* SummaryView.swift */; };
 		AA24B696C655F461F39434E4 /* UIColor+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BB10F9C1929C5A53998D /* UIColor+Fixture.swift */; };
 		AA24B6CD59CC1876FC87674E /* MenuViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BAF8AC8464C4CA23C9D8 /* MenuViewControllerSpec.swift */; };
 		AA24B7130118B052140EC799 /* PlayerTurnControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B77DCFCFB2BA9F8CC272 /* PlayerTurnControllerSpec.swift */; };
@@ -62,10 +61,12 @@
 		AA24B8B08AD975D581E6AF56 /* MovesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA24BA9C383BCEDACB8CD8E5 /* MovesViewController.xib */; };
 		AA24B9D40713DEC4441E3456 /* CoreGraphics+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B10771B109B53597B92F /* CoreGraphics+Extensions.swift */; };
 		AA24BB0EB5F03F92D472BEDA /* MovesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B5092F1425DDB1948782 /* MovesViewController.swift */; };
+		AA24BB561422B0FD553BD4A4 /* UIImage+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BB52B9805E2EAD200F8C /* UIImage+Assets.swift */; };
 		AA24BBCAAF24F051B2E66253 /* UIColor+OnPaperSoccer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B9766E353BB7D3ED0546 /* UIColor+OnPaperSoccer.swift */; };
 		AA24BBD836740507532F5610 /* MovesValidatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B89C3CD561A829494264 /* MovesValidatorSpec.swift */; };
 		AA24BBEA3ABD8329D82E7FDF /* WithViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BE820377AE917733B251 /* WithViewController.swift */; };
 		AA24BC1CBAE58A5B5DF58308 /* GameSettings+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B82E6F9EF90FAA3E9470 /* GameSettings+Fixture.swift */; };
+		AA24BC4C568E5DA5F761B96A /* SummaryViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BD673F83D63E6612678E /* SummaryViewControllerSpec.swift */; };
 		AA24BD0F214B46C2945C2BEB /* Resetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B87021212FBB69C0BD00 /* Resetable.swift */; };
 		AA24BD5D752D52F0BD6889C0 /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B44D98711ED2BADE4D3A /* FlowController.swift */; };
 		AA24BDC8FA9191EEC7BC25D2 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B24D03DBEAA9F3641B24 /* GameSettings.swift */; };
@@ -106,7 +107,6 @@
 		1B6BB3AC23AD0536002A1B46 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		2C1D2C8222E1F637000DEF4B /* UIFont+OnPaperSoccer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+OnPaperSoccer.swift"; sourceTree = "<group>"; };
 		2C28D20E24378CF100285D3C /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
-		2C28D20F24378CF100285D3C /* SummaryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryViewController.xib; sourceTree = "<group>"; };
 		2C2BDD4521874587009D48BC /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
 		2C2CFF7F22FB39E000258B5A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		2C2CFF8322FB3B0A00258B5A /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -123,7 +123,6 @@
 		2C97553D22E095AA0018964A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		2C97553E22E095AA0018964A /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		2C97554422E09B320018964A /* Dreamwalker.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dreamwalker.otf; sourceTree = "<group>"; };
-		2C97554622E09BF60018964A /* Eurostile.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Eurostile.ttf; sourceTree = "<group>"; };
 		2C97554822E09C8A0018964A /* MenuRowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRowButton.swift; sourceTree = "<group>"; };
 		2C97554E22E0A4370018964A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C97555022E0B1980018964A /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
@@ -158,9 +157,12 @@
 		AA24BA9C383BCEDACB8CD8E5 /* MovesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovesViewController.xib; sourceTree = "<group>"; };
 		AA24BAF8AC8464C4CA23C9D8 /* MenuViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewControllerSpec.swift; sourceTree = "<group>"; };
 		AA24BB10F9C1929C5A53998D /* UIColor+Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Fixture.swift"; sourceTree = "<group>"; };
+		AA24BB52B9805E2EAD200F8C /* UIImage+Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Assets.swift"; sourceTree = "<group>"; };
+		AA24BBE17CB8F6DFDF63E4FF /* SummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		AA24BC0B623729163EC253E7 /* Point+Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Point+Fixture.swift"; sourceTree = "<group>"; };
 		AA24BCB1E19522BE044C014E /* ControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllersFactory.swift; sourceTree = "<group>"; };
 		AA24BD2C9FBB272298F04DC4 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		AA24BD673F83D63E6612678E /* SummaryViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewControllerSpec.swift; sourceTree = "<group>"; };
 		AA24BE820377AE917733B251 /* WithViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithViewController.swift; sourceTree = "<group>"; };
 		AA24BEE8D0DE024FC81EBD3A /* Move.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -245,6 +247,7 @@
 				2C320B9E2178E2F600CDADF5 /* UIView+AddContentSubview.swift */,
 				2C320BA02178E32E00CDADF5 /* UIViewController+AddChildViewController.swift */,
 				AA24B10771B109B53597B92F /* CoreGraphics+Extensions.swift */,
+				AA24BB52B9805E2EAD200F8C /* UIImage+Assets.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -293,7 +296,6 @@
 		2C97554322E09B000018964A /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				2C97554622E09BF60018964A /* Eurostile.ttf */,
 				2C97554422E09B320018964A /* Dreamwalker.otf */,
 			);
 			path = Fonts;
@@ -378,7 +380,8 @@
 			isa = PBXGroup;
 			children = (
 				2C28D20E24378CF100285D3C /* SummaryViewController.swift */,
-				2C28D20F24378CF100285D3C /* SummaryViewController.xib */,
+				AA24BBE17CB8F6DFDF63E4FF /* SummaryView.swift */,
+				AA24BD673F83D63E6612678E /* SummaryViewControllerSpec.swift */,
 			);
 			path = Summary;
 			sourceTree = "<group>";
@@ -525,11 +528,9 @@
 				2C97554522E09B320018964A /* Dreamwalker.otf in Resources */,
 				2C97554022E095AA0018964A /* MenuViewController.xib in Resources */,
 				2C9A70A521BE615C00B801C9 /* MatchViewController.xib in Resources */,
-				2C97554722E09BF60018964A /* Eurostile.ttf in Resources */,
 				2C320B992178DD1E00CDADF5 /* FieldViewController.xib in Resources */,
 				2C97554F22E0A4370018964A /* Assets.xcassets in Resources */,
 				AA24B8B08AD975D581E6AF56 /* MovesViewController.xib in Resources */,
-				2C28D21124378CF100285D3C /* SummaryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,6 +602,8 @@
 				AA24BBCAAF24F051B2E66253 /* UIColor+OnPaperSoccer.swift in Sources */,
 				2C97553F22E095AA0018964A /* MenuViewController.swift in Sources */,
 				1B5FBBA823BE3D0A007F9381 /* EmailSender.swift in Sources */,
+				AA24B6685BF4D5BB95F01B88 /* SummaryView.swift in Sources */,
+				AA24BB561422B0FD553BD4A4 /* UIImage+Assets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,6 +625,7 @@
 				2CC33B6422EB37F4006884FB /* UIBarButtonItem+Specs.swift in Sources */,
 				AA24B6CD59CC1876FC87674E /* MenuViewControllerSpec.swift in Sources */,
 				AA24B85978E9CBC61199D413 /* MenuRowButtonSpec.swift in Sources */,
+				AA24BC4C568E5DA5F761B96A /* SummaryViewControllerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

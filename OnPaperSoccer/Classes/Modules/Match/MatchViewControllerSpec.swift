@@ -53,7 +53,7 @@ class MatchViewControllerSpec: QuickSpec {
                 
                 it("should indicate player 1 turn") {
                     expect(sut.turnLabel.text) == "RED PLAYER TURN"
-                    expect(sut.turnView.backgroundColor) == UIColor.App.player1
+                    expect(sut.turnView.backgroundColor) == Player.player1.color
                 }
             }
 
@@ -64,7 +64,7 @@ class MatchViewControllerSpec: QuickSpec {
 
                 it("should mark middle of field as current position") {
                     expect(fieldDrawerSpy.markedPoint) == gameSettings.startingPoint
-                    expect(fieldDrawerSpy.markingColor) == UIColor.App.player1
+                    expect(fieldDrawerSpy.markingColor) == Player.player1.color
                 }
             }
 
@@ -173,7 +173,7 @@ class MatchViewControllerSpec: QuickSpec {
                             }
 
                             it("should set correct color on turn view") {
-                                expect(sut.turnView.backgroundColor) == UIColor.App.player1
+                                expect(sut.turnView.backgroundColor) == Player.player1.color
                             }
                         }
 
@@ -188,7 +188,7 @@ class MatchViewControllerSpec: QuickSpec {
                             }
 
                             it("should set correct color on turn view") {
-                                expect(sut.turnView.backgroundColor) == UIColor.App.player2
+                                expect(sut.turnView.backgroundColor) == Player.player2.color
                             }
                         }
                     }
@@ -232,7 +232,7 @@ class MatchViewControllerSpec: QuickSpec {
 
                     it("should mark middle of field as current position") {
                         expect(fieldDrawerSpy.markedPoint) == gameSettings.startingPoint
-                        expect(fieldDrawerSpy.markingColor) == UIColor.App.player1
+                        expect(fieldDrawerSpy.markingColor) == Player.player1.color
                     }
                 }
 
