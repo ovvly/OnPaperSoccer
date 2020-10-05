@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 import Quick
 import Nimble
 import SnapshotTesting
@@ -41,7 +42,7 @@ class AboutViewControllerSpec: QuickSpec {
                 }
                 
                 it("should open mail with predefined mail") {
-                    expect(emailSenderSpy.capturedEmailAddress) == "help@onpapersoccer.com"
+                    expect(emailSenderSpy.capturedEmailAddress) == "onpapersoccer+help@gmail.com"
                 }
                 
                 it("should present on correct view controller") {
@@ -55,7 +56,7 @@ class AboutViewControllerSpec: QuickSpec {
                 }
                 
                 it("should open mail with predefined mail") {
-                    expect(emailSenderSpy.capturedEmailAddress) == "ideas@onpapersoccer.com"
+                    expect(emailSenderSpy.capturedEmailAddress) == "onpapersoccer+ideas@gmail.com"
                 }
                 
                 it("should present on correct view controller") {
