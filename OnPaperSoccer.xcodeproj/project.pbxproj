@@ -3,18 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1B5FBB9E23BE2188007F9381 /* AboutViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5FBB9C23BE20BA007F9381 /* AboutViewControllerSpec.swift */; };
-		1B5FBBA023BE22F8007F9381 /* Nimble.framework in Carthage Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 2C97553522E08B360018964A /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1B5FBBA123BE22F8007F9381 /* Quick.framework in Carthage Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 2C97553622E08B360018964A /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1B5FBBA223BE22F8007F9381 /* SnapshotTesting.framework in Carthage Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 2C97553422E08B360018964A /* SnapshotTesting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1B5FBBA423BE28CD007F9381 /* ExternalLinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5FBBA323BE28CD007F9381 /* ExternalLinkHandler.swift */; };
 		1B5FBBA823BE3D0A007F9381 /* EmailSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5FBBA723BE3D0A007F9381 /* EmailSender.swift */; };
 		1B5FBBAA23BF47DD007F9381 /* EmailSenderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5FBBA923BF47DD007F9381 /* EmailSenderSpec.swift */; };
-		1B6BB3AD23AD0536002A1B46 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 1B6BB3AC23AD0536002A1B46 /* Cartfile */; };
 		2C1D2C8322E1F637000DEF4B /* UIFont+OnPaperSoccer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1D2C8222E1F637000DEF4B /* UIFont+OnPaperSoccer.swift */; };
 		2C28D21024378CF100285D3C /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C28D20E24378CF100285D3C /* SummaryViewController.swift */; };
 		2C2BDD4621874587009D48BC /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2BDD4521874587009D48BC /* FieldView.swift */; };
@@ -26,20 +22,20 @@
 		2C320B982178DD1E00CDADF5 /* FieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B962178DD1E00CDADF5 /* FieldViewController.swift */; };
 		2C320B9F2178E2F600CDADF5 /* UIView+AddContentSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B9E2178E2F600CDADF5 /* UIView+AddContentSubview.swift */; };
 		2C320BA12178E32E00CDADF5 /* UIViewController+AddChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320BA02178E32E00CDADF5 /* UIViewController+AddChildViewController.swift */; };
-		2C97553722E08B360018964A /* SnapshotTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C97553422E08B360018964A /* SnapshotTesting.framework */; };
-		2C97553822E08B360018964A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C97553522E08B360018964A /* Nimble.framework */; };
-		2C97553922E08B360018964A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C97553622E08B360018964A /* Quick.framework */; };
 		2C97553F22E095AA0018964A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C97553D22E095AA0018964A /* MenuViewController.swift */; };
 		2C97554022E095AA0018964A /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C97553E22E095AA0018964A /* MenuViewController.xib */; };
 		2C97554522E09B320018964A /* Dreamwalker.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C97554422E09B320018964A /* Dreamwalker.otf */; };
 		2C97554922E09C8A0018964A /* MenuRowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C97554822E09C8A0018964A /* MenuRowButton.swift */; };
 		2C97554F22E0A4370018964A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C97554E22E0A4370018964A /* Assets.xcassets */; };
-		2C97555222E0B1EF0018964A /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C97555022E0B1980018964A /* SnapKit.framework */; };
 		2C9A70A421BE615C00B801C9 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A70A221BE615C00B801C9 /* MatchViewController.swift */; };
 		2C9A70A521BE615C00B801C9 /* MatchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C9A70A321BE615C00B801C9 /* MatchViewController.xib */; };
 		2C9A70A721BE747000B801C9 /* MovesValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A70A621BE747000B801C9 /* MovesValidator.swift */; };
 		2CB51AF5202CDC96009C3B71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB51AF4202CDC96009C3B71 /* AppDelegate.swift */; };
 		2CB51AFF202CDC96009C3B71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB51AFD202CDC96009C3B71 /* LaunchScreen.storyboard */; };
+		2CB94CBF252B8F7400FDDBFC /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB94CBE252B8F7400FDDBFC /* Quick */; };
+		2CB94CC3252B8F8E00FDDBFC /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB94CC2252B8F8E00FDDBFC /* Nimble */; };
+		2CB94CC7252B8FB000FDDBFC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB94CC6252B8FB000FDDBFC /* SnapKit */; };
+		2CB94CCB252B8FE100FDDBFC /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB94CCA252B8FE100FDDBFC /* SnapshotTesting */; };
 		2CC33B6222EB36C9006884FB /* AppStyler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC33B6122EB36C9006884FB /* AppStyler.swift */; };
 		2CC33B6422EB37F4006884FB /* UIBarButtonItem+Specs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC33B6322EB37F4006884FB /* UIBarButtonItem+Specs.swift */; };
 		2CCE26C3228AF0B10028D291 /* MoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCE26C2228AF0B10028D291 /* MoveButton.swift */; };
@@ -82,28 +78,11 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		1B5FBB9F23BE2256007F9381 /* Carthage Copy Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				1B5FBBA023BE22F8007F9381 /* Nimble.framework in Carthage Copy Frameworks */,
-				1B5FBBA123BE22F8007F9381 /* Quick.framework in Carthage Copy Frameworks */,
-				1B5FBBA223BE22F8007F9381 /* SnapshotTesting.framework in Carthage Copy Frameworks */,
-			);
-			name = "Carthage Copy Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		1B5FBB9C23BE20BA007F9381 /* AboutViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewControllerSpec.swift; sourceTree = "<group>"; };
 		1B5FBBA323BE28CD007F9381 /* ExternalLinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalLinkHandler.swift; sourceTree = "<group>"; };
 		1B5FBBA723BE3D0A007F9381 /* EmailSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSender.swift; sourceTree = "<group>"; };
 		1B5FBBA923BF47DD007F9381 /* EmailSenderSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSenderSpec.swift; sourceTree = "<group>"; };
-		1B6BB3AC23AD0536002A1B46 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		2C1D2C8222E1F637000DEF4B /* UIFont+OnPaperSoccer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+OnPaperSoccer.swift"; sourceTree = "<group>"; };
 		2C28D20E24378CF100285D3C /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		2C2BDD4521874587009D48BC /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
@@ -170,7 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C97555222E0B1EF0018964A /* SnapKit.framework in Frameworks */,
+				2CB94CC7252B8FB000FDDBFC /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,9 +157,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C97553722E08B360018964A /* SnapshotTesting.framework in Frameworks */,
-				2C97553822E08B360018964A /* Nimble.framework in Frameworks */,
-				2C97553922E08B360018964A /* Quick.framework in Frameworks */,
+				2CB94CCB252B8FE100FDDBFC /* SnapshotTesting in Frameworks */,
+				2CB94CBF252B8F7400FDDBFC /* Quick in Frameworks */,
+				2CB94CC3252B8F8E00FDDBFC /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,7 +291,6 @@
 		2CB51AE8202CDC95009C3B71 = {
 			isa = PBXGroup;
 			children = (
-				1B6BB3AC23AD0536002A1B46 /* Cartfile */,
 				2CB51AF3202CDC96009C3B71 /* OnPaperSoccer */,
 				2CB51B08202CDC96009C3B71 /* OnPaperSoccerTests */,
 				2CB51AF2202CDC96009C3B71 /* Products */,
@@ -443,13 +421,15 @@
 				2CB51AED202CDC95009C3B71 /* Sources */,
 				2CB51AEE202CDC95009C3B71 /* Frameworks */,
 				2CB51AEF202CDC95009C3B71 /* Resources */,
-				2C97555322E0B20C0018964A /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = OnPaperSoccer;
+			packageProductDependencies = (
+				2CB94CC6252B8FB000FDDBFC /* SnapKit */,
+			);
 			productName = OnPaperSoccer;
 			productReference = 2CB51AF1202CDC96009C3B71 /* Grid Soccer.app */;
 			productType = "com.apple.product-type.application";
@@ -461,7 +441,6 @@
 				2CB51B01202CDC96009C3B71 /* Sources */,
 				2CB51B02202CDC96009C3B71 /* Frameworks */,
 				2CB51B03202CDC96009C3B71 /* Resources */,
-				1B5FBB9F23BE2256007F9381 /* Carthage Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -469,6 +448,11 @@
 				2CB51B07202CDC96009C3B71 /* PBXTargetDependency */,
 			);
 			name = OnPaperSoccerTests;
+			packageProductDependencies = (
+				2CB94CBE252B8F7400FDDBFC /* Quick */,
+				2CB94CC2252B8F8E00FDDBFC /* Nimble */,
+				2CB94CCA252B8FE100FDDBFC /* SnapshotTesting */,
+			);
 			productName = OnPaperSoccerTests;
 			productReference = 2CB51B05202CDC96009C3B71 /* OnPaperSoccerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -480,7 +464,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = com.owlyapps.onPaperSoccer;
 				TargetAttributes = {
 					2CB51AF0202CDC95009C3B71 = {
@@ -505,6 +489,12 @@
 				Base,
 			);
 			mainGroup = 2CB51AE8202CDC95009C3B71;
+			packageReferences = (
+				2CB94CBD252B8F7400FDDBFC /* XCRemoteSwiftPackageReference "Quick" */,
+				2CB94CC1252B8F8E00FDDBFC /* XCRemoteSwiftPackageReference "Nimble" */,
+				2CB94CC5252B8FB000FDDBFC /* XCRemoteSwiftPackageReference "SnapKit" */,
+				2CB94CC9252B8FE000FDDBFC /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+			);
 			productRefGroup = 2CB51AF2202CDC96009C3B71 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -520,7 +510,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B6BB3AD23AD0536002A1B46 /* Cartfile in Resources */,
 				2CB51AFF202CDC96009C3B71 /* LaunchScreen.storyboard in Resources */,
 				2C97554522E09B320018964A /* Dreamwalker.otf in Resources */,
 				2C97554022E095AA0018964A /* MenuViewController.xib in Resources */,
@@ -538,28 +527,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2C97555322E0B20C0018964A /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"$(SRCROOT)/Carthage/OnPaperSoccerInput.xcfilelist",
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-				"$(SRCROOT)/Carthage/OnPaperSoccerOutput.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2CB51AED202CDC95009C3B71 /* Sources */ = {
@@ -672,6 +639,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -731,6 +699,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -766,10 +735,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = LK54883DEN;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = OnPaperSoccer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -778,6 +744,7 @@
 				);
 				MARKETING_VERSION = 1.04;
 				PRODUCT_BUNDLE_IDENTIFIER = com.owly.onpapersoccer;
+				PRODUCT_MODULE_NAME = OnPaperSoccer;
 				PRODUCT_NAME = "Grid Soccer";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -791,10 +758,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = LK54883DEN;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = OnPaperSoccer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -803,6 +767,7 @@
 				);
 				MARKETING_VERSION = 1.04;
 				PRODUCT_BUNDLE_IDENTIFIER = com.owly.onpapersoccer;
+				PRODUCT_MODULE_NAME = OnPaperSoccer;
 				PRODUCT_NAME = "Grid Soccer";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -816,10 +781,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TN3WPQAA2X;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = OnPaperSoccerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -830,7 +792,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OnPaperSoccer.app/OnPaperSoccer";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Grid Soccer.app/Grid Soccer";
 			};
 			name = Debug;
 		};
@@ -841,10 +803,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TN3WPQAA2X;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = OnPaperSoccerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -855,7 +814,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OnPaperSoccer.app/OnPaperSoccer";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Grid Soccer.app/Grid Soccer";
 			};
 			name = Release;
 		};
@@ -890,6 +849,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2CB94CBD252B8F7400FDDBFC /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		2CB94CC1252B8F8E00FDDBFC /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		2CB94CC5252B8FB000FDDBFC /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		2CB94CC9252B8FE000FDDBFC /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.8.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2CB94CBE252B8F7400FDDBFC /* Quick */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CB94CBD252B8F7400FDDBFC /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
+		};
+		2CB94CC2252B8F8E00FDDBFC /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CB94CC1252B8F8E00FDDBFC /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+		2CB94CC6252B8FB000FDDBFC /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CB94CC5252B8FB000FDDBFC /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		2CB94CCA252B8FE100FDDBFC /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CB94CC9252B8FE000FDDBFC /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2CB51AE9202CDC95009C3B71 /* Project object */;
 }
