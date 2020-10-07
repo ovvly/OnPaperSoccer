@@ -22,10 +22,8 @@ final class DefaultPlayerTurnController: PlayerTurnController {
     //MARK: Actions
 
     func moved(to point: Point) {
-        guard !isEndingOnBorderLine(point: point) else { return }
-        if !visitedPoints.contains(point) {
-            currentPlayer = currentPlayer.nextPlayer()
-        }
+        if canContinueAfterMoving(to: point) { return }
+        currentPlayer = currentPlayer.nextPlayer()
         visitedPoints.insert(point)
     }
 
@@ -36,8 +34,12 @@ final class DefaultPlayerTurnController: PlayerTurnController {
 
     //MARK: Helpers
 
-    private func isEndingOnBorderLine(point: Point) -> Bool {
-        return point.x == 0 || point.x == settings.fieldWidth - 1 ||
-            point.y == 0 || point.y == settings.fieldHeight - 1
+    private func canContinueAfterMoving(to point: Point) -> Bool {
+        isOnBorderLine(point: point) || visitedPoints.contains(point)
+    }
+
+    private func isOnBorderLine(point: Point) -> Bool {
+        point.x == 0 || point.x == settings.fieldWidth - 1 ||
+                point.y == 0 || point.y == settings.fieldHeight - 1
     }
 }

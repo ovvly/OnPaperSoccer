@@ -5,7 +5,7 @@ class FlowController {
     private let controllersFactory = ControllersFactory()
     private let navigationController: UINavigationController
     private lazy var matchViewController: MatchViewController = {
-        return createMatchViewController()
+        createMatchViewController()
     }()
 
     init() {
@@ -16,7 +16,7 @@ class FlowController {
     }
 
     func rootViewController() -> UIViewController {
-        return navigationController
+        navigationController
     }
 
     private func createMatchViewController() -> MatchViewController {
