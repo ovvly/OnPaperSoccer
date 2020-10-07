@@ -3,8 +3,8 @@ import UIKit
 import MessageUI
 
 final class ControllersFactory {
-    func createMatchViewController() -> MatchViewController {
-        let gameSettings = GameSettings.default
+    func createMatchViewController(gameMode: GameMode) -> MatchViewController {
+        let gameSettings = FieldSettings.default
         let movesViewController = MovesViewController()
         let turnController = DefaultPlayerTurnController(settings: gameSettings)
         let fieldViewController = FieldViewController(settings: gameSettings)
@@ -13,12 +13,13 @@ final class ControllersFactory {
             movesController: movesViewController,
             playerTurnController: turnController,
             movesValidator: movesValidator,
-            settings: gameSettings)
+            settings: gameSettings,
+            gameMode: gameMode)
         return viewController
     }
 
     func createMenuViewController() -> MenuViewController {
-        return MenuViewController()
+        MenuViewController()
     }
 
     func createSummaryViewController(player: Player) -> SummaryViewController {
@@ -39,7 +40,7 @@ final class ControllersFactory {
     
     func createAboutViewController() -> AboutViewController {
         let emailSender = DefaultEmailSender(mailComposerBuilder: {
-            return MFMailComposeViewController()
+            MFMailComposeViewController()
         })
         return AboutViewController(externalLinkHandler: UIApplication.shared, emailSender: emailSender)
     }

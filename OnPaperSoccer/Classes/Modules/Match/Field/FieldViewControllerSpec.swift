@@ -9,12 +9,12 @@ class FieldViewControllerSpec: QuickSpec {
     override func spec() {
         //FIXME: Failing tests
         describe("FieldViewController") {
-            var settings: GameSettings!
+            var settings: FieldSettings!
 
             var sut: FieldViewController!
 
             beforeEach {
-                settings = GameSettings.default
+                settings = FieldSettings.default
 
                 sut = FieldViewController(settings: settings)
             }

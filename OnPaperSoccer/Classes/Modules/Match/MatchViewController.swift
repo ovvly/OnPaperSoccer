@@ -5,16 +5,16 @@ protocol MatchViewControllerDelegate: class {
     func showResetConfirmation()
 }
 
-class MatchViewController: UIViewController, Resetable {
+final class MatchViewController: UIViewController, Resetable {
     @IBOutlet weak var fieldView: UIView!
     @IBOutlet weak var mainContentView: UIView!
     @IBOutlet weak var turnView: UIView!
     @IBOutlet weak var turnLabel: UILabel!
-    
+
     weak var delegate: MatchViewControllerDelegate?
     private(set) var currentPosition: Point
-    private let settings: GameSettings
-
+    private let settings: FieldSettings
+    private let gameMode: GameMode
     private let fieldDrawer: FieldDrawer
     private let movesController: MovesController
     private let turnController: PlayerTurnController
@@ -26,12 +26,14 @@ class MatchViewController: UIViewController, Resetable {
          movesController: MovesController,
          playerTurnController: PlayerTurnController,
          movesValidator: MovesValidator,
-         settings: GameSettings) {
+         settings: FieldSettings,
+         gameMode: GameMode) {
         self.fieldDrawer = fieldDrawer
         self.movesController = movesController
         self.turnController = playerTurnController
         self.movesValidator = movesValidator
         self.settings = settings
+        self.gameMode = gameMode
         self.currentPosition = settings.startingPoint
 
         super.init(nibName: nil, bundle: nil)
@@ -119,10 +121,13 @@ class MatchViewController: UIViewController, Resetable {
     private func updateTurnIndicator(with player: Player) {
         turnView.backgroundColor = player.color
         turnLabel.text = "\(player.name) PLAYER TURN"
+        if gameMode == .singlePlayer && player == .player2 {
+            movesController.updateMovesPossibility([])
+        }
     }
 
     private func playerWon(_ player: Player) {
-        movesController.disableMoves()
+        movesController.updateMovesPossibility([])
         delegate?.playerDidWin(player)
     }
 

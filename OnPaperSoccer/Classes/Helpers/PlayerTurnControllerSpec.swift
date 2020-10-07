@@ -7,11 +7,11 @@ import Nimble
 class TurnControllerSpec: QuickSpec {
     override func spec() {
         describe("DefaultPlayerTurnController") {
-            var gameSettings: GameSettings!
+            var gameSettings: FieldSettings!
             var sut: DefaultPlayerTurnController!
 
             beforeEach {
-                gameSettings = GameSettings.fixture
+                gameSettings = FieldSettings.fixture
 
                 sut = DefaultPlayerTurnController(settings: gameSettings)
             }

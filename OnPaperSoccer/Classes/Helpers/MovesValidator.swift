@@ -13,7 +13,7 @@ final class DefaultMovesValidator: MovesValidator {
 
     //MARK: Lifecycle
 
-    init(settings: GameSettings) {
+    init(settings: FieldSettings) {
         self.fieldWidth = settings.fieldWidth
         self.fieldHeight = settings.fieldHeight
     }

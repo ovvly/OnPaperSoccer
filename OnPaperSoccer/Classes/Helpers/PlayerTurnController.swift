@@ -10,11 +10,11 @@ final class DefaultPlayerTurnController: PlayerTurnController {
     var currentPlayer: Player = .player1
     var visitedPoints: Set<Point>
 
-    private let settings: GameSettings
+    private let settings: FieldSettings
 
     //MARK: Lifecycle
 
-    init(settings: GameSettings) {
+    init(settings: FieldSettings) {
         self.settings = settings
         visitedPoints = [settings.startingPoint]
     }

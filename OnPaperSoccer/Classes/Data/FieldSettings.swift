@@ -2,14 +2,14 @@ import Foundation
 
 typealias WinningPoints = [Point: Player]
 
-struct GameSettings {
+struct FieldSettings {
     let fieldWidth: Int
     let fieldHeight: Int
     let startingPoint: Point
     let winingPoints: WinningPoints
 }
 
-extension GameSettings {
-    static let `default` = GameSettings(fieldWidth: 9, fieldHeight: 11, startingPoint: Point(x: 4, y: 5),
+extension FieldSettings {
+    static let `default` = FieldSettings(fieldWidth: 9, fieldHeight: 11, startingPoint: Point(x: 4, y: 5),
         winingPoints: [Point(x: 4, y: 10): .player1, Point(x: 4, y: 0): .player2])
 }

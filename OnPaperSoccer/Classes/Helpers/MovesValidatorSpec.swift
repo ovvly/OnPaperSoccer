@@ -8,10 +8,10 @@ class MovesValidatorSpec: QuickSpec {
     override func spec() {
         describe("MovesValidator") {
             var sut: DefaultMovesValidator!
-            var settings: GameSettings!
+            var settings: FieldSettings!
 
             beforeEach {
-                settings = GameSettings.fixture
+                settings = FieldSettings.fixture
                 sut = DefaultMovesValidator(settings: settings)
             }
 

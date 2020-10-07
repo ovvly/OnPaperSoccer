@@ -10,11 +10,11 @@ protocol FieldDrawer: WithViewController, Resetable {
 final class FieldViewController: UIViewController, FieldDrawer, WithCustomView {
     typealias CustomView = FieldView
 
-    private let settings: GameSettings
+    private let settings: FieldSettings
 
     // MARK: Init
 
-    init(settings: GameSettings) {
+    init(settings: FieldSettings) {
         self.settings = settings
         super.init(nibName: nil, bundle: nil)
     }
