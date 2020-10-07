@@ -1,7 +1,8 @@
 import UIKit
 
 protocol MenuViewControllerDelegate: class {
-    func didSelectedPlay()
+    func didSelectedHotSeats()
+    func didSelectedSinglePlayer()
     func didSelectedAbout()
 }
 
@@ -13,10 +14,14 @@ final class MenuViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func didSelectedPlayRow(_ sender: MenuRowButton) {
-        delegate?.didSelectedPlay()
+    @IBAction func didSelectedSinglePlayerRow(_ sender: MenuRowButton) {
+        delegate?.didSelectedSinglePlayer()
     }
-
+    
+    @IBAction func didSelectedHotSeatsRow(_ sender: MenuRowButton) {
+        delegate?.didSelectedHotSeats()
+    }
+    
     @IBAction func didSelectedAboutRow(_ sender: MenuRowButton) {
         delegate?.didSelectedAbout()
     }

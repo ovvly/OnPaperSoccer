@@ -50,7 +50,11 @@ extension FlowController: MatchViewControllerDelegate {
 }
 
 extension FlowController: MenuViewControllerDelegate {
-    func didSelectedPlay() {
+    func didSelectedSinglePlayer() {
+        navigationController.pushViewController(matchViewController, animated: true)
+    }
+
+    func didSelectedHotSeats() {
         navigationController.pushViewController(matchViewController, animated: true)
     }
 

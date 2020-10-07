@@ -19,19 +19,18 @@ class MenuViewControllerSpec: QuickSpec {
             }
             
             describe("snapshot") {
-                
                 it("should have valid snapshot") {
                     assertSnapshot(matching: sut, as: .image(on: .iPhone8))
                 }
             }
 
-            context("when selecting play row") {
+            context("when selecting single player row") {
                 beforeEach {
-                    sut.didSelectedPlayRow(MenuRowButton())
+                    sut.didSelectedSinglePlayerRow(MenuRowButton())
                 }
 
                 it("should inform delegate") {
-                    expect(menuViewControllerDelegateSpy.playSelected) == true
+                    expect(menuViewControllerDelegateSpy.singlePlayerSelected) == true
                 }
             }
 
@@ -50,11 +49,16 @@ class MenuViewControllerSpec: QuickSpec {
 }
 
 private final class MenuViewControllerDelegateSpy: MenuViewControllerDelegate {
-    var playSelected = false
+    var hotSeatsSelected = false
+    var singlePlayerSelected = false
     var aboutSelected = false
 
-    func didSelectedPlay() {
-        playSelected = true
+    func didSelectedHotSeats() {
+        hotSeatsSelected = true
+    }
+
+    func didSelectedSinglePlayer() {
+        singlePlayerSelected = true
     }
 
     func didSelectedAbout() {

@@ -32,10 +32,10 @@
 		2C9A70A721BE747000B801C9 /* MovesValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A70A621BE747000B801C9 /* MovesValidator.swift */; };
 		2CB51AF5202CDC96009C3B71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB51AF4202CDC96009C3B71 /* AppDelegate.swift */; };
 		2CB51AFF202CDC96009C3B71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB51AFD202CDC96009C3B71 /* LaunchScreen.storyboard */; };
-		2CB94CBF252B8F7400FDDBFC /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB94CBE252B8F7400FDDBFC /* Quick */; };
-		2CB94CC3252B8F8E00FDDBFC /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB94CC2252B8F8E00FDDBFC /* Nimble */; };
-		2CB94CC7252B8FB000FDDBFC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB94CC6252B8FB000FDDBFC /* SnapKit */; };
-		2CB94CCB252B8FE100FDDBFC /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB94CCA252B8FE100FDDBFC /* SnapshotTesting */; };
+		2CB94CD7252B985D00FDDBFC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB94CC6252B8FB000FDDBFC /* SnapKit */; };
+		2CB94CD8252B985D00FDDBFC /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB94CBE252B8F7400FDDBFC /* Quick */; };
+		2CB94CD9252B985D00FDDBFC /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB94CC2252B8F8E00FDDBFC /* Nimble */; };
+		2CB94CDA252B985D00FDDBFC /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB94CCA252B8FE100FDDBFC /* SnapshotTesting */; };
 		2CC33B6222EB36C9006884FB /* AppStyler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC33B6122EB36C9006884FB /* AppStyler.swift */; };
 		2CC33B6422EB37F4006884FB /* UIBarButtonItem+Specs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC33B6322EB37F4006884FB /* UIBarButtonItem+Specs.swift */; };
 		2CCE26C3228AF0B10028D291 /* MoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCE26C2228AF0B10028D291 /* MoveButton.swift */; };
@@ -149,7 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CB94CC7252B8FB000FDDBFC /* SnapKit in Frameworks */,
+				2CB94CD7252B985D00FDDBFC /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,9 +157,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CB94CCB252B8FE100FDDBFC /* SnapshotTesting in Frameworks */,
-				2CB94CBF252B8F7400FDDBFC /* Quick in Frameworks */,
-				2CB94CC3252B8F8E00FDDBFC /* Nimble in Frameworks */,
+				2CB94CDA252B985D00FDDBFC /* SnapshotTesting in Frameworks */,
+				2CB94CD8252B985D00FDDBFC /* Quick in Frameworks */,
+				2CB94CD9252B985D00FDDBFC /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
