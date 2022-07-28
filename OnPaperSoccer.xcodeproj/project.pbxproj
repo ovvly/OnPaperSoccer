@@ -35,6 +35,10 @@
 		2CC33B6222EB36C9006884FB /* AppStyler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC33B6122EB36C9006884FB /* AppStyler.swift */; };
 		2CC33B6422EB37F4006884FB /* UIBarButtonItem+Specs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC33B6322EB37F4006884FB /* UIBarButtonItem+Specs.swift */; };
 		2CCE26C3228AF0B10028D291 /* MoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCE26C2228AF0B10028D291 /* MoveButton.swift */; };
+		3B0C147F289282A7005D40D2 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB94CCA252B8FE100FDDBFC /* SnapshotTesting */; };
+		3B0C148A2892863D005D40D2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3B0C14892892863D005D40D2 /* SnapKit */; };
+		3B0C148C28928647005D40D2 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 3B0C148B28928647005D40D2 /* Quick */; };
+		3B0C148E28928647005D40D2 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 3B0C148D28928647005D40D2 /* Nimble */; };
 		AA24B2F3C919EEC95E187E86 /* FieldViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B13D18BFBF3DDCDC0F91 /* FieldViewControllerSpec.swift */; };
 		AA24B4171DFA4220F577787F /* Point+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BC0B623729163EC253E7 /* Point+Fixture.swift */; };
 		AA24B42B6DE4E267CAB7CFAD /* MovesViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B4F322735060BBE4226E /* MovesViewControllerSpec.swift */; };
@@ -147,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B0C148A2892863D005D40D2 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +159,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B0C148E28928647005D40D2 /* Nimble in Frameworks */,
+				3B0C148C28928647005D40D2 /* Quick in Frameworks */,
+				3B0C147F289282A7005D40D2 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,7 +431,7 @@
 			);
 			name = OnPaperSoccer;
 			packageProductDependencies = (
-				2CB94CC6252B8FB000FDDBFC,
+				3B0C14892892863D005D40D2 /* SnapKit */,
 			);
 			productName = OnPaperSoccer;
 			productReference = 2CB51AF1202CDC96009C3B71 /* Grid Soccer.app */;
@@ -444,9 +452,9 @@
 			);
 			name = OnPaperSoccerTests;
 			packageProductDependencies = (
-				2CB94CBE252B8F7400FDDBFC,
-				2CB94CC2252B8F8E00FDDBFC,
-				2CB94CCA252B8FE100FDDBFC,
+				2CB94CCA252B8FE100FDDBFC /* SnapshotTesting */,
+				3B0C148B28928647005D40D2 /* Quick */,
+				3B0C148D28928647005D40D2 /* Nimble */,
 			);
 			productName = OnPaperSoccerTests;
 			productReference = 2CB51B05202CDC96009C3B71 /* OnPaperSoccerTests.xctest */;
@@ -485,10 +493,10 @@
 			);
 			mainGroup = 2CB51AE8202CDC95009C3B71;
 			packageReferences = (
-				2CB94CBD252B8F7400FDDBFC,
-				2CB94CC1252B8F8E00FDDBFC,
-				2CB94CC5252B8FB000FDDBFC,
-				2CB94CC9252B8FE000FDDBFC,
+				2CB94CC9252B8FE000FDDBFC /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+				3B0C14802892837B005D40D2 /* XCRemoteSwiftPackageReference "Quick" */,
+				3B0C148328928389005D40D2 /* XCRemoteSwiftPackageReference "Nimble" */,
+				3B0C14862892844D005D40D2 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 2CB51AF2202CDC96009C3B71 /* Products */;
 			projectDirPath = "";
@@ -661,7 +669,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -715,7 +723,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -847,31 +855,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2CB94CBD252B8F7400FDDBFC = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Quick/Quick";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
-		2CB94CC1252B8F8E00FDDBFC = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Quick/Nimble";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
-		2CB94CC5252B8FB000FDDBFC = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
-			};
-		};
-		2CB94CC9252B8FE000FDDBFC = {
+		2CB94CC9252B8FE000FDDBFC /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
 			requirement = {
@@ -879,28 +863,52 @@
 				minimumVersion = 1.8.2;
 			};
 		};
+		3B0C14802892837B005D40D2 /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		3B0C148328928389005D40D2 /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+		3B0C14862892844D005D40D2 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2CB94CBE252B8F7400FDDBFC = {
+		2CB94CCA252B8FE100FDDBFC /* SnapshotTesting */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2CB94CBD252B8F7400FDDBFC;
-			productName = Quick;
+			package = 2CB94CC9252B8FE000FDDBFC /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
-		2CB94CC2252B8F8E00FDDBFC = {
+		3B0C14892892863D005D40D2 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2CB94CC1252B8F8E00FDDBFC;
-			productName = Nimble;
-		};
-		2CB94CC6252B8FB000FDDBFC = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2CB94CC5252B8FB000FDDBFC;
+			package = 3B0C14862892844D005D40D2 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		2CB94CCA252B8FE100FDDBFC = {
+		3B0C148B28928647005D40D2 /* Quick */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2CB94CC9252B8FE000FDDBFC;
-			productName = SnapshotTesting;
+			package = 3B0C14802892837B005D40D2 /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
+		};
+		3B0C148D28928647005D40D2 /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3B0C148328928389005D40D2 /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
