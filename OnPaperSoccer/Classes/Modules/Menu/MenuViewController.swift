@@ -1,6 +1,6 @@
 import UIKit
 
-protocol MenuViewControllerDelegate: class {
+protocol MenuViewControllerDelegate: AnyObject {
     func didSelectedHotSeats()
     func didSelectedSinglePlayer()
     func didSelectedAbout()

@@ -1,6 +1,6 @@
 import UIKit
 
-protocol MatchViewControllerDelegate: class {
+protocol MatchViewControllerDelegate: AnyObject {
     func playerDidWin(_ player: Player)
     func showResetConfirmation()
 }

@@ -1,10 +1,10 @@
 import UIKit
 
-protocol MovesControllerDelegate: class {
+protocol MovesControllerDelegate: AnyObject {
     func didMove(_ move: Move)
 }
 
-protocol MovesController: class, WithViewController, Resetable {
+protocol MovesController: AnyObject, WithViewController, Resetable {
     var delegate: MovesControllerDelegate? { get set }
     func updateMovesPossibility(_ moves: Set<Move>)
 }

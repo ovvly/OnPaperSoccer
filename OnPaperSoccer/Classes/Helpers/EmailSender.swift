@@ -41,7 +41,7 @@ extension DefaultEmailSender: MFMailComposeViewControllerDelegate {
 
 typealias MailComposerDelegate = MFMailComposeViewControllerDelegate
 
-protocol MailComposer: class, WithViewController {
+protocol MailComposer: AnyObject, WithViewController {
     var canSendMail: Bool { get }
     var mailComposeDelegate: MFMailComposeViewControllerDelegate? { get set }
     func set(recipients: [String])

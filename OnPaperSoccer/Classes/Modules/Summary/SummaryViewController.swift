@@ -1,6 +1,6 @@
 import UIKit
 
-protocol SummaryViewControllerDelegate: class {
+protocol SummaryViewControllerDelegate: AnyObject {
     func viewControllerDidRestart(_ viewController: SummaryViewController)
     func viewControllerDidClose(_ viewController: SummaryViewController)
 }
