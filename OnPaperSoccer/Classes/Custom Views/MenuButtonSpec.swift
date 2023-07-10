@@ -1,24 +1,19 @@
-//
-// Created by Jakub Sowa on 10/07/2023.
-// Copyright (c) 2023 com.owlyapps.onPaperSoccer. All rights reserved.
-//
-
 import Foundation
+import SwiftUI
 import Quick
 import Nimble
 import SnapshotTesting
-import SwiftUI
 
 @testable import OnPaperSoccer
 
-class MenuViewSpec: QuickSpec {
+class MenuButtonSpec: QuickSpec {
     override func spec() {
-        describe("MenuView") {
-            var sut: MenuView!
+        describe("MenuButton") {
+            var sut: MenuButton!
             var viewController: UIViewController!
-
+            
             beforeEach {
-                sut = MenuView(interactor: MenuInteractorMock())
+                sut = MenuButton(text: "Fixture", color: Color.App.red, action: {})
                 viewController = UIHostingController(rootView: sut)
             }
 
@@ -29,10 +24,4 @@ class MenuViewSpec: QuickSpec {
             }
         }
     }
-}
-
-private final class MenuInteractorMock: MenuInteracting {
-    func singlePlayerTapped() {}
-    func hotSeatsSelected() {}
-    func aboutSelected() {}
 }
