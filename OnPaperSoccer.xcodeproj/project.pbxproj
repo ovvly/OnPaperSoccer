@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B5FBB9E23BE2188007F9381 /* AboutViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5FBB9C23BE20BA007F9381 /* AboutViewControllerSpec.swift */; };
 		1B5FBBA423BE28CD007F9381 /* ExternalLinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5FBBA323BE28CD007F9381 /* ExternalLinkHandler.swift */; };
 		1B5FBBA823BE3D0A007F9381 /* EmailSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5FBBA723BE3D0A007F9381 /* EmailSender.swift */; };
 		1B5FBBAA23BF47DD007F9381 /* EmailSenderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5FBBA923BF47DD007F9381 /* EmailSenderSpec.swift */; };
@@ -22,8 +21,6 @@
 		2C320B982178DD1E00CDADF5 /* FieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B962178DD1E00CDADF5 /* FieldViewController.swift */; };
 		2C320B9F2178E2F600CDADF5 /* UIView+AddContentSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B9E2178E2F600CDADF5 /* UIView+AddContentSubview.swift */; };
 		2C320BA12178E32E00CDADF5 /* UIViewController+AddChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320BA02178E32E00CDADF5 /* UIViewController+AddChildViewController.swift */; };
-		2C97553F22E095AA0018964A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C97553D22E095AA0018964A /* MenuViewController.swift */; };
-		2C97554022E095AA0018964A /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C97553E22E095AA0018964A /* MenuViewController.xib */; };
 		2C97554522E09B320018964A /* Dreamwalker.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C97554422E09B320018964A /* Dreamwalker.otf */; };
 		2C97554922E09C8A0018964A /* MenuRowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C97554822E09C8A0018964A /* MenuRowButton.swift */; };
 		2C97554F22E0A4370018964A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C97554E22E0A4370018964A /* Assets.xcassets */; };
@@ -39,6 +36,13 @@
 		3B0C148A2892863D005D40D2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3B0C14892892863D005D40D2 /* SnapKit */; };
 		3B0C148C28928647005D40D2 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 3B0C148B28928647005D40D2 /* Quick */; };
 		3B0C148E28928647005D40D2 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 3B0C148D28928647005D40D2 /* Nimble */; };
+		3B914AF02A5C0F0700B1F4DC /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B914AEF2A5C0F0700B1F4DC /* MenuView.swift */; };
+		3B914AF22A5C10C900B1F4DC /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B914AF12A5C10C900B1F4DC /* MenuButton.swift */; };
+		3B914AF62A5C18C200B1F4DC /* Font+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B914AF52A5C18C100B1F4DC /* Font+App.swift */; };
+		3B914AF82A5C19FC00B1F4DC /* Color+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B914AF72A5C19FC00B1F4DC /* Color+App.swift */; };
+		3B914AFA2A5C1B9200B1F4DC /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B914AF92A5C1B9200B1F4DC /* MenuInteractor.swift */; };
+		3B914AFC2A5C259000B1F4DC /* MenuInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B914AFB2A5C259000B1F4DC /* MenuInteractorSpec.swift */; };
+		4408347568AC696A4AA00990 /* MenuViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44083FC5DC067448AC1D7E1E /* MenuViewSpec.swift */; };
 		AA24B2F3C919EEC95E187E86 /* FieldViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B13D18BFBF3DDCDC0F91 /* FieldViewControllerSpec.swift */; };
 		AA24B4171DFA4220F577787F /* Point+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BC0B623729163EC253E7 /* Point+Fixture.swift */; };
 		AA24B42B6DE4E267CAB7CFAD /* MovesViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B4F322735060BBE4226E /* MovesViewControllerSpec.swift */; };
@@ -47,7 +51,6 @@
 		AA24B6302B864E0EE4257AA3 /* MatchViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B240A48A18440B46E320 /* MatchViewControllerSpec.swift */; };
 		AA24B6685BF4D5BB95F01B88 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BBE17CB8F6DFDF63E4FF /* SummaryView.swift */; };
 		AA24B696C655F461F39434E4 /* UIColor+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BB10F9C1929C5A53998D /* UIColor+Fixture.swift */; };
-		AA24B6CD59CC1876FC87674E /* MenuViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BAF8AC8464C4CA23C9D8 /* MenuViewControllerSpec.swift */; };
 		AA24B7130118B052140EC799 /* PlayerTurnControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B77DCFCFB2BA9F8CC272 /* PlayerTurnControllerSpec.swift */; };
 		AA24B75B701BE6F975791AF4 /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BA485BD86C3C906EBFF0 /* GameMode.swift */; };
 		AA24B7F2356C873ECB235CBD /* UIControl+Specs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B1B708C98F1A574B73A2 /* UIControl+Specs.swift */; };
@@ -80,7 +83,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B5FBB9C23BE20BA007F9381 /* AboutViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewControllerSpec.swift; sourceTree = "<group>"; };
 		1B5FBBA323BE28CD007F9381 /* ExternalLinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalLinkHandler.swift; sourceTree = "<group>"; };
 		1B5FBBA723BE3D0A007F9381 /* EmailSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSender.swift; sourceTree = "<group>"; };
 		1B5FBBA923BF47DD007F9381 /* EmailSenderSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSenderSpec.swift; sourceTree = "<group>"; };
@@ -98,8 +100,6 @@
 		2C97553422E08B360018964A /* SnapshotTesting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapshotTesting.framework; path = Carthage/Build/iOS/SnapshotTesting.framework; sourceTree = "<group>"; };
 		2C97553522E08B360018964A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		2C97553622E08B360018964A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
-		2C97553D22E095AA0018964A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		2C97553E22E095AA0018964A /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		2C97554422E09B320018964A /* Dreamwalker.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dreamwalker.otf; sourceTree = "<group>"; };
 		2C97554822E09C8A0018964A /* MenuRowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRowButton.swift; sourceTree = "<group>"; };
 		2C97554E22E0A4370018964A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -116,6 +116,13 @@
 		2CC33B6122EB36C9006884FB /* AppStyler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyler.swift; sourceTree = "<group>"; };
 		2CC33B6322EB37F4006884FB /* UIBarButtonItem+Specs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Specs.swift"; sourceTree = "<group>"; };
 		2CCE26C2228AF0B10028D291 /* MoveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveButton.swift; sourceTree = "<group>"; };
+		3B914AEF2A5C0F0700B1F4DC /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		3B914AF12A5C10C900B1F4DC /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		3B914AF52A5C18C100B1F4DC /* Font+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+App.swift"; sourceTree = "<group>"; };
+		3B914AF72A5C19FC00B1F4DC /* Color+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+App.swift"; sourceTree = "<group>"; };
+		3B914AF92A5C1B9200B1F4DC /* MenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractor.swift; sourceTree = "<group>"; };
+		3B914AFB2A5C259000B1F4DC /* MenuInteractorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractorSpec.swift; sourceTree = "<group>"; };
+		44083FC5DC067448AC1D7E1E /* MenuViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewSpec.swift; sourceTree = "<group>"; };
 		AA24B05A388611DD00323809 /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		AA24B06D05D5533EA3B990A2 /* PlayerTurnController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTurnController.swift; sourceTree = "<group>"; };
 		AA24B10771B109B53597B92F /* CoreGraphics+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreGraphics+Extensions.swift"; sourceTree = "<group>"; };
@@ -134,7 +141,6 @@
 		AA24B9766E353BB7D3ED0546 /* UIColor+OnPaperSoccer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+OnPaperSoccer.swift"; sourceTree = "<group>"; };
 		AA24BA485BD86C3C906EBFF0 /* GameMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
 		AA24BA9C383BCEDACB8CD8E5 /* MovesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovesViewController.xib; sourceTree = "<group>"; };
-		AA24BAF8AC8464C4CA23C9D8 /* MenuViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewControllerSpec.swift; sourceTree = "<group>"; };
 		AA24BB10F9C1929C5A53998D /* UIColor+Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Fixture.swift"; sourceTree = "<group>"; };
 		AA24BB52B9805E2EAD200F8C /* UIImage+Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Assets.swift"; sourceTree = "<group>"; };
 		AA24BBE17CB8F6DFDF63E4FF /* SummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
@@ -173,7 +179,9 @@
 			children = (
 				AA24B9766E353BB7D3ED0546 /* UIColor+OnPaperSoccer.swift */,
 				2C1D2C8222E1F637000DEF4B /* UIFont+OnPaperSoccer.swift */,
+				3B914AF52A5C18C100B1F4DC /* Font+App.swift */,
 				2CC33B6122EB36C9006884FB /* AppStyler.swift */,
+				3B914AF72A5C19FC00B1F4DC /* Color+App.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -182,7 +190,6 @@
 			isa = PBXGroup;
 			children = (
 				2C2CFF7F22FB39E000258B5A /* AboutViewController.swift */,
-				1B5FBB9C23BE20BA007F9381 /* AboutViewControllerSpec.swift */,
 				2C2CFF8322FB3B0A00258B5A /* AboutView.swift */,
 			);
 			path = About;
@@ -246,9 +253,10 @@
 		2C97553C22E095840018964A /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				2C97553D22E095AA0018964A /* MenuViewController.swift */,
-				2C97553E22E095AA0018964A /* MenuViewController.xib */,
-				AA24BAF8AC8464C4CA23C9D8 /* MenuViewControllerSpec.swift */,
+				3B914AF92A5C1B9200B1F4DC /* MenuInteractor.swift */,
+				3B914AFB2A5C259000B1F4DC /* MenuInteractorSpec.swift */,
+				3B914AEF2A5C0F0700B1F4DC /* MenuView.swift */,
+				44083FC5DC067448AC1D7E1E /* MenuViewSpec.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -380,6 +388,7 @@
 			children = (
 				2CCE26C2228AF0B10028D291 /* MoveButton.swift */,
 				2C97554822E09C8A0018964A /* MenuRowButton.swift */,
+				3B914AF12A5C10C900B1F4DC /* MenuButton.swift */,
 				AA24B69EA01AE4A38448BB7E /* MenuRowButtonSpec.swift */,
 			);
 			path = "Custom Views";
@@ -515,7 +524,6 @@
 			files = (
 				2CB51AFF202CDC96009C3B71 /* LaunchScreen.storyboard in Resources */,
 				2C97554522E09B320018964A /* Dreamwalker.otf in Resources */,
-				2C97554022E095AA0018964A /* MenuViewController.xib in Resources */,
 				2C9A70A521BE615C00B801C9 /* MatchViewController.xib in Resources */,
 				2C97554F22E0A4370018964A /* Assets.xcassets in Resources */,
 				AA24B8B08AD975D581E6AF56 /* MovesViewController.xib in Resources */,
@@ -540,6 +548,7 @@
 				2C2CFF8622FB410100258B5A /* WithCustomView.swift in Sources */,
 				2C2BDD4621874587009D48BC /* FieldView.swift in Sources */,
 				2C28D21024378CF100285D3C /* SummaryViewController.swift in Sources */,
+				3B914AF82A5C19FC00B1F4DC /* Color+App.swift in Sources */,
 				2C320B9F2178E2F600CDADF5 /* UIView+AddContentSubview.swift in Sources */,
 				2C320B932178DBC800CDADF5 /* Point.swift in Sources */,
 				2C97554922E09C8A0018964A /* MenuRowButton.swift in Sources */,
@@ -549,6 +558,9 @@
 				2C2CFF8422FB3B0A00258B5A /* AboutView.swift in Sources */,
 				2C320B982178DD1E00CDADF5 /* FieldViewController.swift in Sources */,
 				2CCE26C3228AF0B10028D291 /* MoveButton.swift in Sources */,
+				3B914AF02A5C0F0700B1F4DC /* MenuView.swift in Sources */,
+				3B914AFA2A5C1B9200B1F4DC /* MenuInteractor.swift in Sources */,
+				3B914AF62A5C18C200B1F4DC /* Font+App.swift in Sources */,
 				2C9A70A721BE747000B801C9 /* MovesValidator.swift in Sources */,
 				AA24B9D40713DEC4441E3456 /* CoreGraphics+Extensions.swift in Sources */,
 				2C2CFF8122FB39E000258B5A /* AboutViewController.swift in Sources */,
@@ -566,9 +578,9 @@
 				AA24BD0F214B46C2945C2BEB /* Resetable.swift in Sources */,
 				AA24BDC8FA9191EEC7BC25D2 /* FieldSettings.swift in Sources */,
 				AA24BBCAAF24F051B2E66253 /* UIColor+OnPaperSoccer.swift in Sources */,
-				2C97553F22E095AA0018964A /* MenuViewController.swift in Sources */,
 				1B5FBBA823BE3D0A007F9381 /* EmailSender.swift in Sources */,
 				AA24B6685BF4D5BB95F01B88 /* SummaryView.swift in Sources */,
+				3B914AF22A5C10C900B1F4DC /* MenuButton.swift in Sources */,
 				AA24BB561422B0FD553BD4A4 /* UIImage+Assets.swift in Sources */,
 				AA24B75B701BE6F975791AF4 /* GameMode.swift in Sources */,
 			);
@@ -579,7 +591,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA24B7F2356C873ECB235CBD /* UIControl+Specs.swift in Sources */,
-				1B5FBB9E23BE2188007F9381 /* AboutViewControllerSpec.swift in Sources */,
 				1B5FBBAA23BF47DD007F9381 /* EmailSenderSpec.swift in Sources */,
 				AA24B2F3C919EEC95E187E86 /* FieldViewControllerSpec.swift in Sources */,
 				AA24B42B6DE4E267CAB7CFAD /* MovesViewControllerSpec.swift in Sources */,
@@ -590,9 +601,10 @@
 				AA24B696C655F461F39434E4 /* UIColor+Fixture.swift in Sources */,
 				AA24BC1CBAE58A5B5DF58308 /* GameSettings+Fixture.swift in Sources */,
 				2CC33B6422EB37F4006884FB /* UIBarButtonItem+Specs.swift in Sources */,
-				AA24B6CD59CC1876FC87674E /* MenuViewControllerSpec.swift in Sources */,
 				AA24B85978E9CBC61199D413 /* MenuRowButtonSpec.swift in Sources */,
+				3B914AFC2A5C259000B1F4DC /* MenuInteractorSpec.swift in Sources */,
 				AA24BC4C568E5DA5F761B96A /* SummaryViewControllerSpec.swift in Sources */,
+				4408347568AC696A4AA00990 /* MenuViewSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

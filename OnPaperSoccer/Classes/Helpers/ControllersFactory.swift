@@ -1,6 +1,7 @@
 import Foundation
 import UIKit
 import MessageUI
+import SwiftUI
 
 final class ControllersFactory {
     func createMatchViewController(gameMode: GameMode) -> MatchViewController {
@@ -18,8 +19,10 @@ final class ControllersFactory {
         return viewController
     }
 
-    func createMenuViewController() -> MenuViewController {
-        MenuViewController()
+    func createMenuViewController(onRoute: @escaping (MenuRoute) -> Void) -> UIViewController {
+        let interactor = MenuInteractor(onRoute: onRoute)
+        let view = MenuView(interactor: interactor)
+        return UIHostingController(rootView: view)
     }
 
     func createSummaryViewController(player: Player) -> SummaryViewController {

@@ -7,9 +7,9 @@ class FlowController {
     weak var matchViewController: MatchViewController?
 
     init() {
-        let menuViewController = controllersFactory.createMenuViewController()
-        navigationController = UINavigationController(rootViewController: menuViewController)
-        menuViewController.delegate = self
+        navigationController = UINavigationController()
+        let menuViewController = controllersFactory.createMenuViewController(onRoute: menuRoute)
+        navigationController.pushViewController(menuViewController, animated: false)
         setupNavigationController()
     }
 
@@ -28,6 +28,22 @@ class FlowController {
         self.navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController.navigationBar.shadowImage = UIImage()
     }
+
+    private func menuRoute(route: MenuRoute) {
+        switch route {
+        case .singlePlayer:
+            let matchViewController = createMatchViewController(gameMode: .singlePlayer)
+            self.matchViewController = matchViewController
+            navigationController.pushViewController(matchViewController, animated: true)
+        case .hotSeats:
+            let matchViewController = createMatchViewController(gameMode: .hotSeats)
+            self.matchViewController = matchViewController
+            navigationController.pushViewController(matchViewController, animated: true)
+        case .about:
+            let aboutViewController = controllersFactory.createAboutViewController()
+            navigationController.pushViewController(aboutViewController, animated: true)
+        }
+    }
 }
 
 extension FlowController: MatchViewControllerDelegate {
@@ -44,25 +60,6 @@ extension FlowController: MatchViewControllerDelegate {
             self?.matchViewController?.reset()
         })
         matchViewController?.present(alertController, animated: true)
-    }
-}
-
-extension FlowController: MenuViewControllerDelegate {
-    func didSelectedSinglePlayer() {
-        let matchViewController = createMatchViewController(gameMode: .singlePlayer)
-        self.matchViewController = matchViewController
-        navigationController.pushViewController(matchViewController, animated: true)
-    }
-
-    func didSelectedHotSeats() {
-        let matchViewController = createMatchViewController(gameMode: .hotSeats)
-        self.matchViewController = matchViewController
-        navigationController.pushViewController(matchViewController, animated: true)
-    }
-
-    func didSelectedAbout() {
-        let aboutViewController = controllersFactory.createAboutViewController()
-        navigationController.pushViewController(aboutViewController, animated: true)
     }
 }
 
