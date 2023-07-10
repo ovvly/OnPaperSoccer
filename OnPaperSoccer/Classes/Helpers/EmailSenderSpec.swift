@@ -15,7 +15,7 @@ class EmailSenderSpec: QuickSpec {
                 mailComposerSpy = MailComposerSpy()
                 
                 sut = DefaultEmailSender(mailComposerBuilder: {
-                    return mailComposerSpy
+                    mailComposerSpy
                 })
             }
             
@@ -24,13 +24,14 @@ class EmailSenderSpec: QuickSpec {
                 
                 beforeEach {
                     viewController = ViewControllerSpy()
+                    sut.presentingViewController = viewController
                 }
                 
                 context("when email can be send") {
                     beforeEach {
                         mailComposerSpy.canSendMail = true
                         
-                        sut.sendMail(to: "fake@email.com", presentedFrom: viewController)
+                        sut.sendMail(to: "fake@email.com")
                     }
                     
                     it("should present composers view controller from provided view controller") {
@@ -56,7 +57,7 @@ class EmailSenderSpec: QuickSpec {
                     beforeEach {
                         mailComposerSpy.canSendMail = false
                         
-                        sut.sendMail(to: "fake@email.com", presentedFrom: viewController)
+                        sut.sendMail(to: "fake@email.com")
                     }
                     
                     it("should present alert controller") {
