@@ -41,10 +41,14 @@ final class ControllersFactory {
         return alertController
     }
     
-    func createAboutViewController() -> AboutViewController {
+    func createAboutViewController() -> UIViewController {
         let emailSender = DefaultEmailSender(mailComposerBuilder: {
             MFMailComposeViewController()
         })
-        return AboutViewController(externalLinkHandler: UIApplication.shared, emailSender: emailSender)
+        let interactor = AboutInteractor(externalLinkHandler: UIApplication.shared, emailSender: emailSender)
+        let view = AboutView(interactor: interactor)
+        let viewController = UIHostingController(rootView: view)
+        emailSender.presentingViewController = viewController
+        return viewController
     }
 }

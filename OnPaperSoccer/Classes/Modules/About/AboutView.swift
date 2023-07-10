@@ -1,80 +1,41 @@
-import UIKit
-import SnapKit
+//
+// Created by Jakub Sowa on 10/07/2023.
+// Copyright (c) 2023 com.owlyapps.onPaperSoccer. All rights reserved.
+//
 
-final class AboutView: UIView {
-    let infoLabel: UILabel = {
-        var label = UILabel()
-        label.font = UIFont.App.system(size: 18)
-        label.textColor = UIColor.App.textColor
-        label.numberOfLines = 0
-        label.textAlignment = .justified
-        return label
-    }()
-    
-    let sourceCodeButton: MenuRowButton = {
-        let button = MenuRowButton()
-        button.tintColor = UIColor.App.green
-        return button
-    }()
-    
-    let contactUsButton: MenuRowButton = {
-        let button = MenuRowButton()
-        button.tintColor = UIColor.App.red
-        return button
-    }()
-    
-    let ideasButton: MenuRowButton = {
-        let button = MenuRowButton()
-        button.tintColor = UIColor.App.blue
-        return button
-    }()
-    
-    convenience init() {
-        self.init(frame: CGRect.zero)
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        setupView()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+import Foundation
+import SwiftUI
 
-    private func setupView() {
-        backgroundColor = UIColor.App.field
-        addSubview(infoLabel)
-        addSubview(sourceCodeButton)
-        addSubview(contactUsButton)
-        addSubview(ideasButton)
-        setupCustomConstraints()
-    }
-    
-    private func setupCustomConstraints() {
-        infoLabel.snp.makeConstraints { make in
-            make.topMargin.equalToSuperview().offset(40)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
-        }
-        
-        sourceCodeButton.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.bottom.equalTo(contactUsButton.snp.top).offset(-20)
-        }
-        
-        contactUsButton.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.bottom.equalTo(ideasButton.snp.top).offset(-20)
-        }
-        
-        ideasButton.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.bottomMargin.equalToSuperview().offset(-20)
+struct AboutView: View {
+    let interactor: AboutInteracting
+
+    var body: some View {
+        VStack {
+            Text("Thank you for playing On Paper Soccer. \r\nSource code for this game is public and it can be accessed at: \r\nhttps://github.com/ovvly/OnPaperSoccer")
+                .padding()
+            Spacer()
+
+            MenuButton(text: "Source code", color: Color.App.green) {
+                interactor.sourceCodeTapped()
+            }
+            MenuButton(text: "Contact us", color: Color.App.red) {
+                interactor.contactUsTapped()
+            }
+            MenuButton(text: "Send us your ideas", color: Color.App.blue) {
+                interactor.contactUsTapped()
+            }
         }
     }
+}
+
+struct AboutView_Previews: PreviewProvider {
+    static var previews: some View {
+        AboutView(interactor: AboutInteractorMock())
+    }
+}
+
+private final class AboutInteractorMock: AboutInteracting {
+    func sourceCodeTapped() {}
+    func contactUsTapped() {}
+    func ideasTapped() {}
 }

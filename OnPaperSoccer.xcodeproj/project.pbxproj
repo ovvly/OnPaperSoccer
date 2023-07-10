@@ -13,8 +13,6 @@
 		2C1D2C8322E1F637000DEF4B /* UIFont+OnPaperSoccer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1D2C8222E1F637000DEF4B /* UIFont+OnPaperSoccer.swift */; };
 		2C28D21024378CF100285D3C /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C28D20E24378CF100285D3C /* SummaryViewController.swift */; };
 		2C2BDD4621874587009D48BC /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2BDD4521874587009D48BC /* FieldView.swift */; };
-		2C2CFF8122FB39E000258B5A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CFF7F22FB39E000258B5A /* AboutViewController.swift */; };
-		2C2CFF8422FB3B0A00258B5A /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CFF8322FB3B0A00258B5A /* AboutView.swift */; };
 		2C2CFF8622FB410100258B5A /* WithCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CFF8522FB410100258B5A /* WithCustomView.swift */; };
 		2C320B932178DBC800CDADF5 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B922178DBC800CDADF5 /* Point.swift */; };
 		2C320B952178DBE500CDADF5 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C320B942178DBE500CDADF5 /* Line.swift */; };
@@ -43,6 +41,8 @@
 		3B914AFC2A5C259000B1F4DC /* MenuInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B914AFB2A5C259000B1F4DC /* MenuInteractorSpec.swift */; };
 		3B914B002A5C37E400B1F4DC /* MenuRowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B914AFF2A5C37E400B1F4DC /* MenuRowButton.swift */; };
 		4408347568AC696A4AA00990 /* MenuViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44083FC5DC067448AC1D7E1E /* MenuViewSpec.swift */; };
+		440838A407A684A3500C37AD /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44083ECB593356D2C3520E5E /* AboutView.swift */; };
+		44083C8F7EC3C0BA9FAE9CAE /* AboutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440836BDD1A105BE8FD4BCBC /* AboutInteractor.swift */; };
 		AA24B2F3C919EEC95E187E86 /* FieldViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B13D18BFBF3DDCDC0F91 /* FieldViewControllerSpec.swift */; };
 		AA24B4171DFA4220F577787F /* Point+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24BC0B623729163EC253E7 /* Point+Fixture.swift */; };
 		AA24B42B6DE4E267CAB7CFAD /* MovesViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA24B4F322735060BBE4226E /* MovesViewControllerSpec.swift */; };
@@ -89,8 +89,6 @@
 		2C1D2C8222E1F637000DEF4B /* UIFont+OnPaperSoccer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+OnPaperSoccer.swift"; sourceTree = "<group>"; };
 		2C28D20E24378CF100285D3C /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		2C2BDD4521874587009D48BC /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
-		2C2CFF7F22FB39E000258B5A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		2C2CFF8322FB3B0A00258B5A /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		2C2CFF8522FB410100258B5A /* WithCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithCustomView.swift; sourceTree = "<group>"; };
 		2C320B922178DBC800CDADF5 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		2C320B942178DBE500CDADF5 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
@@ -122,6 +120,8 @@
 		3B914AF92A5C1B9200B1F4DC /* MenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractor.swift; sourceTree = "<group>"; };
 		3B914AFB2A5C259000B1F4DC /* MenuInteractorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractorSpec.swift; sourceTree = "<group>"; };
 		3B914AFF2A5C37E400B1F4DC /* MenuRowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuRowButton.swift; sourceTree = "<group>"; };
+		440836BDD1A105BE8FD4BCBC /* AboutInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutInteractor.swift; sourceTree = "<group>"; };
+		44083ECB593356D2C3520E5E /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		44083FC5DC067448AC1D7E1E /* MenuViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewSpec.swift; sourceTree = "<group>"; };
 		AA24B05A388611DD00323809 /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		AA24B06D05D5533EA3B990A2 /* PlayerTurnController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTurnController.swift; sourceTree = "<group>"; };
@@ -189,8 +189,8 @@
 		2C2CFF7E22FB39B700258B5A /* About */ = {
 			isa = PBXGroup;
 			children = (
-				2C2CFF7F22FB39E000258B5A /* AboutViewController.swift */,
-				2C2CFF8322FB3B0A00258B5A /* AboutView.swift */,
+				44083ECB593356D2C3520E5E /* AboutView.swift */,
+				440836BDD1A105BE8FD4BCBC /* AboutInteractor.swift */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -554,7 +554,6 @@
 				2C9A70A421BE615C00B801C9 /* MatchViewController.swift in Sources */,
 				2CB51AF5202CDC96009C3B71 /* AppDelegate.swift in Sources */,
 				2C320B952178DBE500CDADF5 /* Line.swift in Sources */,
-				2C2CFF8422FB3B0A00258B5A /* AboutView.swift in Sources */,
 				2C320B982178DD1E00CDADF5 /* FieldViewController.swift in Sources */,
 				2CCE26C3228AF0B10028D291 /* MoveButton.swift in Sources */,
 				3B914AF02A5C0F0700B1F4DC /* MenuView.swift in Sources */,
@@ -562,7 +561,6 @@
 				3B914AF62A5C18C200B1F4DC /* Font+App.swift in Sources */,
 				2C9A70A721BE747000B801C9 /* MovesValidator.swift in Sources */,
 				AA24B9D40713DEC4441E3456 /* CoreGraphics+Extensions.swift in Sources */,
-				2C2CFF8122FB39E000258B5A /* AboutViewController.swift in Sources */,
 				2CC33B6222EB36C9006884FB /* AppStyler.swift in Sources */,
 				AA24BB0EB5F03F92D472BEDA /* MovesViewController.swift in Sources */,
 				AA24B801CF942F9DB6416223 /* Vector.swift in Sources */,
@@ -583,6 +581,8 @@
 				3B914AF22A5C10C900B1F4DC /* MenuButton.swift in Sources */,
 				AA24BB561422B0FD553BD4A4 /* UIImage+Assets.swift in Sources */,
 				AA24B75B701BE6F975791AF4 /* GameMode.swift in Sources */,
+				440838A407A684A3500C37AD /* AboutView.swift in Sources */,
+				44083C8F7EC3C0BA9FAE9CAE /* AboutInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

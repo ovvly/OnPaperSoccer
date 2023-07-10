@@ -3,32 +3,31 @@ import UIKit
 import MessageUI
 
 protocol EmailSender {
-    func sendMail(to emailAddress: String, presentedFrom viewController: UIViewController)
+    func sendMail(to emailAddress: String)
 }
 
 final class DefaultEmailSender: NSObject, EmailSender {
     private let mailComposerBuilder: () -> MailComposer
-    private var presentingViewController: UIViewController?
+    var presentingViewController: UIViewController?
     
     init(mailComposerBuilder: @escaping () -> MailComposer) {
         self.mailComposerBuilder = mailComposerBuilder
         super.init()
     }
     
-    func sendMail(to emailAddress: String, presentedFrom viewController: UIViewController) {
+    func sendMail(to emailAddress: String) {
         let mailComposer = mailComposerBuilder()
         mailComposer.mailComposeDelegate = self
-        presentingViewController = viewController
         
         if mailComposer.canSendMail {
             mailComposer.set(recipients: [emailAddress])
-            viewController.present(mailComposer.viewController, animated: true)
+            presentingViewController?.present(mailComposer.viewController, animated: true)
         } else {
             let alertViewController = UIAlertController(title: "Error", message: "Sending email is not configured or not possible from this device", preferredStyle: .alert)
             let confirmAction = UIAlertAction(title: "OK", style: .default)
             alertViewController.addAction(confirmAction)
             
-            viewController.present(alertViewController, animated: true)
+            presentingViewController?.present(alertViewController, animated: true)
         }
     }
 }
@@ -49,7 +48,7 @@ protocol MailComposer: AnyObject, WithViewController {
 
 extension MFMailComposeViewController: MailComposer {
     var canSendMail: Bool {
-        return MFMailComposeViewController.canSendMail()
+        MFMailComposeViewController.canSendMail()
     }
     
     func set(recipients: [String]) {

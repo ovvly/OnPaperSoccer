@@ -24,9 +24,9 @@ class FlowController {
     }
 
     private func setupNavigationController() {
-        self.navigationController.navigationBar.isTranslucent = true
-        self.navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController.navigationBar.shadowImage = UIImage()
+        navigationController.navigationBar.isTranslucent = true
+        navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController.navigationBar.shadowImage = UIImage()
     }
 
     private func menuRoute(route: MenuRoute) {
